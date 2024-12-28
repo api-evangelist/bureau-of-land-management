@@ -1,5 +1,6 @@
 aid: bureau-of-land-management
 url: >-
+
   https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/refs/heads/main/apis.yml
 apis:
   - aid: bureau-of-land-management:bureau-of-land-management
@@ -10,7 +11,8 @@ apis:
     properties:
       - url: https://www.blm.gov
         type: Documentation
-    description: >-
+    description: |-
+
       The Mineral & Land Records System (MLRS) is an online platform delivering
       state-of-the-art mineral and land records transactions, tracking, mapping,
       and more for BLM customers and staff. MLRS has replaced and integrated
@@ -25,14 +27,14 @@ type: Contract
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-30'
-modified: '2024-12-22'
-position: Producing
+modified: '2024-12-27'
+position: Consuming
 description: >-
-  The Bureau of Land Management (BLM) is an agency within the United States
-  Department of the Interior responsible for administering U.S. federal lands.
-  Headquartered in Washington, D.C., the BLM oversees more than 247.3 million
-  acres (1,001,000 km2) of land, or one-eighth of the United States's total
-  landmass.
+  The Bureau of Land Management (BLM) is a U.S. government agency responsible
+  for managing vast stretches of public lands across the country, primarily
+  focused on activities like outdoor recreation, livestock grazing, mineral
+  development, and energy production, aiming to sustain the health and diversity
+  of these lands for future generations.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
