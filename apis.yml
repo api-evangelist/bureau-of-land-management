@@ -3,10 +3,10 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/refs/heads/main/apis.yml
 name: Bureau of Land Management
 tags:
+  - Environment
   - Federal Government
   - Land
   - Resources
-  - Environment
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
