@@ -6,6 +6,7 @@ The Bureau of Land Management (BLM) is a U.S. government agency responsible for 
 ## Scope
 
 - **Type:** Index
+- **x-type:** government
 - **Position:** Consumer
 - **Access:** 3rd-Party
 
@@ -22,7 +23,7 @@ The Bureau of Land Management (BLM) is a U.S. government agency responsible for 
 ## Timestamps
 
 - **Created:** 2024-11-30
-- **Modified:** 2026-04-21
+- **Modified:** 2026-04-23
 
 ## APIs
 
@@ -96,6 +97,7 @@ Provides public access to land use planning documents, environmental impact stat
 - [Website](https://www.blm.gov)
 - [Portal](https://gbp-blm-egis.hub.arcgis.com/)
 - [Privacy Policy](https://www.blm.gov/privacy-policy)
+- [Data Portal](https://catalog.data.gov/dataset?organization=blm-gov)
 
 ## Maintainers
 

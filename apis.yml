@@ -11,10 +11,11 @@ tags:
   - Geospatial
   - Mining
 type: Index
+x-type: government
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-30'
-modified: '2026-04-21'
+modified: '2026-04-23'
 position: Consumer
 description: >-
   The Bureau of Land Management (BLM) is a U.S. government agency responsible
@@ -37,6 +38,8 @@ apis:
         type: Portal
       - url: https://blm-egis.maps.arcgis.com/home/index.html
         type: Documentation
+      - url: https://catalog.data.gov/dataset?organization=blm-gov
+        type: DataAPI
     description: >-
       The BLM Geospatial Business Platform is a public tool and publication
       platform for exploring and downloading GIS data. Built on ArcGIS Online,
@@ -135,6 +138,8 @@ common:
     url: https://gbp-blm-egis.hub.arcgis.com/
   - type: Privacy Policy
     url: https://www.blm.gov/privacy-policy
+  - type: Data Portal
+    url: https://catalog.data.gov/dataset?organization=blm-gov
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
