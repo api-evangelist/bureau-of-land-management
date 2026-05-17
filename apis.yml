@@ -11,7 +11,7 @@ tags:
   - Geospatial
   - Mining
 type: Index
-x-type: government
+kind: government
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2024-11-30'
@@ -136,7 +136,7 @@ common:
     url: https://www.blm.gov
   - type: Portal
     url: https://gbp-blm-egis.hub.arcgis.com/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://www.blm.gov/privacy-policy
   - type: Data Portal
     url: https://catalog.data.gov/dataset?organization=blm-gov
