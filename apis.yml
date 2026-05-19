@@ -132,6 +132,8 @@ apis:
       - Land use planning research
       - Policy development support
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/bureau-of-land-management
   - type: Website
     url: https://www.blm.gov
   - type: Portal
