@@ -132,6 +132,10 @@ apis:
       - Land use planning research
       - Policy development support
 common:
+  - type: VulnerabilityDisclosure
+    url: security/bureau-of-land-management-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/bureau-of-land-management-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/bureau-of-land-management
   - type: Website
