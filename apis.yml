@@ -4,6 +4,14 @@ url: >-
 name: Bureau of Land Management
 tags:
   - Environment
+  - Federal-Government
+  - Land
+  - Resources
+  - GIS
+  - Geospatial
+  - Mining
+tags_raw:
+  - Environment
   - Federal Government
   - Land
   - Resources
@@ -39,6 +47,11 @@ apis:
   - aid: bureau-of-land-management:blm-geospatial-business-platform
     name: BLM Geospatial Business Platform (GBP) Hub
     tags:
+      - Federal-Government
+      - Geospatial
+      - GIS
+      - Land
+    tags_raw:
       - Federal Government
       - Geospatial
       - GIS
@@ -71,6 +84,11 @@ apis:
   - aid: bureau-of-land-management:blm-mineral-land-records
     name: BLM Mineral and Land Records System (MLRS)
     tags:
+      - Federal-Government
+      - Land
+      - Mining
+      - Minerals
+    tags_raw:
       - Federal Government
       - Land
       - Mining
@@ -97,6 +115,10 @@ apis:
   - aid: bureau-of-land-management:blm-general-land-office-records
     name: BLM General Land Office Records
     tags:
+      - Federal-Government
+      - Land
+      - Historical Records
+    tags_raw:
       - Federal Government
       - Land
       - Historical Records
@@ -122,6 +144,10 @@ apis:
   - aid: bureau-of-land-management:blm-eplanning
     name: BLM ePlanning
     tags:
+      - Federal-Government
+      - Land Use Planning
+      - Environmental
+    tags_raw:
       - Federal Government
       - Land Use Planning
       - Environmental
