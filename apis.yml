@@ -47,7 +47,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-
 access: 3rd-Party
 created: '2024-11-30'
 modified: '2026-04-23'
-position: Consumer
+position: Consuming
 description: >-
   The Bureau of Land Management (BLM) is a U.S. government agency responsible
   for managing vast stretches of public lands across the country, primarily
