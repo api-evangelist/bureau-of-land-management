@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[transportation_BLM_Natl_GTLF_Public_Display]]></Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword><![CDATA[]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geo+json</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[BLM National Ground Transportation Linear Features Public Display]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-158.780850</westBoundLongitude><eastBoundLongitude>-83.959271</eastBoundLongitude><southBoundLatitude>27.821787</southBoundLatitude><northBoundLatitude>67.740418</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-158.780850" miny="27.821787" maxx="-83.959271" maxy="67.740418"/>
+<BoundingBox CRS="EPSG:4326" minx="27.821787" miny="-158.780850" maxx="67.740418" maxy="-83.959271"/>
+<BoundingBox CRS="EPSG:3857" minx="-17675403.337363" miny="3226523.668069" maxx="-9346303.345830" maxy="10370287.955597"/>
+<BoundingBox CRS="EPSG:102100" minx="-17675403.337363" miny="3226523.668069" maxx="-9346303.345830" maxy="10370287.955597"/>
+      <Layer queryable="1">
+        <Name>0</Name>
+        <Title><![CDATA[Trails Managed for Public]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Managed Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-152.973569</westBoundLongitude><eastBoundLongitude>-104.553815</eastBoundLongitude><southBoundLatitude>31.684303</southBoundLatitude><northBoundLatitude>67.254287</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-152.973569" miny="31.684303" maxx="-104.553815" maxy="67.254287"/>
+<BoundingBox CRS="EPSG:4326" minx="31.684303" miny="-152.973569" maxx="67.254287" maxy="-104.553815"/>
+<BoundingBox CRS="EPSG:3857" minx="-17028939.851943" miny="3721941.467231" maxx="-11638877.392156" maxy="10228886.971943"/>
+<BoundingBox CRS="EPSG:102100" minx="-17028939.851943" miny="3721941.467231" maxx="-11638877.392156" maxy="10228886.971943"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Managed for Public]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[Trails Not Assessed for Public]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Not Assessed Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-164.766535</westBoundLongitude><eastBoundLongitude>-103.867968</eastBoundLongitude><southBoundLatitude>31.495344</southBoundLatitude><northBoundLatitude>68.464036</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-164.766535" miny="31.495344" maxx="-103.867968" maxy="68.464036"/>
+<BoundingBox CRS="EPSG:4326" minx="31.495344" miny="-164.766535" maxx="68.464036" maxy="-103.867968"/>
+<BoundingBox CRS="EPSG:3857" minx="-18341726.803121" miny="3697247.449862" maxx="-11562529.324341" maxy="10586294.374815"/>
+<BoundingBox CRS="EPSG:102100" minx="-18341726.803121" miny="3697247.449862" maxx="-11562529.324341" maxy="10586294.374815"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Not Assessed for Public]]></Title>
+          <LegendURL width="48" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[Trails Managed for Public Non-Mechanized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Nonmechanized Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-150.463713</westBoundLongitude><eastBoundLongitude>-104.553815</eastBoundLongitude><southBoundLatitude>32.226741</southBoundLatitude><northBoundLatitude>67.254287</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-150.463713" miny="32.226741" maxx="-104.553815" maxy="67.254287"/>
+<BoundingBox CRS="EPSG:4326" minx="32.226741" miny="-150.463713" maxx="67.254287" maxy="-104.553815"/>
+<BoundingBox CRS="EPSG:3857" minx="-16749543.882940" miny="3793110.834311" maxx="-11638877.395816" maxy="10228886.971943"/>
+<BoundingBox CRS="EPSG:102100" minx="-16749543.882940" miny="3793110.834311" maxx="-11638877.395816" maxy="10228886.971943"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Managed for Public Non-Mechanized Use]]></Title>
+          <LegendURL width="48" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[Trails Managed for Public Non-Motorized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Nonmotorized Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-149.804073</westBoundLongitude><eastBoundLongitude>-105.063670</eastBoundLongitude><southBoundLatitude>31.741056</southBoundLatitude><northBoundLatitude>65.484970</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-149.804073" miny="31.741056" maxx="-105.063670" maxy="65.484970"/>
+<BoundingBox CRS="EPSG:4326" minx="31.741056" miny="-149.804073" maxx="65.484970" maxy="-105.063670"/>
+<BoundingBox CRS="EPSG:3857" minx="-16676113.082970" miny="3729368.019183" maxx="-11695634.294070" maxy="9737290.019361"/>
+<BoundingBox CRS="EPSG:102100" minx="-16676113.082970" miny="3729368.019183" maxx="-11695634.294070" maxy="9737290.019361"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Managed for Public Non-Motorized Use]]></Title>
+          <LegendURL width="48" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[Trails Managed for Limited Public Motorized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Limited Public Motorized Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-152.973568</westBoundLongitude><eastBoundLongitude>-106.068996</eastBoundLongitude><southBoundLatitude>33.162404</southBoundLatitude><northBoundLatitude>66.285059</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-152.973568" miny="33.162404" maxx="-106.068996" maxy="66.285059"/>
+<BoundingBox CRS="EPSG:4326" minx="33.162404" miny="-152.973568" maxx="66.285059" maxy="-106.068996"/>
+<BoundingBox CRS="EPSG:3857" minx="-17028939.729686" miny="3916880.300021" maxx="-11807546.574187" maxy="9955302.940100"/>
+<BoundingBox CRS="EPSG:102100" minx="-17028939.729686" miny="3916880.300021" maxx="-11807546.574187" maxy="9955302.940100"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Managed for Limited Public Motorized Use]]></Title>
+          <LegendURL width="48" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[Trails Managed for Public Motorized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Motorized Trails subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-148.217056</westBoundLongitude><eastBoundLongitude>-105.008237</eastBoundLongitude><southBoundLatitude>32.615814</southBoundLatitude><northBoundLatitude>63.319129</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-148.217056" miny="32.615814" maxx="-105.008237" maxy="63.319129"/>
+<BoundingBox CRS="EPSG:4326" minx="32.615814" miny="-148.217056" maxx="63.319129" maxy="-105.008237"/>
+<BoundingBox CRS="EPSG:3857" minx="-16499447.161619" miny="3844419.981864" maxx="-11689463.516063" maxy="9178933.302829"/>
+<BoundingBox CRS="EPSG:102100" minx="-16499447.161619" miny="3844419.981864" maxx="-11689463.516063" maxy="9178933.302829"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Trails Managed for Public Motorized Use]]></Title>
+          <LegendURL width="48" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[Roads Managed for Limited Public Motorized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Limited Public Motorized Roads subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.999996</westBoundLongitude><eastBoundLongitude>179.999996</eastBoundLongitude><southBoundLatitude>-89.000000</southBoundLatitude><northBoundLatitude>89.000000</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.999996" miny="-89.000000" maxx="179.999996" maxy="89.000000"/>
+<BoundingBox CRS="EPSG:4326" minx="-89.000000" miny="-179.999996" maxx="89.000000" maxy="179.999996"/>
+<BoundingBox CRS="EPSG:3857" minx="-20037507.842788" miny="-30240971.458386" maxx="20037507.842788" maxy="30240971.458386"/>
+<BoundingBox CRS="EPSG:102100" minx="-20037507.842788" miny="-30240971.458386" maxx="20037507.842788" maxy="30240971.458386"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Roads Managed for Limited Public Motorized Use]]></Title>
+          <LegendURL width="246" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[Roads Managed for Public Motorized Use]]></Title>
+        <Abstract><![CDATA[This feature class is the BLM Natl GTLF Public Motorized Roads subset of the feature dataset containing the BLM Ground Transportation Linear Features.  A linear feature for ground transportation includes roads, primitive roads, primitive routes, trails, temporary routes, and linear disturbances.
+
+The Ground Transportation Linear Feature (GTLF) data standard provides a national geospatial data standard of the ground transportation linear features in BLM’s Enterprise GIS (E-GIS).  A national BLM GTLF data standard is essential for collecting the landscape-scale data necessary to identify management opportunities and challenges that may not be evident when managing smaller land areas.  GTLF data not only serve the crucial function of improving BLM transportation planning, but is also invaluable to numerous other BLM programs affected by transportation (e.g. water and air quality, wildlife habitat fragmentation, engineering, realty, cultural resources).
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Schema Workbook represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-124.226882</westBoundLongitude><eastBoundLongitude>-103.406433</eastBoundLongitude><southBoundLatitude>31.334164</southBoundLatitude><northBoundLatitude>48.038665</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-124.226882" miny="31.334164" maxx="-103.406433" maxy="48.038665"/>
+<BoundingBox CRS="EPSG:4326" minx="31.334164" miny="-124.226882" maxx="48.038665" maxy="-103.406433"/>
+<BoundingBox CRS="EPSG:3857" minx="-13828873.223934" miny="3676223.159154" maxx="-11511151.479077" maxy="6113289.792489"/>
+<BoundingBox CRS="EPSG:102100" minx="-13828873.223934" miny="3676223.159154" maxx="-11511151.479077" maxy="6113289.792489"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Roads Managed for Public Motorized Use]]></Title>
+          <LegendURL width="246" height="36">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/transportation/BLM_Natl_GTLF_Public_Display/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

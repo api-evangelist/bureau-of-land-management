@@ -1,0 +1,334 @@
+generated: '2026-09-05'
+method: probed
+source: live GET of the named /.well-known path list plus /apis.json and /apis.yml on every host in this
+  record, 2026-09-05
+note: 'Nine hosts probed against the closed path list. Four documents were served and saved verbatim:
+  an RFC 9116 security.txt on www.blm.gov, an RFC 8414 OAuth authorization-server document on the BLM
+  ArcGIS Online organization host, and OpenID Connect discovery documents on mlrs.blm.gov and glorecords.blm.gov
+  (both Salesforce Experience Cloud sites running under BLM''s own domain). No apis.json, no api-catalog,
+  no ai-plugin, no AAuth resource and no agent card anywhere. A negative-control path that cannot exist
+  was issued on every host and returned a non-2xx on every one, so none of these hosts echoes paths.'
+hit_count: 4
+path_echo_control: passed on all 9 hosts
+hosts:
+- host: https://www.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: bureau-of-land-management-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 403
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 404
+    negative_control: true
+  path_echo_control: passed
+- host: https://blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/openid-configuration
+    status: 301
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+  - path: /.well-known/oauth-protected-resource
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/ai-plugin.json
+    status: 301
+  - path: /.well-known/ucp.json
+    status: 301
+  - path: /.well-known/acp.json
+    status: 301
+  - path: /.well-known/aauth-resource.json
+    status: 301
+  - path: /.well-known/apis.json
+    status: 301
+  - path: /apis.json
+    status: 301
+  - path: /apis.yml
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 301
+    negative_control: true
+  path_echo_control: passed
+- host: https://gis.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 404
+    negative_control: true
+  path_echo_control: passed
+- host: https://gbp-blm-egis.hub.arcgis.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 404
+    negative_control: true
+  path_echo_control: passed
+- host: https://blm-egis.maps.arcgis.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: bureau-of-land-management-blm-egis-arcgis-oauth-authorization-server.json
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 404
+    negative_control: true
+  path_echo_control: passed
+- host: https://mlrs.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: bureau-of-land-management-mlrs-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/ucp.json
+    status: 401
+  - path: /.well-known/acp.json
+    status: 401
+  - path: /.well-known/aauth-resource.json
+    status: 401
+  - path: /.well-known/apis.json
+    status: 401
+  - path: /apis.json
+    status: 401
+  - path: /apis.yml
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 401
+    negative_control: true
+  path_echo_control: passed
+  note: Salesforce Experience Cloud site on a blm.gov host. Every path except /.well-known/openid-configuration
+    answers 401 behind the platform login; the OIDC discovery document is served anonymously and is a
+    real RFC 8414/OIDC document.
+- host: https://glorecords.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 401
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: bureau-of-land-management-glorecords-openid-configuration.json
+  - path: /.well-known/oauth-authorization-server
+    status: 401
+  - path: /.well-known/oauth-protected-resource
+    status: 401
+  - path: /.well-known/api-catalog
+    status: 401
+  - path: /.well-known/ai-plugin.json
+    status: 401
+  - path: /.well-known/ucp.json
+    status: 401
+  - path: /.well-known/acp.json
+    status: 401
+  - path: /.well-known/aauth-resource.json
+    status: 401
+  - path: /.well-known/apis.json
+    status: 401
+  - path: /apis.json
+    status: 401
+  - path: /apis.yml
+    status: 401
+  - path: /.well-known/agent-card.json
+    status: 401
+  - path: /.well-known/agent.json
+    status: 401
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 401
+    negative_control: true
+  path_echo_control: passed
+  note: Salesforce Experience Cloud site on a blm.gov host. Every path except /.well-known/openid-configuration
+    answers 401 behind the platform login; the OIDC discovery document is served anonymously and is a
+    real RFC 8414/OIDC document.
+- host: https://eplanning.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 500
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/ucp.json
+    status: 404
+  - path: /.well-known/acp.json
+    status: 404
+  - path: /.well-known/aauth-resource.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /apis.yml
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 404
+    negative_control: true
+  path_echo_control: passed
+  note: Microsoft Power Pages deployment. /.well-known/oauth-authorization-server answered HTTP 500 with
+    {"error":"server_error","error_description":"MCP is not enabled for this site"} — the platform's MCP
+    feature exists but BLM has not enabled it. Recorded as a negative, not a hit.
+- host: https://navigator.blm.gov
+  documents:
+  - path: /.well-known/security.txt
+    status: 0
+  - path: /.well-known/openid-configuration
+    status: 0
+  - path: /.well-known/oauth-authorization-server
+    status: 0
+  - path: /.well-known/oauth-protected-resource
+    status: 0
+  - path: /.well-known/api-catalog
+    status: 0
+  - path: /.well-known/ai-plugin.json
+    status: 0
+  - path: /.well-known/ucp.json
+    status: 0
+  - path: /.well-known/acp.json
+    status: 0
+  - path: /.well-known/aauth-resource.json
+    status: 0
+  - path: /.well-known/apis.json
+    status: 0
+  - path: /apis.json
+    status: 0
+  - path: /apis.yml
+    status: 0
+  - path: /.well-known/agent-card.json
+    status: 0
+  - path: /.well-known/agent.json
+    status: 0
+  - path: /.well-known/blm-negative-control-7f3ab91c.json
+    status: 0
+    negative_control: true
+  path_echo_control: passed
+  note: Host does not resolve (DNS NXDOMAIN, curl exit 6) as of 2026-09-05; every row is a non-response,
+    not a 404.

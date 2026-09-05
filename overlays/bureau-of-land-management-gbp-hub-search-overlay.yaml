@@ -1,0 +1,64 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the BLM GBP Hub Search API
+  version: 1.0.0
+extends: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+x-generated: '2026-09-05'
+x-method: generated
+x-source: >-
+  Derived from live probes of https://gbp-blm-egis.hub.arcgis.com/api/search/v1 on 2026-09-05
+  and from the artifacts in this repo. The original document fetched from
+  /api/search/definition/?f=json is never mutated.
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-provider: bureau-of-land-management
+      x-apievangelist-surface: OGC API - Records (ArcGIS Hub search, BLM tenant)
+      x-apievangelist-operator: >-
+        Deployment is BLM's. The software is Esri ArcGIS Hub; info.title names the BLM GBP Hub,
+        the catalog it serves is BLM's 803 datasets, and the hub item owner is
+        lwilliams@blm.gov_BLM_EGIS.
+      x-apievangelist-authentication: none — anonymous read, no key, no plan, no quota
+      x-apievangelist-artifacts:
+        conformance: conformance/bureau-of-land-management-conformance.yml
+        conventions: conventions/bureau-of-land-management-conventions.yml
+        errors: errors/bureau-of-land-management-problem-types.yml
+        data_model: data-model/bureau-of-land-management-data-model.yml
+        skills: skills/_index.yml
+  - target: $
+    update:
+      servers:
+        - url: https://gbp-blm-egis.hub.arcgis.com
+          description: >-
+            ADDED BY OVERLAY. The fetched document ships servers[] empty, so paths resolve
+            relative to the host it was fetched from. This states that host explicitly so the
+            spec is usable standalone.
+  - target: $.info
+    update:
+      x-apievangelist-error-semantics: >-
+        This surface returns honest 4xx status codes with a {message,error,statusCode} envelope.
+        Its sibling BLM surface at gis.blm.gov does NOT — it returns HTTP 200 with an error
+        object in the body. Do not share one error handler across both.
+  - target: $.paths['/api/search/v1/collections/{collectionId}/items'].get
+    update:
+      x-apievangelist-limits:
+        max_limit: 20000
+        evidence: 'limit=99999 -> HTTP 400 ["searchOptions.limit must not be greater than 20000"], probed 2026-09-05'
+      x-apievangelist-pagination:
+        style: index
+        params: [limit, startindex]
+  - target: $.paths['/api/search/v1/conformance'].get
+    update:
+      x-apievangelist-conformance-observed:
+        - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core
+        - http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
+        - http://www.opengis.net/spec/ogcapi-common-2/0.0/conf/collections
+        - http://www.opengis.net/spec/ogcapi-common-2/0.0/conf/json
+        - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
+        - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+        - http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30
+        - http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core
+        - http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+  - target: $.paths['/api/search/v1/collections'].get
+    update:
+      x-apievangelist-collections-observed: [dataset, document, site]

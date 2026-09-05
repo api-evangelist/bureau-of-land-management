@@ -1,0 +1,96 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json (no securitySchemes declared),
+  live probes of gis.blm.gov/<instance>/rest/info, and the OIDC/OAuth discovery documents saved
+  verbatim in well-known/, all 2026-09-05.
+docs: https://www.blm.gov/services/geospatial/GISData
+note: |
+  BLM publishes no API authentication page, and the one machine-readable contract it serves
+  (the GBP Hub Search API) declares NO securitySchemes at all — because the public read surface
+  genuinely needs no credential. That is the headline for an agent: the entire public geospatial
+  surface is anonymous.
+
+  Credentials only appear on the two transactional systems, MLRS and GLO Records, which are
+  Salesforce Experience Cloud sites running on BLM's own hosts. Both serve a real OIDC
+  discovery document anonymously while every other path answers 401.
+summary:
+  types: [none, oauth2, openIdConnect]
+  anonymous_read_surface: true
+  api_key_in: []
+  oauth2_flows: [authorizationCode, implicit]
+schemes:
+  - name: anonymous
+    type: none
+    surface: GBP Hub Search API (OGC API - Records)
+    sources: [openapi/bureau-of-land-management-gbp-hub-search-openapi.json]
+    evidence: >-
+      The document declares no components.securitySchemes and no security[]. All 17 operations
+      were called anonymously on 2026-09-05 and returned 200. An optional `token` query
+      parameter exists on the item operations for reaching private ArcGIS items; it is not
+      required for BLM's public catalog.
+  - name: anonymous
+    type: none
+    surface: ArcGIS Server REST (13 instances on gis.blm.gov)
+    sources: [openapi/bureau-of-land-management-arcgis-service-inventory.json]
+    evidence: >-
+      Every /rest/info reports authInfo.isTokenBasedSecurity = false. Service directory, layer
+      metadata and /query were all exercised anonymously on 2026-09-05.
+  - name: anonymous
+    type: none
+    surface: OGC WMS (gis.blm.gov/arcgis/services)
+    sources: [openapi/bureau-of-land-management-sma-wms-capabilities.xml]
+    evidence: >-
+      GetCapabilities returned HTTP 200 with no authentication on all seven services fetched.
+  - name: arcgis-online-oauth2
+    type: oauth2
+    surface: BLM ArcGIS Online organization (blm-egis.maps.arcgis.com)
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://blm-egis.maps.arcgis.com/sharing/rest/oauth2/authorize
+        tokenUrl: https://blm-egis.maps.arcgis.com/sharing/rest/oauth2/token
+        pkce: S256
+      - flow: implicit
+        authorizationUrl: https://blm-egis.maps.arcgis.com/sharing/rest/oauth2/authorize
+    sources: [well-known/bureau-of-land-management-blm-egis-arcgis-oauth-authorization-server.json]
+    evidence: >-
+      RFC 8414 metadata, HTTP 200, issuer https://blm-egis.maps.arcgis.com,
+      grant_types_supported [authorization_code, implicit],
+      code_challenge_methods_supported ["S256"]. Needed only to publish or reach non-public
+      items; BLM's published content is open.
+  - name: mlrs-oidc
+    type: openIdConnect
+    surface: Mineral and Land Records System (mlrs.blm.gov)
+    openIdConnectUrl: https://mlrs.blm.gov/.well-known/openid-configuration
+    issuer: https://mlrs.blm.gov
+    endpoints:
+      authorization: https://mlrs.blm.gov/services/oauth2/authorize
+      token: https://mlrs.blm.gov/services/oauth2/token
+      userinfo: https://mlrs.blm.gov/services/oauth2/userinfo
+      revocation: https://mlrs.blm.gov/services/oauth2/revoke
+      introspection: https://mlrs.blm.gov/services/oauth2/introspect
+      registration: https://mlrs.blm.gov/services/oauth2/register
+      jwks_uri: https://mlrs.blm.gov/id/keys
+      end_session: https://mlrs.blm.gov/services/auth/idp/oidc/logout
+    sources: [well-known/bureau-of-land-management-mlrs-openid-configuration.json]
+    evidence: >-
+      HTTP 200 anonymously on 2026-09-05. Every other probed path on this host answered 401.
+      The 36 advertised scopes are the stock Salesforce platform scope set (api, web, openid,
+      refresh_token, cdp_*, pardot_api, ...), not a BLM-authored permission model — see
+      scopes/bureau-of-land-management-scopes.yml.
+  - name: glorecords-oidc
+    type: openIdConnect
+    surface: General Land Office Records (glorecords.blm.gov)
+    openIdConnectUrl: https://glorecords.blm.gov/.well-known/openid-configuration
+    issuer: https://glorecords.blm.gov
+    endpoints:
+      authorization: https://glorecords.blm.gov/services/oauth2/authorize
+      token: https://glorecords.blm.gov/services/oauth2/token
+      userinfo: https://glorecords.blm.gov/services/oauth2/userinfo
+      revocation: https://glorecords.blm.gov/services/oauth2/revoke
+      introspection: https://glorecords.blm.gov/services/oauth2/introspect
+      registration: https://glorecords.blm.gov/services/oauth2/register
+      jwks_uri: https://glorecords.blm.gov/id/keys
+      end_session: https://glorecords.blm.gov/services/auth/idp/oidc/logout
+    sources: [well-known/bureau-of-land-management-glorecords-openid-configuration.json]
+    evidence: HTTP 200 anonymously on 2026-09-05; all other paths on this host answered 401.

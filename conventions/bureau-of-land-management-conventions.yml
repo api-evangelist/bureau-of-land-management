@@ -1,0 +1,135 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json, the WMS GetCapabilities
+  documents in openapi/, and live probes of gis.blm.gov and gbp-blm-egis.hub.arcgis.com,
+  2026-09-05.
+note: |
+  BLM publishes no API design guide, no developer portal and no conventions page. Everything
+  below was read out of the served contract or observed on a live call. Where a convention does
+  not exist it is recorded as absent rather than guessed.
+authentication:
+  style: none on every public surface
+  detail: authentication/bureau-of-land-management-authentication.yml
+idempotency:
+  supported: false
+  coverage: na
+  scope: []
+  note: >-
+    There is no write surface to make idempotent. All 17 operations in the published contract
+    are GET, all 785 ArcGIS services are exposed read-only to anonymous callers, and WMS is a
+    read protocol. No Idempotency-Key header is documented or accepted anywhere. `na` rather
+    than `none`: an API with nothing to replay is not failing an idempotency test, it is not
+    taking one. DO NOT wire an Idempotency pointer for this provider.
+reversibility:
+  grade: na
+  applicable: false
+  write_surface_present: false
+  reversal_operations: []
+  note: >-
+    Read-only provider. There is no create, update, delete, cancel, refund or dispatch operation
+    on any public BLM surface, so there is nothing for an agent to take back. Recorded as `na`
+    so it leaves the denominator rather than scoring zero. The transactional systems that DO
+    take actions — MLRS filings and GLO orders — are behind a login (401 on every path) and
+    publish no contract, so no reversal window can be stated for them; asserting one would be
+    an invention.
+dry_run_mode:
+  supported: partial
+  coverage: na
+  note: >-
+    No dry-run parameter exists, and none is needed for a read surface. The nearest equivalents
+    are genuinely useful for planning a call: ArcGIS `returnCountOnly=true` returns the row count
+    a query would produce without returning rows, and the Hub Search API's
+    OgcItemAggregationController_getAggregations_api/search/v1 returns facet counts without
+    returning records.
+pagination:
+  - surface: GBP Hub Search API (OGC API - Records)
+    style: index
+    params: [limit, startindex]
+    response_fields: [features, numberMatched, numberReturned, links]
+    limits:
+      max_limit: 20000
+    evidence: >-
+      limit=99999 returned HTTP 400 ["searchOptions.limit must not be greater than 20000"],
+      probed 2026-09-05
+  - surface: ArcGIS Server FeatureServer / MapServer query
+    style: offset
+    params: [resultOffset, resultRecordCount]
+    response_fields: [exceededTransferLimit, features]
+    limits:
+      maxRecordCount: 2000
+      standardMaxRecordCount: 4000
+      tileMaxRecordCount: 4000
+    evidence: >-
+      lands/BLM_Natl_NLCS_Generalized/FeatureServer/0 reports maxRecordCount 2000 and
+      advancedQueryCapabilities.supportsPagination true; probed 2026-09-05. maxRecordCount is
+      per-layer and varies across the 785 services — read it from the layer document, never
+      assume 2000.
+  - surface: OGC WMS
+    style: none
+    note: WMS is an image/feature-info protocol with no paging concept.
+filtering:
+  - surface: GBP Hub Search API
+    params: [q, bbox, filter, type, title, tags, sortBy, openData, recordId]
+    note: >-
+      `filter` takes a CQL2 expression; `bbox` is CRS84 minx,miny,maxx,maxy. `openData=true`
+      narrows to items flagged as open data.
+  - surface: ArcGIS Server query
+    params: [where, geometry, geometryType, spatialRel, inSR, outSR, outFields, returnGeometry, returnCountOnly, orderByFields, groupByFieldsForStatistics, outStatistics]
+    note: >-
+      SQL-92 `where` plus spatial filters. Full-text search, statistics, percentile statistics,
+      distinct and having are all advertised as supported on the layers checked.
+content_negotiation:
+  style: query parameter, not Accept header
+  detail: >-
+    ArcGIS selects the representation with `f` (html is the DEFAULT — `f=json` is required for
+    machine-readable output, and `f=geojson` on FeatureServer layers). The Hub Search API
+    returns JSON by default and GeoJSON on the items routes (application/geo+json); its OpenAPI
+    is at /api/search/definition/?f=json. OGC services select with `format`/`outputFormat`.
+    Sending an Accept header does not change the ArcGIS default.
+field_selection:
+  supported: true
+  note: ArcGIS `outFields` (comma list or `*`). The Hub Search API has no sparse-fieldset parameter.
+expansion:
+  supported: partial
+  note: >-
+    The Hub Search API exposes /items/{recordId}/related and /items/{recordId}/connected as
+    explicit relationship traversals rather than an `expand` parameter.
+metadata:
+  user_defined: false
+  note: Read-only surface; no customer-writable metadata anywhere.
+request_tracing:
+  supported: false
+  note: >-
+    No request-id header is returned by any surface. There is no correlation id to quote in a
+    support request, and there is no API support channel to quote it to.
+versioning:
+  scheme: uri-path
+  detail: >-
+    The Hub Search API is versioned in the path (/api/search/v1) and its OpenAPI declares
+    info.version 1.0.0. ArcGIS instances report a product version (currentVersion 11.5) rather
+    than an API version, and that number moves when BLM upgrades the server product — it is not
+    a contract version and carries no compatibility promise.
+  detail_artifact: lifecycle/bureau-of-land-management-lifecycle.yml
+error_envelope:
+  detail: errors/bureau-of-land-management-problem-types.yml
+  summary: >-
+    Three different envelopes across three surfaces, and TWO OF THEM RETURN HTTP 200 ON FAILURE.
+    Never branch on the status code alone for gis.blm.gov.
+rate_limit_signaling:
+  supported: false
+  detail: rate-limits/bureau-of-land-management-rate-limits.yml
+  note: >-
+    No X-RateLimit-*, no RateLimit-*, no Retry-After observed on any response. No published
+    limits.
+caching:
+  supported: true
+  note: >-
+    Several national services are pre-cached tile services (the *_Cached names in the lands and
+    geophysical folders). ArcGIS Server sets ETag/Last-Modified on tile and image responses.
+crs:
+  default: 'EPSG:4326 / CRS84 for OGC API; the service spatialReference for ArcGIS REST'
+  note: >-
+    ArcGIS layers publish their own spatialReference and accept inSR/outSR for reprojection.
+    The Cadastral folder ships the PLSS CadNSDI in two datums — BLM_Natl_PLSS_CadNSDI and
+    BLM_Natl_PLSS_CadNSDI_NAD83 — so pick the one that matches your data.

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[lands_BLM_Natl_NLCS_Generalized]]></Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword><![CDATA[]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geo+json</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[BLM Natl NLCS Generalized]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-156.002046</westBoundLongitude><eastBoundLongitude>-80.079256</eastBoundLongitude><southBoundLatitude>26.947548</southBoundLatitude><northBoundLatitude>69.044886</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-156.002046" miny="26.947548" maxx="-80.079256" maxy="69.044886"/>
+<BoundingBox CRS="EPSG:4326" minx="26.947548" miny="-156.002046" maxx="69.044886" maxy="-80.079256"/>
+<BoundingBox CRS="EPSG:3857" minx="-17366068.291668" miny="3116920.137403" maxx="-8914382.022771" maxy="10764743.589119"/>
+<BoundingBox CRS="EPSG:102100" minx="-17366068.291668" miny="3116920.137403" maxx="-8914382.022771" maxy="10764743.589119"/>
+      <Layer queryable="1">
+        <Name>0</Name>
+        <Title><![CDATA[Wilderness Study Areas]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Many of the BLM National Datasets cannot be taken offline due to the number of vertices in the dataset. In addition, displaying the data using a Feature Service crashes ArcGIS Server due to complex geometries (ie Godzilla polygons). As a result, it became imperative to generalize the Feature Classes so that they can be used in a Feature Service as well as being taken offline.    Using configuration settings, the user may choose between using a Smoothing algorithm or Simplification algorithm to perform generalization.     Documentation on the Smoothing algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-polygon.htm    Documentation on the Simplification algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/simplify-polygon.htm    Note: At the time of this writing, only polygon smoothing/simplification is tested. However, Linear datasets are also supported (FEATURE_TYPE)    *Each of the features within this feature class were generalized. To keep the naming convention the same, we added the _gen after each feature class so this service and the data layers won’t get confused with the other NLCS services. This service and the underlying data will be kept “in-sync” with national replication. </SPAN></P><P><SPAN>This Feature Class represents the BLM Wilderness Study Areas and BLM Other Related Lands data covered by the National Landscape Conservation System (NLCS) Data Standard. In particular, this feature class includes the polygon features representing the spatial extent and boundaries of the BLM National Landscape Conservation System (NLCS)  Wilderness Study Areas. A Wilderness is a special place where the earth and its community of life are essentially undisturbed; they retain a primeval character, without permanent improvements and generally appear to have been affected primarily by the forces of nature. In 1964, Congress established the National Wilderness Preservation System and designated the first Wilderness Areas in passing the Wilderness Act. The uniquely American idea of wilderness has become an increasingly significant tool to ensure long-term protection of natural landscapes. Wilderness protects the habitat of numerous wildlife species and serves as a biodiversity bank for many species of plants and animals. Wilderness is also a source of clean water.    The Federal Land Policy and Management Act of 1976 directed the Bureau to inventory and study its roadless areas for wilderness characteristics. To be designated as a Wilderness Study Area, an area has to have the following characteristics: Size - roadless areas of at least 5,000 acres of public lands or of a manageable size; Naturalness - generally appears to have been affected primarily by the forces of nature; Opportunities - provides outstanding opportunities for solitude or primitive and unconfined types of recreation. In addition, Wilderness Study Areas often have special qualities such as ecological, geological, educational, historical, scientific and scenic values.    BLM National Landscape Conservation System (NLCS) Other Related Lands are lands not in Wilderness or Wilderness Study Areas that have been determined to have wilderness character through inventory or land use planning. These lands fall into one of two categories. The first category are lands with "wilderness value and characteristics". These are inventoried areas not in Wilderness or Wilderness Study Areas that have been determined to meet the size, naturalness, and the outstanding solitude and/or the outstanding primitive and unconfined recreation criteria. The second category are "wilderness characteristic protection areas". These are former lands with "wilderness value and characteristics" where a plan decision has been made to protect them.    This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Implementation Guide represents the official national dataset from which this dataset was derived.</SPAN></P></DIV></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-156.002046</westBoundLongitude><eastBoundLongitude>-103.821073</eastBoundLongitude><southBoundLatitude>31.332284</southBoundLatitude><northBoundLatitude>69.044886</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-156.002046" miny="31.332284" maxx="-103.821073" maxy="69.044886"/>
+<BoundingBox CRS="EPSG:4326" minx="31.332284" miny="-156.002046" maxx="69.044886" maxy="-103.821073"/>
+<BoundingBox CRS="EPSG:3857" minx="-17366068.291668" miny="3675978.180787" maxx="-11557308.926116" maxy="10764743.589119"/>
+<BoundingBox CRS="EPSG:102100" minx="-17366068.291668" miny="3675978.180787" maxx="-11557308.926116" maxy="10764743.589119"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Wilderness Study Areas]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4390673.482143</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[Wilderness Areas]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;"><DIV><DIV><P><SPAN>Many of the BLM National Datasets cannot be taken offline due to the number of vertices in the dataset. In addition, displaying the data using a Feature Service crashes ArcGIS Server due to complex geometries (ie Godzilla polygons). As a result, it became imperative to generalize the Feature Classes so that they can be used in a Feature Service as well as being taken offline.    Using configuration settings, the user may choose between using a Smoothing algorithm or Simplification algorithm to perform generalization.     Documentation on the Smoothing algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-polygon.htm    Documentation on the Simplification algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/simplify-polygon.htm    Note: At the time of this writing, only polygon smoothing/simplification is tested. However, Linear datasets are also supported (FEATURE_TYPE)    *Each of the features within this feature class were generalized. To keep the naming convention the same, we added the _gen after each feature class so this service and the data layers won’t get confused with the other NLCS services. This service and the underlying data will be kept “in-sync” with national replication. </SPAN></P><P><SPAN>This Feature Class represents the BLM Wilderness Areas and BLM Other Related Lands data covered by the National Landscape Conservation System (NLCS) Data Standard. In particular, this feature class includes the polygon features representing the spatial extent and boundaries of the BLM National Landscape Conservation System (NLCS) Wilderness Areas. A Wilderness is a special place where the earth and its community of life are essentially undisturbed; they retain a primeval character, without permanent improvements and generally appear to have been affected primarily by the forces of nature. In 1964, Congress established the National Wilderness Preservation System and designated the first Wilderness Areas in passing the Wilderness Act. The uniquely American idea of wilderness has become an increasingly significant tool to ensure long-term protection of natural landscapes. Wilderness protects the habitat of numerous wildlife species and serves as a biodiversity bank for many species of plants and animals. Wilderness is also a source of clean water.    The Federal Land Policy and Management Act of 1976 directed the Bureau to inventory and study its roadless areas for wilderness characteristics. To be designated as a Wilderness Study Area, an area has to have the following characteristics: Size - roadless areas of at least 5,000 acres of public lands or of a manageable size; Naturalness - generally appears to have been affected primarily by the forces of nature; Opportunities - provides outstanding opportunities for solitude or primitive and unconfined types of recreation. In addition, Wilderness Study Areas often have special qualities such as ecological, geological, educational, historical, scientific and scenic values.    BLM National Landscape Conservation System (NLCS) Other Related Lands are lands not in Wilderness or Wilderness Study Areas that have been determined to have wilderness character through inventory or land use planning. These lands fall into one of two categories. The first category are lands with "wilderness value and characteristics". These are inventoried areas not in Wilderness or Wilderness Study Areas that have been determined to meet the size, naturalness, and the outstanding solitude and/or the outstanding primitive and unconfined recreation criteria. The second category are "wilderness characteristic protection areas". These are former lands with "wilderness value and characteristics" where a plan decision has been made to protect them.    This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Implementation Guide represents the official national dataset from which this dataset was derived.</SPAN></P></DIV></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-124.357870</westBoundLongitude><eastBoundLongitude>-104.393886</eastBoundLongitude><southBoundLatitude>31.760556</southBoundLatitude><northBoundLatitude>46.427603</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-124.357870" miny="31.760556" maxx="-104.393886" maxy="46.427603"/>
+<BoundingBox CRS="EPSG:4326" minx="31.760556" miny="-124.357870" maxx="46.427603" maxy="-104.393886"/>
+<BoundingBox CRS="EPSG:3857" minx="-13843454.782840" miny="3731920.764903" maxx="-11621074.267695" maxy="5849139.645567"/>
+<BoundingBox CRS="EPSG:102100" minx="-13843454.782840" miny="3731920.764903" maxx="-11621074.267695" maxy="5849139.645567"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Wilderness Areas]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4390673.482143</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[NLCS National Monuments, National Conservation Areas and Similar Designations]]></Title>
+        <Abstract><![CDATA[This polygon feature class represents the spatial extent and boundaries of the BLM National Landscape Conservation System (NLCS) National Monuments, National Conservation Areas and Similar Designations.
+
+Many of the BLM National Datasets cannot be taken offline due to the number of vertices in the dataset. In addition, displaying the data using a Feature Service crashes ArcGIS Server due to complex geometries (ie Godzilla polygons). As a result, it became imperative to generalize the Feature Classes so that they can be used in a Feature Service as well as being taken offline. Using configuration settings, the user may choose between using a Smoothing algorithm or Simplification algorithm to perform generalization. Documentation on the Smoothing algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-polygon.htm Documentation on the Simplification algorithm can be found here: https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/simplify-polygon.htm Note: At the time of this writing, only polygon smoothing/simplification is tested. However, Linear datasets are also supported (FEATURE_TYPE) *Each of the features within this feature class were generalized. To keep the naming convention the same, we added the _gen after each feature class so this service and the data layers won’t get confused with the other NLCS services. This service and the underlying data will be kept “in-sync” with national replication. This polygon feature class represents the spatial extent and boundaries of the BLM National Landscape Conservation System (NLCS) National Monuments, National Conservation Areas and Similar Designations. This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance.
+
+This dataset is a subset of the official national dataset, containing features and attributes intended for public release and has been optimized for online map service performance. The Implementation Guide represents the official national dataset from which this dataset was derived.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-146.759328</westBoundLongitude><eastBoundLongitude>-80.079256</eastBoundLongitude><southBoundLatitude>26.947548</southBoundLatitude><northBoundLatitude>65.845841</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-146.759328" miny="26.947548" maxx="-80.079256" maxy="65.845841"/>
+<BoundingBox CRS="EPSG:4326" minx="26.947548" miny="-146.759328" maxx="65.845841" maxy="-80.079256"/>
+<BoundingBox CRS="EPSG:3857" minx="-16337173.626871" miny="3116920.137403" maxx="-8914382.022771" maxy="9834781.104284"/>
+<BoundingBox CRS="EPSG:102100" minx="-16337173.626871" miny="3116920.137403" maxx="-8914382.022771" maxy="9834781.104284"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[NLCS National Monuments, National Conservation Areas and Similar Designations]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_NLCS_Generalized/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>4390673.482143</MaxScaleDenominator>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

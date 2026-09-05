@@ -1,0 +1,135 @@
+generated: '2026-09-05'
+method: derived
+source: >-
+  mcp/bureau-of-land-management-mcp.yml bound against
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+note: |
+  Binds each proposed MCP tool to the OpenAPI operation that would back it, so every tool
+  inherits a REAL inputSchema (that operation's parameters) instead of a guessed one.
+
+  BLM runs no MCP server and publishes no GraphQL, so there is no live tool list to reconcile
+  against — confidence is `high` throughout only because each row is a one-to-one binding to an
+  operationId that exists verbatim in the saved contract, not because a server confirmed it.
+
+  operationIds on this surface are machine-generated and contain a slash
+  ("CatalogController_getSiteCatalog_api/search/v1"). They are quoted exactly as the provider
+  emits them.
+surfaces:
+  openapi:
+    file: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+    title: BLM GBP Hub Search API
+    version: 1.0.0
+    operations: 17
+    base: https://gbp-blm-egis.hub.arcgis.com
+    gated: false
+  graphql:
+    endpoint: null
+    note: BLM publishes no GraphQL surface.
+  mcp:
+    url: null
+    gated: null
+    note: No MCP server exists; tools/list could not be called because there is nothing to call.
+  ogc_wms:
+    endpoint: 'https://gis.blm.gov/arcgis/services/<service>/MapServer/WMSServer'
+    contract: openapi/bureau-of-land-management-sma-wms-capabilities.xml (and six siblings)
+    gated: false
+    note: Contract is GetCapabilities XML, not OpenAPI — no operationId to bind.
+  arcgis_rest:
+    endpoint: 'https://gis.blm.gov/<instance>/rest/services'
+    contract: openapi/bureau-of-land-management-arcgis-service-inventory.json
+    gated: false
+    note: 785 services, no OpenAPI published — inventory only.
+crosswalk:
+  - tool: search_blm_datasets
+    category: discovery
+    rest: ['OgcItemController_getSiteCollectionItems_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_blm_dataset
+    category: discovery
+    rest: ['OgcItemController_getSiteCollectionItemById_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: list_blm_collections
+    category: discovery
+    rest: ['CollectionController_getSiteCollections_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_blm_collection
+    category: discovery
+    rest: ['CollectionController_getSiteCollectionFromId_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_blm_collection_queryables
+    category: discovery
+    rest: ['QueryableController_getSiteCollectionQueryables_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: aggregate_blm_datasets
+    category: analytics
+    rest: ['OgcItemAggregationController_getAggregations_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_related_blm_records
+    category: graph
+    rest: ['OgcItemController_getRelatedOgcItemsById_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_connected_blm_records
+    category: graph
+    rest: ['OgcItemController_getConnectedOgcItemsById_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: get_blm_site_catalog
+    category: metadata
+    rest: ['CatalogController_getSiteCatalog_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: describe_blm_ogc_conformance
+    category: metadata
+    rest: ['OgcRootConformanceController_getApiConformance_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: query_blm_collection_features
+    category: geospatial
+    rest: ['GeoserviceController_featureLayerQuery_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: describe_blm_feature_layer
+    category: geospatial
+    rest: ['GeoserviceController_featureLayer_api/search/v1']
+    binding: rest
+    confidence: high
+  - tool: list_blm_feature_layers
+    category: geospatial
+    rest: ['GeoserviceController_featureLayers_api/search/v1']
+    binding: rest
+    confidence: high
+mcp_only:
+  - tool: list_blm_gis_services
+    reason: >-
+      Backed by the ArcGIS Server REST directory on gis.blm.gov, for which BLM publishes no
+      OpenAPI. Real surface, no operationId — a genuine divergence, not a gap to paper over.
+  - tool: get_blm_wms_capabilities
+    reason: >-
+      Backed by OGC WMS GetCapabilities. The contract is the XML document itself; there is no
+      OpenAPI operation to bind to.
+rest_only:
+  - capability: OGC landing page
+    operations: ['OgcRootController_getSiteRoot_api/search/v1']
+    reason: Service-description plumbing; no agent tool needs it as a separate call.
+  - capability: ArcGIS compatibility shim
+    operations:
+      - 'GeoserviceController_restInfo_api/search/v1'
+      - 'GeoserviceController_featureServer_api/search/v1'
+      - 'GeoserviceController_featureLayerInfo_api/search/v1'
+    reason: >-
+      Esri-client compatibility endpoints (rest/info, FeatureServer root, layer info). Useful to
+      an ArcGIS client, redundant for an agent that already has describe_blm_feature_layer.
+coverage:
+  tools_named: 15
+  tools_bound_to_rest: 13
+  mcp_only: 2
+  rest_ops_total: 17
+  rest_ops_with_a_tool: 13
+  rest_ops_without_a_tool: 4

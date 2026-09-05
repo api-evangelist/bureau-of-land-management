@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title><![CDATA[recreation_BLM_Natl_Recreation]]></Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword><![CDATA[]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geo+json</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[BLM Natl Recreation]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-166.199782</westBoundLongitude><eastBoundLongitude>118.582503</eastBoundLongitude><southBoundLatitude>25.757132</southBoundLatitude><northBoundLatitude>70.988345</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-166.199782" miny="25.757132" maxx="118.582503" maxy="70.988345"/>
+<BoundingBox CRS="EPSG:4326" minx="25.757132" miny="-166.199782" maxx="70.988345" maxy="118.582503"/>
+      <Layer queryable="1">
+        <Name>0</Name>
+        <Title><![CDATA[BLM Natl Recreation Areas]]></Title>
+        <Abstract><![CDATA[This polygon feature class represents the spatial extent and boundaries of the BLM Recreation Sites. The general types of recreation polygon features targeted by this feature class include campgrounds, OHV designated areas, recreation management areas, natural/endangered areas, etc.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-166.199782</westBoundLongitude><eastBoundLongitude>-77.187219</eastBoundLongitude><southBoundLatitude>26.948509</southBoundLatitude><northBoundLatitude>69.391251</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-166.199782" miny="26.948509" maxx="-77.187219" maxy="69.391251"/>
+<BoundingBox CRS="EPSG:4326" minx="26.948509" miny="-166.199782" maxx="69.391251" maxy="-77.187219"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Recreation Areas]]></Title>
+          <LegendURL width="186" height="90">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=0" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1327655.543155</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>1</Name>
+        <Title><![CDATA[BLM Natl Trails Not Assessed for Public]]></Title>
+        <Abstract><![CDATA[BLM Natl Trails Not Assessed for Public are a route regarded and or managed as a trail by the BLM for which no BLM travel planning decision has been made as part of a TMP, LUP or other planning decision. No record of decision (ROD) applies to this route. A trail is usually intended for human-powered, stock, or off-road vehicle forms of transportation, or for historical or heritage values. Trails are not generally for use by four-wheel drive or high-clearance vehicles. General Business Rule: A "Not-Assessed-Trail" is correctly classified if; the linear feature looks or functions as a trail but has no associated planning decision; or is actively managed for public access; has a record in the Facility Asset Management System (FAMS), or is published in maps or brochures to promote public use, or any combination of the above. These data are provided by Bureau of Land Management (BLM) "as is" and may contain errors or omissions. The User assumes the entire risk associated with its use of these data and recognizes that this data will never be 100% QCed. Official and accurate data should be obtained directly from the data steward. Please see the metadata of the individual layers for complete details.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-164.766535</westBoundLongitude><eastBoundLongitude>-103.867968</eastBoundLongitude><southBoundLatitude>31.495344</southBoundLatitude><northBoundLatitude>68.464036</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-164.766535" miny="31.495344" maxx="-103.867968" maxy="68.464036"/>
+<BoundingBox CRS="EPSG:4326" minx="31.495344" miny="-164.766535" maxx="68.464036" maxy="-103.867968"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Trails Not Assessed for Public]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=1" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>145594.288165</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[BLM Natl Trails Managed for Public]]></Title>
+        <Abstract><![CDATA[BLM Natl Trails Managed for Public layer provides a comprehensive view of all BLM designated trails, and includes whether there are use restrictions (e.g., OHV, mode of transportation) if available or known. These trails have been through the BLM travel management planning process and have a designated asset class as a Trail. Users of this data are encouraged to verify current use limitations and restrictions on these trails with the local BLM office as restrictions may vary from what is depicted in the data. These data are provided by Bureau of Land Management (BLM) "as is" and may contain errors or omissions. The User assumes the entire risk associated with its use of these data and recognizes that this data will never be 100% QCed. Official and accurate data should be obtained directly from the data steward. Please see the metadata of the individual layers for complete details.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-152.973569</westBoundLongitude><eastBoundLongitude>-104.553815</eastBoundLongitude><southBoundLatitude>31.684303</southBoundLatitude><northBoundLatitude>67.254287</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-152.973569" miny="31.684303" maxx="-104.553815" maxy="67.254287"/>
+<BoundingBox CRS="EPSG:4326" minx="31.684303" miny="-152.973569" maxx="67.254287" maxy="-104.553815"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Trails Managed for Public]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>145594.288165</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[BLM National Scenic or Historic Trails]]></Title>
+        <Abstract><![CDATA[The National Scenic and Historic trail layer supports the BLM's recreation opportunities. This map contains data associated with recreational sites and supplemental reference data. Visitors to the public lands enjoy countless types of outdoor adventure – participating in activities as widely varied as camping, hunting, fishing, hiking, horseback riding, boating, whitewater rafting, hang-gliding, off-highway vehicle driving, mountain biking, birding and wildlife viewing, photography, climbing, all types of winter sports, and visiting natural and cultural heritage sites. Please visit the BLM's Recreation website for more information. https://www.blm.gov/programs/recreation.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-164.766845</westBoundLongitude><eastBoundLongitude>-68.921618</eastBoundLongitude><southBoundLatitude>25.757132</southBoundLatitude><northBoundLatitude>64.574831</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-164.766845" miny="25.757132" maxx="-68.921618" maxy="64.574831"/>
+<BoundingBox CRS="EPSG:4326" minx="25.757132" miny="-164.766845" maxx="64.574831" maxy="-68.921618"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM National Scenic or Historic Trails]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[BLM Natl Top Mountain Bike Areas]]></Title>
+        <Abstract><![CDATA[The BLM Natl Top Mountain Bike Area layer is an aggregate BLM polyline contains line features that are part of the BLM National Ground Transportation Linear Features dataset. This line features are the top 20 BLM priority mountain bike trail systems located in AK, AZ, CA, CO, Eastern States (ES), ID, NM, OR, UT and WY.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-124.063192</westBoundLongitude><eastBoundLongitude>-77.208171</eastBoundLongitude><southBoundLatitude>33.798341</southBoundLatitude><northBoundLatitude>45.402257</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-124.063192" miny="33.798341" maxx="-77.208171" maxy="45.402257"/>
+<BoundingBox CRS="EPSG:4326" minx="33.798341" miny="-124.063192" maxx="45.402257" maxy="-77.208171"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Top Mountain Bike Areas]]></Title>
+          <LegendURL width="150" height="90">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>301904.315939</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[BLM Natl Mountain Bike Trail Opportunities]]></Title>
+        <Abstract><![CDATA[The BLM National Mountain Bike Trail Opportunities layer contains the location of the top 20 BLM priority mountain bike trail systems located in AK, AZ, CA, CO, Eastern States (ES), ID, NM, OR, UT and WY.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-124.051821</westBoundLongitude><eastBoundLongitude>-77.209046</eastBoundLongitude><southBoundLatitude>34.070869</southBoundLatitude><northBoundLatitude>45.381819</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-124.051821" miny="34.070869" maxx="-77.209046" maxy="45.381819"/>
+<BoundingBox CRS="EPSG:4326" minx="34.070869" miny="-124.051821" maxx="45.381819" maxy="-77.209046"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Mountain Bike Trail Opportunities]]></Title>
+          <LegendURL width="24" height="24">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[BLM Natl Recreation Sites]]></Title>
+        <Abstract><![CDATA[This feature class represents the point features that show the physical locations of BLM National Recreation Sites. The general types of recreation point features targeted by this feature class include information center sites, water-based sites, overnight sites, day use sites, restrooms, water access, recreational access, parking areas, airplane landing strips, etc.  ]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-164.974882</westBoundLongitude><eastBoundLongitude>-77.187020</eastBoundLongitude><southBoundLatitude>26.948101</southBoundLatitude><northBoundLatitude>70.988345</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-164.974882" miny="26.948101" maxx="-77.187020" maxy="70.988345"/>
+<BoundingBox CRS="EPSG:4326" minx="26.948101" miny="-164.974882" maxx="70.988345" maxy="-77.187020"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Recreation Sites]]></Title>
+          <LegendURL width="138" height="234">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[BLM Natl Facilities Camping and Cabins]]></Title>
+        <Abstract><![CDATA[These are points representing recreation data from the BLM Recreation Information Database.  This layer has an activity code associated with camping and cabins.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-164.961107</westBoundLongitude><eastBoundLongitude>118.582503</eastBoundLongitude><southBoundLatitude>31.436203</southBoundLatitude><northBoundLatitude>69.362550</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-164.961107" miny="31.436203" maxx="118.582503" maxy="69.362550"/>
+<BoundingBox CRS="EPSG:4326" minx="31.436203" miny="-164.961107" maxx="69.362550" maxy="118.582503"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Facilities Camping and Cabins]]></Title>
+          <LegendURL width="24" height="24">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[BLM Natl RIDB Recreation Sites]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-160.796880</westBoundLongitude><eastBoundLongitude>114.141700</eastBoundLongitude><southBoundLatitude>26.948000</southBoundLatitude><northBoundLatitude>68.130000</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-160.796880" miny="26.948000" maxx="114.141700" maxy="68.130000"/>
+<BoundingBox CRS="EPSG:4326" minx="26.948000" miny="-160.796880" maxx="68.130000" maxy="114.141700"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl RIDB Recreation Sites]]></Title>
+          <LegendURL width="188" height="38">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>9</Name>
+        <Title><![CDATA[BLM Natl RIDB Recreation Sites (Clusters)]]></Title>
+        <Abstract><![CDATA[The layer supports the BLM's recreation opportunities map and is used for clustering the data used by the BLM National Recreation web application. This layer contains data associated with recreational sites and supplemental reference data. Visitors to the public lands enjoy countless types of outdoor adventure – participating in activities as widely varied as camping, hunting, fishing, hiking, horseback riding, boating, whitewater rafting, hang-gliding, off-highway vehicle driving, mountain biking, birding and wildlife viewing, photography, climbing, all types of winter sports, and visiting natural and cultural heritage sites. Please visit the BLM's Recreation website for more information. https://www.blm.gov/programs/recreation.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-160.796880</westBoundLongitude><eastBoundLongitude>-77.197411</eastBoundLongitude><southBoundLatitude>26.948000</southBoundLatitude><northBoundLatitude>68.130000</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-160.796880" miny="26.948000" maxx="-77.197411" maxy="68.130000"/>
+<BoundingBox CRS="EPSG:4326" minx="26.948000" miny="-160.796880" maxx="68.130000" maxy="-77.197411"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl RIDB Recreation Sites (Clusters)]]></Title>
+          <LegendURL width="144" height="162">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=9" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title><![CDATA[BLM Natl Featured Recreation Sites]]></Title>
+        <Abstract><![CDATA[These are points representing featured recreation sites associated with the top climbing, OHV and mountain biking areas within the BLM.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-146.707050</westBoundLongitude><eastBoundLongitude>-77.208265</eastBoundLongitude><southBoundLatitude>32.213223</southBoundLatitude><northBoundLatitude>65.341650</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-146.707050" miny="32.213223" maxx="-77.208265" maxy="65.341650"/>
+<BoundingBox CRS="EPSG:4326" minx="32.213223" miny="-146.707050" maxx="65.341650" maxy="-77.208265"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[BLM Natl Featured Recreation Sites]]></Title>
+          <LegendURL width="120" height="90">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/recreation/BLM_Natl_Recreation/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+        <MaxScaleDenominator>1480562.976190</MaxScaleDenominator>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

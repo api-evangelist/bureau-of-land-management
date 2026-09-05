@@ -1,0 +1,98 @@
+generated: '2026-09-05'
+method: derived
+status: candidate
+source: >-
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json and
+  openapi/bureau-of-land-management-arcgis-service-inventory.json
+note: |
+  BLM OPERATES NO MCP SERVER. Searched 2026-09-05: no mcp.blm.gov (DNS fails), no /mcp route on
+  gis.blm.gov, www.blm.gov or the GBP Hub (404 on all three), nothing in the DOI-BLM GitHub
+  organization, nothing on npm or PyPI, and no /.well-known/ai-plugin.json on any of the nine
+  hosts probed.
+
+  One negative is worth quoting because it is unusually explicit. eplanning.blm.gov runs on
+  Microsoft Power Pages, and its /.well-known/oauth-authorization-server answered HTTP 500 with
+  {"error":"server_error","error_description":"MCP is not enabled for this site"}. The platform
+  BLM already pays for ships an MCP feature; BLM has not turned it on.
+
+  `status: candidate` and `mode: none`: every tool below is an API Evangelist PROPOSAL derived
+  one-for-one from an operation verified callable anonymously on 2026-09-05, not something BLM
+  runs. No endpoint is invented.
+
+  Why this is worth proposing: the whole public surface is anonymous and read-only, which is the
+  cheapest possible MCP server to stand up — no token exchange, no consent screen, no write
+  consequence. See agentic-access/, where all 17 operations classify as connected/read.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: probed
+server:
+  name: bureau-of-land-management
+  transport: http
+  url: null
+  authentication: none required — the public surface is anonymous
+tools:
+  - name: search_blm_datasets
+    description: >-
+      Search BLM's geospatial catalog (803 datasets) by keyword, bounding box, CQL2 filter, type
+      or tag.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getSiteCollectionItems_api/search/v1
+  - name: get_blm_dataset
+    description: Get one catalog record by its ArcGIS item id.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getSiteCollectionItemById_api/search/v1
+  - name: list_blm_collections
+    description: List the catalog collections (dataset, document, site).
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#CollectionController_getSiteCollections_api/search/v1
+  - name: get_blm_collection
+    description: Get one collection and its links.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#CollectionController_getSiteCollectionFromId_api/search/v1
+  - name: get_blm_collection_queryables
+    description: Get the queryable fields for a collection before building a filter.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#QueryableController_getSiteCollectionQueryables_api/search/v1
+  - name: aggregate_blm_datasets
+    description: >-
+      Get facet counts across the catalog without returning records — the cheap way to size a
+      question first.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemAggregationController_getAggregations_api/search/v1
+  - name: get_related_blm_records
+    description: Traverse from one record to the records related to it.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getRelatedOgcItemsById_api/search/v1
+  - name: get_connected_blm_records
+    description: Traverse from one record to the records connected to it.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getConnectedOgcItemsById_api/search/v1
+  - name: get_blm_site_catalog
+    description: Get the site catalog definition (which groups and item types the hub scopes to).
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#CatalogController_getSiteCatalog_api/search/v1
+  - name: describe_blm_ogc_conformance
+    description: Read which OGC API conformance classes the catalog implements.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcRootConformanceController_getApiConformance_api/search/v1
+  - name: query_blm_collection_features
+    description: >-
+      Query a collection's geoservice FeatureServer layer with a where clause and get GeoJSON
+      back.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#GeoserviceController_featureLayerQuery_api/search/v1
+  - name: describe_blm_feature_layer
+    description: Describe one geoservice feature layer — fields, geometry type, maxRecordCount.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#GeoserviceController_featureLayer_api/search/v1
+  - name: list_blm_feature_layers
+    description: List the layers of a collection's geoservice FeatureServer.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#GeoserviceController_featureLayers_api/search/v1
+tools_without_a_published_contract:
+  - name: list_blm_gis_services
+    description: >-
+      Enumerate the 785 ArcGIS services across BLM's 13 REST instances (national + 12 state).
+    backing_surface: 'https://gis.blm.gov/<instance>/rest/services?f=json'
+    reason: >-
+      Real, anonymously callable and inventoried in
+      openapi/bureau-of-land-management-arcgis-service-inventory.json, but BLM publishes no
+      OpenAPI for the ArcGIS REST surface, so there is no operationId to bind to. Listed here
+      rather than in tools[] so the crosswalk stays honest.
+  - name: get_blm_wms_capabilities
+    description: Fetch the OGC WMS 1.3.0 capabilities for one of the 42 WMS-enabled national services.
+    backing_surface: 'https://gis.blm.gov/arcgis/services/<service>/MapServer/WMSServer?service=WMS&request=GetCapabilities'
+    reason: >-
+      The GetCapabilities document IS the contract; seven are saved verbatim in openapi/. No
+      OpenAPI operation backs it.

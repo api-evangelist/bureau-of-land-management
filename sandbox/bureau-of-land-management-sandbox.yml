@@ -1,0 +1,46 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  https://gbp-blm-egis.hub.arcgis.com/api/search/definition/ and
+  https://gis.blm.gov/arcgis/rest/services, both fetched 2026-09-05.
+note: |
+  There is no test mode, because there is nothing to protect. BLM issues no credentials, charges
+  nothing and exposes no write operation, so the live surface IS the sandbox — every call in this
+  repo's skills was made anonymously against production during this pass.
+
+  What BLM does publish, and what earns this artifact, are two live interactive explorers a
+  developer can drive from the browser with no account. NO test cards, test tokens, magic
+  identifiers, test clocks or fixture tooling exist, and none are invented here.
+test_mode:
+  supported: false
+  reason: read-only, unauthenticated, free surface — no separation between test and live is possible or needed
+key_prefixes: []
+test_values: []
+test_clocks: false
+fixtures: false
+consoles:
+  - name: BLM GBP Hub Search API explorer
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/
+    type: interactive-api-explorer
+    auth_required: false
+    status: 200
+    evidence: >-
+      HTTP 200 text/html titled "BLM GBP Hub Search API", 2026-09-05. The OpenAPI's own
+      info.description says: "Use this explorer to test API endpoints and search the site's
+      catalog without needing to use the site's client search interface."
+    machine_readable_form: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - name: ArcGIS Server REST services directory
+    url: https://gis.blm.gov/arcgis/rest/services
+    type: interactive-service-directory
+    auth_required: false
+    status: 200
+    evidence: >-
+      HTTP 200, 2026-09-05. Esri's HTML service directory — browse all 13 instances, drill into
+      any of the 785 services and any layer, and run a live /query from a form. HTML is the
+      DEFAULT representation here; append ?f=json for the machine-readable form.
+    machine_readable_form: https://gis.blm.gov/arcgis/rest/services?f=json
+    instances_covered: 13
+safe_call_guidance: >-
+  Because there is no sandbox, size a query before you run it rather than after: use
+  returnCountOnly=true on an ArcGIS layer query, or the Hub Search API's aggregations endpoint,
+  to learn how much a request would return without returning it.

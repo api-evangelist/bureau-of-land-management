@@ -1,0 +1,86 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  npm (registry.npmjs.org), PyPI (pypi.org/pypi/<name>/json), the DOI-BLM GitHub organization,
+  and https://www.blm.gov/services/geospatial — all searched 2026-09-05.
+note: |
+  BLM SHIPS NO PACKAGED CLIENT LIBRARY. Nothing on npm, nothing on PyPI, nothing on Maven
+  Central, NuGet, RubyGems, Packagist, crates.io or pkg.go.dev. The three PyPI names that look
+  like hits are all unrelated third parties and are recorded under rejected_candidates so the
+  next pass does not re-litigate them.
+
+  What BLM does publish is SOURCE, in the DOI-BLM GitHub organization: an ArcGIS authentication
+  handler for Python Requests and a set of worked examples against BLM's own services. Neither
+  is released to a registry, neither is versioned, and neither can be installed with a package
+  manager — so `version: null` and `registry: none` below is the finding, not a gap in the
+  search. A consumer has to clone a default branch and pin nothing.
+
+  DO NOT wire an SDKs pointer for this provider: sdk_count would be crediting BLM with client
+  libraries it has not published.
+package_count: 0
+official_sdk_count: 0
+packages: []
+source_only_distributions:
+  - name: requests-arcgis-auth
+    language: python
+    registry: none
+    url: https://github.com/DOI-BLM/requests-arcgis-auth
+    official: true
+    version: null
+    published: null
+    default_branch: master
+    license: null
+    install: git clone https://github.com/DOI-BLM/requests-arcgis-auth
+    description: >-
+      Authentication handler for using Esri ArcGIS for Server and Portal (ArcGIS Online) token
+      authentication with Python Requests.
+    note: >-
+      Checked pypi.org/pypi/requests-arcgis-auth/json and .../requests_arcgis_auth/json on
+      2026-09-05 — both HTTP 404. Never released to PyPI, so there is no version and no
+      publication date to record; a consumer cannot pin it.
+  - name: BLM-GIS_Python_Samples
+    language: python
+    registry: none
+    url: https://github.com/DOI-BLM/BLM-GIS_Python_Samples
+    official: true
+    version: null
+    published: null
+    default_branch: master
+    license: null
+    description: Example Python code calling BLM's own GIS services.
+    note: Sample code, not a library. Nothing to install or pin.
+  - name: AIM-Lotic-IndicatorCalculation
+    language: r
+    registry: none
+    url: https://github.com/DOI-BLM/AIM-Lotic-IndicatorCalculation
+    official: true
+    version: null
+    published: null
+    default_branch: main
+    license: MIT
+    description: Calculation of Lotic AIM (Assessment, Inventory and Monitoring) indicators from raw data.
+    note: >-
+      Domain analysis code, not an API client. The only DOI-BLM repository carrying an explicit
+      licence.
+rejected_candidates:
+  - registry: pypi
+    name: blm
+    reason: >-
+      "A simple model to describe the backlash effect in physics simulations", author Fabio
+      Muratore, github.com/famura/blm. Unrelated.
+  - registry: pypi
+    name: blmpy
+    reason: '"Bluemanoid Package", author Gautier Rio (bluemanoid.com). Unrelated to the DOI-BLM blmpy test repo.'
+  - registry: pypi
+    name: pyblm
+    reason: '"The Big Linear Models Toolbox", author Tom Maullin. Unrelated.'
+  - registry: pypi
+    name: arcgis
+    reason: >-
+      The Esri ArcGIS API for Python. Real and usable against BLM's services, but it is ESRI'S
+      package, not BLM's — recording it here would credit BLM with a library another company
+      publishes.
+  - registry: npm
+    name: blm-api / blm-gis / pyblm
+    reason: HTTP 404 on registry.npmjs.org, 2026-09-05. No such packages.
+github_organization: https://github.com/DOI-BLM

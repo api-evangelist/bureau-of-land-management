@@ -1,0 +1,116 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  Live error probes 2026-09-05 against https://gbp-blm-egis.hub.arcgis.com/api/search/v1 and
+  https://gis.blm.gov/arcgis, plus
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+format: vendor
+note: |
+  NOT RFC 9457. Neither BLM surface returns application/problem+json, and no BLM page
+  publishes an error reference — so the catalogue below was built by deliberately provoking
+  each error and recording the response verbatim.
+
+  The single most important thing an agent needs to know about this provider is in
+  transport_gotcha below: the ArcGIS surfaces answer HTTP 200 on failure and put the failure
+  in the body. Client code that branches on the status code will read a "Service not found"
+  as a success.
+envelopes:
+  - surface: GBP Hub Search API (OGC API - Records)
+    shape: '{message, error, statusCode}'
+    content_type: application/json
+    status_codes_honest: true
+    note: >-
+      NestJS-style envelope. message is a string, or an array of strings for validation
+      failures. The HTTP status code matches statusCode in the body.
+  - surface: ArcGIS Server REST (gis.blm.gov, all 13 instances)
+    shape: '{"error": {code, message, details[]}}'
+    content_type: application/json
+    status_codes_honest: false
+    note: >-
+      The HTTP response is 200 even when error.code is 400/404/500. error.code is the real
+      outcome.
+  - surface: OGC WMS (gis.blm.gov/arcgis/services/.../WMSServer)
+    shape: XML ServiceExceptionReport/ServiceException[@code]
+    content_type: application/vnd.ogc.se_xml
+    status_codes_honest: false
+    note: >-
+      OGC WMS 1.1.1 exception report. Also served with HTTP 200. Parse the XML root — a
+      ServiceExceptionReport root element is the failure signal.
+transport_gotcha: >-
+  Two of the three surfaces return HTTP 200 on failure. For gis.blm.gov, treat a JSON body
+  containing a top-level "error" key, or an XML body whose root is ServiceExceptionReport, as
+  the error regardless of the status line. Only the GBP Hub Search API can be trusted to set a
+  4xx status.
+problems:
+  - surface: gbp-hub-search
+    status: 404
+    error: Not Found
+    title: Collection not found
+    message_observed: 'Collection with id "nosuchcollection" not found'
+    remediation: >-
+      Call CollectionController_getSiteCollections_api/search/v1 (GET /api/search/v1/collections)
+      for the valid collection ids. On this deployment they are dataset, document and site.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#CollectionController_getSiteCollectionFromId_api/search/v1
+    evidence: GET /api/search/v1/collections/nosuchcollection -> HTTP 404, probed 2026-09-05
+  - surface: gbp-hub-search
+    status: 404
+    error: Not Found
+    title: Record not found in collection
+    message_observed: Cannot find item with recordId zzzzzzzz in collection Data
+    remediation: Search the collection first; record ids are ArcGIS item ids (32 hex characters).
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getSiteCollectionItemById_api/search/v1
+    evidence: GET /api/search/v1/collections/dataset/items/zzzzzzzz -> HTTP 404, probed 2026-09-05
+  - surface: gbp-hub-search
+    status: 400
+    error: Bad Request
+    title: Validation failure on a query parameter
+    message_observed: '["searchOptions.limit must not be greater than 20000"]'
+    remediation: >-
+      message is an ARRAY here, not a string. limit is capped at 20000; page with startindex
+      instead of raising limit.
+    source_operation: openapi/bureau-of-land-management-gbp-hub-search-openapi.json#OgcItemController_getSiteCollectionItems_api/search/v1
+    evidence: GET /api/search/v1/collections/dataset/items?limit=99999 -> HTTP 400, probed 2026-09-05
+  - surface: gbp-hub-search
+    status: 404
+    error: Not Found
+    title: Route does not exist
+    message_observed: Cannot GET /api/search/v1/openapi
+    remediation: >-
+      The OpenAPI is at /api/search/definition/?f=json, advertised as the service-desc link on
+      the landing page — not at /openapi.
+    evidence: GET /api/search/v1/openapi -> HTTP 404, probed 2026-09-05
+  - surface: arcgis-rest
+    status: 200
+    error_code: 404
+    title: Service not found
+    message_observed: Service not found
+    remediation: >-
+      Enumerate the folder with GET /arcgis/rest/services/<folder>?f=json. Service names are
+      case-sensitive and the type suffix (MapServer / FeatureServer) is part of the path.
+    evidence: GET /arcgis/rest/services/lands/NoSuchService/MapServer?f=json -> HTTP 200 with error.code 404, probed 2026-09-05
+  - surface: arcgis-rest
+    status: 200
+    error_code: 404
+    title: Layer not found
+    message_observed: Layer not found
+    remediation: Read the service document's layers[] for valid layer indexes before addressing one.
+    evidence: GET /arcgis/rest/services/lands/BLM_Natl_NLCS_Generalized/FeatureServer/99?f=json -> HTTP 200 with error.code 404, probed 2026-09-05
+  - surface: arcgis-rest
+    status: 200
+    error_code: 400
+    title: Query could not be completed
+    message_observed: 'Unable to complete operation. details: ["Query with count request failed."]'
+    remediation: >-
+      Malformed `where` clause. Use a valid SQL-92 predicate, or `1=1` for everything. details[]
+      carries the operation-specific reason and is the only useful part of this response.
+    evidence: GET .../FeatureServer/0/query?where=bogus%3D&returnCountOnly=true&f=json -> HTTP 200 with error.code 400, probed 2026-09-05
+  - surface: ogc-wms
+    status: 200
+    error_code: RequestNotAllowed
+    title: Unsupported WMS request
+    message_observed: The request not allowed.
+    remediation: >-
+      Only the requests listed in the service's GetCapabilities are accepted — GetCapabilities,
+      GetMap, GetFeatureInfo, GetLegendGraphic, GetStyles.
+    evidence: GET .../MapServer/WMSServer?service=WMS&request=Bogus -> HTTP 200 with a ServiceExceptionReport, probed 2026-09-05
+undocumented_by_provider: true

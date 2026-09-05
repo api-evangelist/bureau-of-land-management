@@ -1,0 +1,159 @@
+generated: '2026-09-05'
+method: derived
+source: >-
+  openapi/bureau-of-land-management-gbp-hub-search-openapi.json (47 component schemas),
+  conformance/bureau-of-land-management-gbp-hub-ogc-collections.json,
+  openapi/bureau-of-land-management-arcgis-service-inventory.json, and
+  https://gbp-blm-egis.hub.arcgis.com/data.json — all read 2026-09-05.
+note: |
+  Two different data models sit behind BLM's public surface and they meet only at the item id.
+
+  The CATALOG model (OGC API - Records) is about metadata: collections hold records, records
+  point at services. The GEOSPATIAL model (ArcGIS) is about the data itself: services hold
+  layers, layers hold fields and features. An agent that wants BLM's actual land data walks
+  from the first into the second — search the catalog, read the record's geoservice link, then
+  query the layer.
+
+  Every entity below is present in a document BLM serves. Nothing is inferred from naming.
+entities:
+  - name: Catalog
+    schema: Catalog
+    surface: gbp-hub-search
+    description: >-
+      The site catalog definition — which ArcGIS groups and item types the BLM GBP Hub scopes
+      itself to. One per hub site.
+    identifier: the hub site item id (1f7469023a92437a8a7e2dd7d8ba808a for BLM GBP Hub)
+  - name: Collection
+    schema: CollectionDto
+    surface: gbp-hub-search
+    description: An OGC API - Records collection. BLM publishes three.
+    identifier: id
+    fields: [id, type, title, description, itemType, crs, filters]
+    instances:
+      - id: dataset
+        title: Data
+        itemType: record
+        description: 'BLM GBP Hub: Data Collection'
+      - id: document
+        itemType: record
+      - id: site
+        itemType: record
+    note: >-
+      Instance list read from
+      conformance/bureau-of-land-management-gbp-hub-ogc-collections.json. The `dataset`
+      collection's filters[] enumerates the ArcGIS item types it admits — Feature Service,
+      Feature Layer, Image Service, Table, CSV, GeoJSON, KML, Shapefile, File Geodatabase,
+      Stream Service.
+  - name: Record
+    schema: OgcItemDto
+    surface: gbp-hub-search
+    description: >-
+      One catalog record — a GeoJSON Feature whose properties carry the dataset metadata and
+      whose geometry is the dataset extent.
+    identifier: id (32-character ArcGIS item id)
+    fields: [id, type, geometry, properties, time]
+    count_observed: 803
+  - name: Dataset
+    schema: dcat:Dataset
+    surface: dcat-us
+    description: >-
+      The same 803 datasets, expressed in the federal open-data vocabulary at
+      https://gbp-blm-egis.hub.arcgis.com/data.json.
+    identifier: identifier (an arcgis.com item URL)
+    fields: [identifier, landingPage, title, description, keyword, issued, modified, publisher, contactPoint, distribution]
+    note: publisher.name is "Bureau of Land Management" on every record.
+  - name: FeatureService
+    schema: FeatureServerDto
+    surface: arcgis-rest
+    description: An ArcGIS FeatureServer or MapServer. 785 exist across BLM's 13 REST instances.
+    identifier: '<instance>/<folder>/<name>/<type>'
+    counts:
+      MapServer: 463
+      FeatureServer: 283
+      ImageServer: 16
+      GPServer: 12
+      SymbolServer: 10
+      GeometryServer: 1
+  - name: FeatureLayer
+    schema: FeatureLayerFieldDto (fields), FeatureInfoDto
+    surface: arcgis-rest
+    description: A layer inside a service. 261 layers across the 46 national services alone.
+    identifier: layerIndex within its service
+    fields: [id, name, type, geometryType, fields, maxRecordCount, extent, spatialReference]
+  - name: Field
+    schema: FeatureLayerFieldDto
+    surface: arcgis-rest
+    description: One attribute column on a layer.
+    fields: [name, type, alias, sqlType, domain, defaultValue, length, editable, nullable]
+  - name: WMSLayer
+    schema: WMS 1.3.0 Layer element
+    surface: ogc-wms
+    description: >-
+      The same layers projected as OGC WMS layers, described in the GetCapabilities documents
+      saved verbatim in openapi/.
+    identifier: Layer/Name
+relationships:
+  - from: Catalog
+    to: Collection
+    type: has_many
+    via: links[rel=data]
+  - from: Collection
+    to: Record
+    type: has_many
+    via: links[rel=items]
+  - from: Record
+    to: Record
+    type: has_many
+    via: /items/{recordId}/related
+    note: >-
+      Explicit relationship traversal. /items/{recordId}/connected is a second, distinct edge
+      type on the same entity.
+  - from: Record
+    to: FeatureService
+    type: has_one
+    via: 'rest/services/collections/{collectionId}/geoservice/FeatureServer'
+    note: >-
+      This is the join that matters. It is how an agent gets from "I found the grazing allotment
+      dataset" to "I can query its geometry".
+  - from: Record
+    to: Dataset
+    type: has_one
+    via: the shared ArcGIS item id
+    note: >-
+      The OGC record and the DCAT-US dataset are two serializations of one item. The DCAT
+      identifier is an arcgis.com item URL whose id parameter equals the OGC record id.
+  - from: FeatureService
+    to: FeatureLayer
+    type: has_many
+    via: layers[]
+  - from: FeatureLayer
+    to: Field
+    type: has_many
+    via: fields[]
+  - from: FeatureLayer
+    to: WMSLayer
+    type: has_one
+    via: the WMSServer projection of the same MapServer
+    note: Only for the 42 of 46 national services that advertise the WMSServer extension.
+identifier_conventions:
+  - entity: Record / Dataset
+    form: 32-character lowercase hexadecimal ArcGIS item id
+    example_shape: 023d2b2d882046fdb84e00983cfe636e
+  - entity: FeatureService
+    form: 'folder/ServiceName/ServiceType, case-sensitive'
+    example_shape: lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer
+    note: >-
+      BLM's own naming convention is legible and worth knowing: BLM_Natl_* is a national
+      dataset, BLM_<ST>_* is state-specific, BOC_* is a boundary reference layer, and *_Cached
+      is a pre-rendered tile service.
+domains:
+  - lands (surface management agency, NLCS, ACEC, land use planning, LPAD/PLAD)
+  - Cadastral (PLSS CadNSDI, in two datums)
+  - recreation (recreation sites and facilities, MAPLand, mountain biking, visual resources)
+  - range (grazing allotments and pastures, wild horse and burro)
+  - transportation (ground transportation linear features)
+  - admin_boundaries (BLM administrative units and offices, county boundaries)
+  - geophysical (paleontological potential, geologic formations)
+  - elevation (3DEP lidar priority areas)
+  - vegetation, wildlife, fire, DANL, PCPL
+render: null

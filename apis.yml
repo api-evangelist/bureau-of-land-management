@@ -1,23 +1,42 @@
 aid: bureau-of-land-management
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/refs/heads/main/apis.yml
 name: Bureau of Land Management
 tags:
-  - Environment
-  - Federal-Government
-  - Land
-  - Resources
-  - GIS
-  - Geospatial
-  - Mining
+- Environment
+- Federal-Government
+- Land
+- Resources
+- GIS
+- Geospatial
+- Mining
+- Public-Lands
+- Open-Data
+- OGC
+- Cadastral
+- Recreation
+- Grazing
+- ArcGIS
+- DCAT
+- Conservation
+- Mapping
 tags_raw:
-  - Environment
-  - Federal Government
-  - Land
-  - Resources
-  - GIS
-  - Geospatial
-  - Mining
+- Environment
+- Federal Government
+- Land
+- Resources
+- GIS
+- Geospatial
+- Mining
+- Public Lands
+- Open Data
+- OGC
+- Cadastral
+- Recreation
+- Grazing
+- ArcGIS
+- DCAT
+- Conservation
+- Mapping
 type: Index
 kind: government
 deliveryModel:
@@ -46,156 +65,361 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-land-management.png
 access: 3rd-Party
 created: '2024-11-30'
-modified: '2026-04-23'
-position: Consuming
-description: >-
-  The Bureau of Land Management (BLM) is a U.S. government agency responsible
-  for managing vast stretches of public lands across the country, primarily
-  focused on activities like outdoor recreation, livestock grazing, mineral
-  development, and energy production, aiming to sustain the health and diversity
-  of these lands for future generations.
+modified: '2026-09-05'
+position: Producing
+description: 'The Bureau of Land Management (BLM) is the U.S. Department of the Interior bureau that administers
+  245 million surface acres of public land and 700 million acres of subsurface mineral estate — about
+  one in every ten acres of the United States — for outdoor recreation, livestock grazing, mineral and
+  energy development, conservation and cultural heritage. Its public API surface is geospatial and entirely
+  anonymous: a catalog of 803 datasets served as OGC API - Records and DCAT-US 1.1, and 785 ArcGIS Server
+  services across thirteen REST instances (one national, twelve state) that BLM operates itself on gis.blm.gov,
+  42 of which also publish OGC WMS 1.3.0. There is no API key, no plan and no quota — and equally no versioning
+  policy, changelog, status page or developer support channel. Every published operation is read-only;
+  the transactional systems (MLRS mining claims and land records, GLO Records land patents, ePlanning
+  NEPA documents) sit behind a login and publish no contract.'
 apis:
-  - aid: bureau-of-land-management:blm-geospatial-business-platform
-    name: BLM Geospatial Business Platform (GBP) Hub
-    tags:
-      - Federal-Government
-      - Geospatial
-      - GIS
-      - Land
-    tags_raw:
-      - Federal Government
-      - Geospatial
-      - GIS
-      - Land
-    humanURL: https://gbp-blm-egis.hub.arcgis.com/
-    baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
-    properties:
-      - url: https://gbp-blm-egis.hub.arcgis.com/
-        type: Portal
-      - url: https://blm-egis.maps.arcgis.com/home/index.html
-        type: Documentation
-      - url: https://catalog.data.gov/dataset?organization=blm-gov
-        type: DataAPI
-    description: >-
-      The BLM Geospatial Business Platform is a public tool and publication
-      platform for exploring and downloading GIS data. Built on ArcGIS Online,
-      it provides REST endpoints for BLM geospatial data including public lands
-      boundaries, mineral resources, recreation areas, and environmental data.
-    features:
-      - ArcGIS REST Endpoints
-      - ISO-19139 XML Metadata
-      - DCAT-US Compliance
-      - Keyword and Location Search
-      - Public Land Records
-    useCases:
-      - Public lands research
-      - Recreation planning
-      - Environmental impact assessment
-      - Mineral rights research
-  - aid: bureau-of-land-management:blm-mineral-land-records
-    name: BLM Mineral and Land Records System (MLRS)
-    tags:
-      - Federal-Government
-      - Land
-      - Mining
-      - Minerals
-    tags_raw:
-      - Federal Government
-      - Land
-      - Mining
-      - Minerals
-    humanURL: https://mlrs.blm.gov/s/
-    properties:
-      - url: https://mlrs.blm.gov/s/
-        type: Portal
-    description: >-
-      The Mineral and Land Records System (MLRS) is an online platform
-      delivering state-of-the-art mineral and land records transactions,
-      tracking, mapping, and more for BLM customers and staff. It manages
-      land patents, rights-of-way, mining claims, and related records.
-    features:
-      - Mineral Records
-      - Land Patent Records
-      - Rights-of-Way Management
-      - Mining Claims
-    useCases:
-      - Mineral rights research
-      - Land patent lookup
-      - Rights-of-way applications
-      - Mining claim verification
-  - aid: bureau-of-land-management:blm-general-land-office-records
-    name: BLM General Land Office Records
-    tags:
-      - Federal-Government
-      - Land
-      - Historical Records
-    tags_raw:
-      - Federal Government
-      - Land
-      - Historical Records
-    humanURL: https://glorecords.blm.gov/default.aspx
-    properties:
-      - url: https://glorecords.blm.gov/default.aspx
-        type: Portal
-    description: >-
-      The General Land Office (GLO) Records provide access to federal land
-      conveyance records including land patents, survey plats, and field notes
-      from 1788 to the present. The system contains over 10 million Federal
-      land title records.
-    features:
-      - Land Patent Records
-      - Survey Plats
-      - Field Notes
-      - Historical Records Search
-    useCases:
-      - Historical land research
-      - Genealogy research
-      - Property title research
-      - Academic historical study
-  - aid: bureau-of-land-management:blm-eplanning
-    name: BLM ePlanning
-    tags:
-      - Federal-Government
-      - Land Use Planning
-      - Environmental
-    tags_raw:
-      - Federal Government
-      - Land Use Planning
-      - Environmental
-    humanURL: https://eplanning.blm.gov/
-    properties:
-      - url: https://eplanning.blm.gov/
-        type: Portal
-    description: >-
-      BLM ePlanning provides public access to land use planning documents,
-      environmental impact statements, and resource management plans. Citizens
-      can track planning projects and participate in comment periods.
-    features:
-      - Land Use Planning Documents
-      - Environmental Impact Statements
-      - Resource Management Plans
-      - Public Comment Access
-    useCases:
-      - Environmental review tracking
-      - Public comment participation
-      - Land use planning research
-      - Policy development support
+- aid: bureau-of-land-management:blm-geospatial-business-platform
+  name: BLM Geospatial Business Platform (GBP) Hub
+  tags:
+  - Federal-Government
+  - Geospatial
+  - GIS
+  - Land
+  tags_raw:
+  - Federal Government
+  - Geospatial
+  - GIS
+  - Land
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  properties:
+  - url: https://gbp-blm-egis.hub.arcgis.com/
+    type: Portal
+  - url: https://catalog.data.gov/dataset?organization=blm-gov
+    type: DataAPI
+  - url: https://www.blm.gov/services/geospatial/GISData
+    type: Documentation
+  - url: https://gis.blm.gov/arcgis/rest/services
+    type: APIReference
+  description: The BLM Geospatial Business Platform is a public tool and publication platform for exploring
+    and downloading GIS data. Built on ArcGIS Online, it provides REST endpoints for BLM geospatial data
+    including public lands boundaries, mineral resources, recreation areas, and environmental data.
+  features:
+  - ArcGIS REST Endpoints
+  - ISO-19139 XML Metadata
+  - DCAT-US Compliance
+  - Keyword and Location Search
+  - Public Land Records
+  useCases:
+  - Public lands research
+  - Recreation planning
+  - Environmental impact assessment
+  - Mineral rights research
+- aid: bureau-of-land-management:blm-mineral-land-records
+  name: BLM Mineral and Land Records System (MLRS)
+  tags:
+  - Federal-Government
+  - Land
+  - Mining
+  - Minerals
+  tags_raw:
+  - Federal Government
+  - Land
+  - Mining
+  - Minerals
+  humanURL: https://mlrs.blm.gov/s/
+  properties:
+  - url: https://mlrs.blm.gov/s/
+    type: Portal
+  description: The Mineral and Land Records System (MLRS) is an online platform delivering state-of-the-art
+    mineral and land records transactions, tracking, mapping, and more for BLM customers and staff. It
+    manages land patents, rights-of-way, mining claims, and related records.
+  features:
+  - Mineral Records
+  - Land Patent Records
+  - Rights-of-Way Management
+  - Mining Claims
+  useCases:
+  - Mineral rights research
+  - Land patent lookup
+  - Rights-of-way applications
+  - Mining claim verification
+  baseURL: https://mlrs.blm.gov
+- aid: bureau-of-land-management:blm-general-land-office-records
+  name: BLM General Land Office Records
+  tags:
+  - Federal-Government
+  - Land
+  - Historical Records
+  tags_raw:
+  - Federal Government
+  - Land
+  - Historical Records
+  humanURL: https://glorecords.blm.gov/default.aspx
+  properties:
+  - url: https://glorecords.blm.gov/default.aspx
+    type: Portal
+  description: The General Land Office (GLO) Records provide access to federal land conveyance records
+    including land patents, survey plats, and field notes from 1788 to the present. The system contains
+    over 10 million Federal land title records.
+  features:
+  - Land Patent Records
+  - Survey Plats
+  - Field Notes
+  - Historical Records Search
+  useCases:
+  - Historical land research
+  - Genealogy research
+  - Property title research
+  - Academic historical study
+  baseURL: https://glorecords.blm.gov
+- aid: bureau-of-land-management:blm-eplanning
+  name: BLM ePlanning
+  tags:
+  - Federal-Government
+  - Land Use Planning
+  - Environmental
+  tags_raw:
+  - Federal Government
+  - Land Use Planning
+  - Environmental
+  humanURL: https://eplanning.blm.gov/
+  properties:
+  - url: https://eplanning.blm.gov/
+    type: Portal
+  description: BLM ePlanning provides public access to land use planning documents, environmental impact
+    statements, and resource management plans. Citizens can track planning projects and participate in
+    comment periods.
+  features:
+  - Land Use Planning Documents
+  - Environmental Impact Statements
+  - Resource Management Plans
+  - Public Comment Access
+  useCases:
+  - Environmental review tracking
+  - Public comment participation
+  - Land use planning research
+  - Policy development support
+  baseURL: https://eplanning.blm.gov
+- aid: bureau-of-land-management:blm-gbp-hub-search-api
+  name: BLM GBP Hub Search API (OGC API - Records)
+  tags:
+  - Federal-Government
+  - Geospatial
+  - GIS
+  - Open-Data
+  - OGC
+  - Search
+  tags_raw:
+  - Federal Government
+  - Geospatial
+  - GIS
+  - Open Data
+  - OGC
+  - Search
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/
+  baseURL: https://gbp-blm-egis.hub.arcgis.com
+  description: The only OpenAPI the Bureau of Land Management serves. A 17-operation OGC API - Records
+    catalog over BLM's 803 published geospatial datasets, with keyword, bounding-box and CQL2 filtering,
+    facet aggregation, related/connected record traversal, and an ArcGIS FeatureServer projection that
+    takes a caller from a search result straight to queryable features. Anonymous — no key, no plan, no
+    quota. The contract names itself "BLM GBP Hub Search API" and the catalog it serves carries publisher
+    "Bureau of Land Management" on every record; the software underneath is Esri ArcGIS Hub running as
+    BLM's tenant.
+  properties:
+  - url: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+    type: OpenAPI
+  - url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+    type: APIReference
+  - url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+    type: Conformance
+  - url: overlays/bureau-of-land-management-gbp-hub-search-overlay.yaml
+    type: Overlay
+  - url: mcp/bureau-of-land-management-tool-crosswalk.yml
+    type: ToolCrosswalk
+  - url: https://gbp-blm-egis.hub.arcgis.com/
+    type: Portal
+  - url: https://gbp-blm-egis.hub.arcgis.com/data.json
+    type: DataAPI
+  features:
+  - OGC API - Records 1.0
+  - OGC API - Features 1.0
+  - CQL2 filtering
+  - Bounding-box search
+  - Facet aggregation
+  - GeoJSON output
+  - Anonymous access
+  - DCAT-US 1.1 catalog feed
+  useCases:
+  - Public lands dataset discovery
+  - Bulk open-data harvesting
+  - Bounding-box search for land status
+  - Feeding a geospatial agent or MCP server
+- aid: bureau-of-land-management:blm-arcgis-gis-services
+  name: BLM National and State ArcGIS REST / OGC WMS Services
+  tags:
+  - Federal-Government
+  - Geospatial
+  - GIS
+  - Land
+  - Cadastral
+  - OGC
+  - WMS
+  tags_raw:
+  - Federal Government
+  - Geospatial
+  - GIS
+  - Land
+  - Cadastral
+  - OGC
+  - WMS
+  humanURL: https://www.blm.gov/services/geospatial/GISData
+  baseURL: https://gis.blm.gov/arcgis/rest/services
+  description: 'BLM''s own ArcGIS Server estate, operated on blm.gov infrastructure rather than a hosted
+    platform: thirteen REST instances — one national plus Alaska, Arizona, California, Colorado, Eastern
+    States, Idaho, Montana, Nevada, New Mexico, Oregon, Utah and Wyoming — serving 785 services (463 MapServer,
+    283 FeatureServer, 16 ImageServer, 12 GPServer). All run ArcGIS Server 11.5 with token security disabled,
+    so the service directory, layer schemas and attribute/spatial queries are anonymously callable. 42
+    of the 46 national services also publish OGC WMS 1.3.0 GetCapabilities, which is the machine-readable
+    contract for this surface — BLM publishes no OpenAPI for it. Covers surface management agency, the
+    PLSS cadastral fabric, grazing allotments, recreation sites, the National Landscape Conservation System,
+    transportation and administrative boundaries.'
+  properties:
+  - url: openapi/bureau-of-land-management-arcgis-service-inventory.json
+    type: ArcGIS
+  - url: openapi/bureau-of-land-management-arcgis-national-rest-services.json
+    type: ArcGIS
+  - url: openapi/bureau-of-land-management-arcgis-national-rest-info.json
+    type: ArcGIS
+  - url: https://gis.blm.gov/arcgis/rest/services
+    type: APIReference
+  - url: https://www.blm.gov/services/geospatial/GISData
+    type: Documentation
+  - url: openapi/bureau-of-land-management-sma-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-plss-cadnsdi-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-admin-unit-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-recreation-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-nlcs-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-grazing-allotment-wms-capabilities.xml
+    type: GetCapabilities
+  - url: openapi/bureau-of-land-management-gtlf-wms-capabilities.xml
+    type: GetCapabilities
+  - url: https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?service=WMS&request=GetCapabilities
+    type: WMS
+  - url: wsdl/bureau-of-land-management-sma-mapserver.wsdl
+    type: WSDL
+  - url: wsdl/bureau-of-land-management-plss-cadnsdi-mapserver.wsdl
+    type: WSDL
+  - url: https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer?wsdl
+    type: SOAP
+  features:
+  - ArcGIS Server 11.5 REST
+  - Anonymous access (token security disabled)
+  - OGC WMS 1.3.0 on 42 national services
+  - SQL-92 attribute query
+  - Spatial query
+  - GeoJSON output
+  - Statistics and pagination
+  - Pre-cached tile services
+  useCases:
+  - Public land status and ownership lookup
+  - PLSS township/range/section resolution
+  - Grazing allotment research
+  - Recreation site mapping
+  - Mineral and cadastral research
+  - State-level BLM data extraction
 common:
-  - type: VulnerabilityDisclosure
-    url: security/bureau-of-land-management-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/bureau-of-land-management-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/bureau-of-land-management
-  - type: Website
-    url: https://www.blm.gov
-  - type: Portal
-    url: https://gbp-blm-egis.hub.arcgis.com/
-  - type: PrivacyPolicy
-    url: https://www.blm.gov/privacy-policy
-  - type: Data Portal
-    url: https://catalog.data.gov/dataset?organization=blm-gov
+- type: AgenticAccess
+  url: agentic-access/bureau-of-land-management-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/bureau-of-land-management-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/bureau-of-land-management-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/bureau-of-land-management
+- type: Website
+  url: https://www.blm.gov
+- type: Portal
+  url: https://gbp-blm-egis.hub.arcgis.com/
+- type: Data Portal
+  url: https://catalog.data.gov/dataset?organization=blm-gov
+- type: OpenAPI
+  url: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+- type: Conformance
+  url: conformance/bureau-of-land-management-conformance.yml
+- type: WellKnown
+  url: well-known/bureau-of-land-management-well-known.yml
+- type: SecurityTxt
+  url: https://www.blm.gov/.well-known/security.txt
+- type: Security
+  url: https://www.blm.gov/info/notices/vulnerability-disclosure
+- type: Authentication
+  url: authentication/bureau-of-land-management-authentication.yml
+- type: OAuthScopes
+  url: scopes/bureau-of-land-management-scopes.yml
+- type: Conventions
+  url: conventions/bureau-of-land-management-conventions.yml
+- type: ErrorCatalog
+  url: errors/bureau-of-land-management-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/bureau-of-land-management-lifecycle.yml
+- type: DataModel
+  url: data-model/bureau-of-land-management-data-model.yml
+- type: Packages
+  url: packages/bureau-of-land-management-packages.yml
+- type: X-MCPServerCandidate
+  url: mcp/bureau-of-land-management-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/bureau-of-land-management-tool-crosswalk.yml
+- type: Overlay
+  url: overlays/bureau-of-land-management-gbp-hub-search-overlay.yaml
+- type: LLMsTxt
+  url: llms/bureau-of-land-management-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: RateLimits
+  url: rate-limits/bureau-of-land-management-rate-limits.yml
+- type: Plans
+  url: plans/bureau-of-land-management-plans-pricing.yml
+- type: DeveloperPortal
+  url: https://gbp-blm-egis.hub.arcgis.com/
+- type: Documentation
+  url: https://www.blm.gov/services/geospatial/GISData
+- type: APIReference
+  url: https://gis.blm.gov/arcgis/rest/services
+- type: GettingStarted
+  url: https://www.blm.gov/services/geospatial
+- type: Support
+  url: https://www.blm.gov/contact
+- type: Blog
+  url: https://www.blm.gov/blog
+- type: GitHubOrganization
+  url: https://github.com/DOI-BLM
+- type: PrivacyPolicy
+  url: https://www.doi.gov/privacy
+- type: TermsOfService
+  url: https://www.doi.gov/disclaimer
+- type: DataAPI
+  url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- type: OGCAPI
+  url: https://gbp-blm-egis.hub.arcgis.com/api/search/v1
+- type: WSDL
+  url: wsdl/bureau-of-land-management-sma-mapserver.wsdl
+- type: Sandbox
+  url: sandbox/bureau-of-land-management-sandbox.yml
+- type: Console
+  url: https://gis.blm.gov/arcgis/rest/services
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 specificationVersion: '0.23'
+x-enrichment:
+  date: '2026-09-05'
+  status: enriched
+  artifacts_added: 39
+  pass: local-v3

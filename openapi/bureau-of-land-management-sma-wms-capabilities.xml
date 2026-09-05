@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+  xmlns="http://www.opengis.net/wms"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:esri_wms="http://www.esri.com/wms"
+  xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd http://www.esri.com/wms https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?version=1.3.0%26service=WMS%26request=GetSchemaExtension">
+  <Service>
+    <Name><![CDATA[WMS]]></Name>
+    <Title>WMS</Title>
+    <Abstract>WMS</Abstract>
+    <KeywordList><Keyword><![CDATA[]]></Keyword></KeywordList>
+    <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?"/>
+    <ContactInformation>
+      <ContactPersonPrimary>
+        <ContactPerson><![CDATA[]]></ContactPerson>
+        <ContactOrganization><![CDATA[]]></ContactOrganization>
+      </ContactPersonPrimary>
+      <ContactPosition><![CDATA[]]></ContactPosition>
+      <ContactAddress>
+        <AddressType><![CDATA[]]></AddressType>
+        <Address><![CDATA[]]></Address>
+        <City><![CDATA[]]></City>
+        <StateOrProvince><![CDATA[]]></StateOrProvince>
+        <PostCode><![CDATA[]]></PostCode>
+        <Country><![CDATA[]]></Country>
+      </ContactAddress>
+      <ContactVoiceTelephone><![CDATA[]]></ContactVoiceTelephone>
+      <ContactFacsimileTelephone><![CDATA[]]></ContactFacsimileTelephone>
+      <ContactElectronicMailAddress><![CDATA[]]></ContactElectronicMailAddress>
+    </ContactInformation>
+    <Fees><![CDATA[]]></Fees>
+    <AccessConstraints><![CDATA[]]></AccessConstraints>
+    <MaxWidth>4096</MaxWidth>
+    <MaxHeight>4096</MaxHeight>
+  </Service>
+  <Capability>
+    <Request>
+      <GetCapabilities>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>text/xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetCapabilities>
+      <GetMap>
+        <Format>image/bmp</Format>
+        <Format>image/jpeg</Format>
+        <Format>image/tiff</Format>
+        <Format>image/png</Format>
+        <Format>image/png8</Format>
+        <Format>image/png24</Format>
+        <Format>image/png32</Format>
+        <Format>image/gif</Format>
+        <Format>image/svg+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetMap>
+      <GetFeatureInfo>
+        <Format>application/vnd.esri.wms_raw_xml</Format>
+        <Format>application/vnd.esri.wms_featureinfo_xml</Format>
+        <Format>application/vnd.ogc.wms_xml</Format>
+        <Format>application/geo+json</Format>
+        <Format>text/xml</Format>
+        <Format>text/html</Format>
+        <Format>text/plain</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </GetFeatureInfo>
+      <esri_wms:GetStyles>
+        <Format>application/vnd.ogc.sld+xml</Format>
+        <DCPType>
+          <HTTP><Get><OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?"/></Get></HTTP>
+        </DCPType>
+      </esri_wms:GetStyles>
+    </Request>
+    <Exception>
+      <Format>application/vnd.ogc.se_xml</Format>
+      <Format>application/vnd.ogc.se_inimage</Format>
+      <Format>application/vnd.ogc.se_blank</Format>
+      <Format>text/xml</Format>
+      <Format>XML</Format>
+    </Exception>
+    <Layer>
+      <Title><![CDATA[BLM National SMA without PriUnk]]></Title>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-173.286281</westBoundLongitude><eastBoundLongitude>-67.757186</eastBoundLongitude><southBoundLatitude>12.684246</southBoundLatitude><northBoundLatitude>78.833262</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-173.286281" miny="12.684246" maxx="-67.757186" maxy="78.833262"/>
+<BoundingBox CRS="EPSG:4326" minx="12.684246" miny="-173.286281" maxx="78.833262" maxy="-67.757186"/>
+<BoundingBox CRS="EPSG:3857" minx="-19290140.579524" miny="1423680.893363" maxx="-7542695.392503" maxy="14830840.942181"/>
+<BoundingBox CRS="EPSG:102100" minx="-19290140.579524" miny="1423680.893363" maxx="-7542695.392503" maxy="14830840.942181"/>
+      <Layer queryable="1">
+        <Title><![CDATA[FEATURES]]></Title>
+        <Abstract><![CDATA[This group is used to display the symbology of the GIS features.  Labeling is not enabled.  Search and Identify functions are possible, but also available in the 'IDENTIFY' group above.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="71.386935" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+      <Layer queryable="1">
+        <Title><![CDATA[Surface Management Agency]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>Features in this layer are part of the Surface Management Agency (SMA) dataset.</SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="71.386935" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+      <Layer queryable="1">
+        <Name>2</Name>
+        <Title><![CDATA[Local]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-166.648949</westBoundLongitude><eastBoundLongitude>-77.428046</eastBoundLongitude><southBoundLatitude>31.899346</southBoundLatitude><northBoundLatitude>71.325961</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-166.648949" miny="31.899346" maxx="-77.428046" maxy="71.325961"/>
+<BoundingBox CRS="EPSG:4326" minx="31.899346" miny="-166.648949" maxx="71.325961" maxy="-77.428046"/>
+<BoundingBox CRS="EPSG:3857" minx="-18551276.179600" miny="3750105.480500" maxx="-8619250.691000" maxy="11514657.651500"/>
+<BoundingBox CRS="EPSG:102100" minx="-18551276.179600" miny="3750105.480500" maxx="-8619250.691000" maxy="11514657.651500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Local]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=2" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>3</Name>
+        <Title><![CDATA[State]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-176.654242</westBoundLongitude><eastBoundLongitude>-93.576602</eastBoundLongitude><southBoundLatitude>25.887725</southBoundLatitude><northBoundLatitude>71.291814</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-176.654242" miny="25.887725" maxx="-93.576602" maxy="71.291814"/>
+<BoundingBox CRS="EPSG:4326" minx="25.887725" miny="-176.654242" maxx="71.291814" maxy="-93.576602"/>
+<BoundingBox CRS="EPSG:3857" minx="-19665060.260700" miny="2985181.842600" maxx="-10416899.700700" maxy="11502796.109100"/>
+<BoundingBox CRS="EPSG:102100" minx="-19665060.260700" miny="2985181.842600" maxx="-10416899.700700" maxy="11502796.109100"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[State]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=3" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>4</Name>
+        <Title><![CDATA[Other Federal]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-170.351357</westBoundLongitude><eastBoundLongitude>173.210980</eastBoundLongitude><southBoundLatitude>29.869463</southBoundLatitude><northBoundLatitude>71.326772</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-170.351357" miny="29.869463" maxx="173.210980" maxy="71.326772"/>
+<BoundingBox CRS="EPSG:4326" minx="29.869463" miny="-170.351357" maxx="71.326772" maxy="173.210980"/>
+<BoundingBox CRS="EPSG:3857" minx="-18963426.356700" miny="3486781.536500" maxx="19281758.075000" maxy="11514939.693800"/>
+<BoundingBox CRS="EPSG:102100" minx="-18963426.356700" miny="3486781.536500" maxx="19281758.075000" maxy="11514939.693800"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Other Federal]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=4" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>5</Name>
+        <Title><![CDATA[Bureau of Indian Affairs (BIA)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-131.649365</westBoundLongitude><eastBoundLongitude>-67.045124</eastBoundLongitude><southBoundLatitude>25.979253</southBoundLatitude><northBoundLatitude>55.300085</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-131.649365" miny="25.979253" maxx="-67.045124" maxy="55.300085"/>
+<BoundingBox CRS="EPSG:4326" minx="25.979253" miny="-131.649365" maxx="55.300085" maxy="-67.045124"/>
+<BoundingBox CRS="EPSG:3857" minx="-14655140.290300" miny="2996511.584700" maxx="-7463429.101000" maxy="7420325.765600"/>
+<BoundingBox CRS="EPSG:102100" minx="-14655140.290300" miny="2996511.584700" maxx="-7463429.101000" maxy="7420325.765600"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Indian Affairs (BIA)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=5" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>6</Name>
+        <Title><![CDATA[Bureau of Reclamation (USBR)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-123.253052</westBoundLongitude><eastBoundLongitude>-96.473183</eastBoundLongitude><southBoundLatitude>28.906734</southBoundLatitude><northBoundLatitude>48.957615</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-123.253052" miny="28.906734" maxx="-96.473183" maxy="48.957615"/>
+<BoundingBox CRS="EPSG:4326" minx="28.906734" miny="-123.253052" maxx="48.957615" maxy="-96.473183"/>
+<BoundingBox CRS="EPSG:3857" minx="-13720466.937000" miny="3363780.750500" maxx="-10739345.559000" maxy="6267672.535500"/>
+<BoundingBox CRS="EPSG:102100" minx="-13720466.937000" miny="3363780.750500" maxx="-10739345.559000" maxy="6267672.535500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Reclamation (USBR)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=6" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>7</Name>
+        <Title><![CDATA[US Fish and Wildlife (USFW)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>70.170624</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="70.170624"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="70.170624" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11124478.381300"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11124478.381300"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[US Fish and Wildlife (USFW)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=7" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>8</Name>
+        <Title><![CDATA[US Forest Service (USFS)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-150.007928</westBoundLongitude><eastBoundLongitude>-70.765238</eastBoundLongitude><southBoundLatitude>28.883855</southBoundLatitude><northBoundLatitude>61.518551</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-150.007928" miny="28.883855" maxx="-70.765238" maxy="61.518551"/>
+<BoundingBox CRS="EPSG:4326" minx="28.883855" miny="-150.007928" maxx="61.518551" maxy="-70.765238"/>
+<BoundingBox CRS="EPSG:3857" minx="-16698806.113800" miny="3360871.675600" maxx="-7877550.297200" maxy="8745874.559900"/>
+<BoundingBox CRS="EPSG:102100" minx="-16698806.113800" miny="3360871.675600" maxx="-7877550.297200" maxy="8745874.559900"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[US Forest Service (USFS)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=8" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>9</Name>
+        <Title><![CDATA[National Park Service (NPS)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.548168</westBoundLongitude><eastBoundLongitude>-68.037279</eastBoundLongitude><southBoundLatitude>24.849977</southBoundLatitude><northBoundLatitude>68.655388</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.548168" miny="24.849977" maxx="-68.037279" maxy="68.655388"/>
+<BoundingBox CRS="EPSG:4326" minx="24.849977" miny="-167.548168" maxx="68.655388" maxy="-68.037279"/>
+<BoundingBox CRS="EPSG:3857" minx="-18651376.707900" miny="2857328.923500" maxx="-7573875.230600" maxy="10644569.247600"/>
+<BoundingBox CRS="EPSG:102100" minx="-18651376.707900" miny="2857328.923500" maxx="-7573875.230600" maxy="10644569.247600"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[National Park Service (NPS)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=9" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>10</Name>
+        <Title><![CDATA[Bureau of Land Management (BLM)]]></Title>
+        <Abstract><![CDATA[]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.848901</westBoundLongitude><eastBoundLongitude>-77.186685</eastBoundLongitude><southBoundLatitude>24.616409</southBoundLatitude><northBoundLatitude>71.336073</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.848901" miny="24.616409" maxx="-77.186685" maxy="71.336073"/>
+<BoundingBox CRS="EPSG:4326" minx="24.616409" miny="-167.848901" maxx="71.336073" maxy="-77.186685"/>
+<BoundingBox CRS="EPSG:3857" minx="-18684854.140100" miny="2828702.169500" maxx="-8592382.424200" maxy="11518174.258500"/>
+<BoundingBox CRS="EPSG:102100" minx="-18684854.140100" miny="2828702.169500" maxx="-8592382.424200" maxy="11518174.258500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Land Management (BLM)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=10" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>11</Name>
+        <Title><![CDATA[Department Of Defense (DOD)]]></Title>
+        <Abstract><![CDATA[The Department of Defense (DOD) layer has been creaetd by this query: ADMIN_DEPT_CODE='DOD' AND ADMIN_AGENCY_CODE IN ('DOD','USAF','ARMY','USACE','USMC', 'NAVY', Null)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-176.728462</westBoundLongitude><eastBoundLongitude>174.156097</eastBoundLongitude><southBoundLatitude>25.366578</southBoundLatitude><northBoundLatitude>71.323767</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-176.728462" miny="25.366578" maxx="174.156097" maxy="71.323767"/>
+<BoundingBox CRS="EPSG:4326" minx="25.366578" miny="-176.728462" maxx="71.323767" maxy="174.156097"/>
+<BoundingBox CRS="EPSG:3857" minx="-19673322.431200" miny="2920838.099000" maxx="19386968.051700" maxy="11513894.835500"/>
+<BoundingBox CRS="EPSG:102100" minx="-19673322.431200" miny="2920838.099000" maxx="19386968.051700" maxy="11513894.835500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Department Of Defense (DOD)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=11" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>12</Name>
+        <Title><![CDATA[Alaska Native Lands (Patented or Interim Conveyed)]]></Title>
+        <Abstract><![CDATA[SurfaceManagementAgency: The Surface Management Agency (SMA) Geographic Information System (GIS) dataset depicts Federal land for the United States and classifies this land by its active Federal surface managing agency. The SMA feature class covers the continental United States, Alaska, Hawaii, Puerto Rico, Guam, American Samoa and the Virgin Islands. A Federal SMA agency refers to a Federal agency with administrative jurisdiction over the surface of Federal lands. Jurisdiction over the land is defined when the land is either: Withdrawn by some administrative or legislative action, or Acquired or Exchanged by a Federal Agency. This layer is a dynamic assembly of spatial data layers maintained at various federal and local government offices. The GIS data contained in this dataset represents the polygon features that show the boundaries for Surface Management Agency and the surface extent of each Federal agency’s surface administrative jurisdiction. SMA data depicts current withdrawn areas for a particular agency and (when appropriate) includes land that was acquired or exchanged and is located outside of a withdrawal area for that agency. The SMA data do not illustrate land status ownership pattern boundaries or contain land ownership attribute details.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.080122</westBoundLongitude><eastBoundLongitude>179.419461</eastBoundLongitude><southBoundLatitude>51.249481</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.080122" miny="51.249481" maxx="179.419461" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="51.249481" miny="-179.080122" maxx="71.386935" maxy="179.419461"/>
+<BoundingBox CRS="EPSG:3857" minx="-19935107.938500" miny="6665543.206100" maxx="19972883.040400" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19935107.938500" miny="6665543.206100" maxx="19972883.040400" maxy="11535890.138200"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Alaska Native Lands (Patented or Interim Conveyed)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=12" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>13</Name>
+        <Title><![CDATA[Alaska Native Allotment]]></Title>
+        <Abstract><![CDATA[SurfaceManagementAgency: The Surface Management Agency (SMA) Geographic Information System (GIS) dataset depicts Federal land for the United States and classifies this land by its active Federal surface managing agency. The SMA feature class covers the continental United States, Alaska, Hawaii, Puerto Rico, Guam, American Samoa and the Virgin Islands. A Federal SMA agency refers to a Federal agency with administrative jurisdiction over the surface of Federal lands. Jurisdiction over the land is defined when the land is either: Withdrawn by some administrative or legislative action, or Acquired or Exchanged by a Federal Agency. This layer is a dynamic assembly of spatial data layers maintained at various federal and local government offices. The GIS data contained in this dataset represents the polygon features that show the boundaries for Surface Management Agency and the surface extent of each Federal agency’s surface administrative jurisdiction. SMA data depicts current withdrawn areas for a particular agency and (when appropriate) includes land that was acquired or exchanged and is located outside of a withdrawal area for that agency. The SMA data do not illustrate land status ownership pattern boundaries or contain land ownership attribute details.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.848141</westBoundLongitude><eastBoundLongitude>-132.267851</eastBoundLongitude><southBoundLatitude>53.821262</southBoundLatitude><northBoundLatitude>71.208648</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.848141" miny="53.821262" maxx="-132.267851" maxy="71.208648"/>
+<BoundingBox CRS="EPSG:4326" minx="53.821262" miny="-167.848141" maxx="71.208648" maxy="-132.267851"/>
+<BoundingBox CRS="EPSG:3857" minx="-18684769.578500" miny="7136377.934100" maxx="-14723989.859000" maxy="11473994.034300"/>
+<BoundingBox CRS="EPSG:102100" minx="-18684769.578500" miny="7136377.934100" maxx="-14723989.859000" maxy="11473994.034300"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Alaska Native Allotment]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=13" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[LABELS]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>This group layer is used to enable labeling.  There is no symbology on any of the layers in this group for performance reasons.  Turning this layer on will display the label if at a valid zoom/scale level.  </SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="71.386935" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+      <Layer queryable="1">
+        <Title><![CDATA[Surface Management Agency]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>Individual labels for the Surface Management Agency (SMA) features.</SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="71.386935" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11535890.138200"/>
+        <MaxScaleDenominator>708705.357143</MaxScaleDenominator>
+      <Layer queryable="1">
+        <Name>16</Name>
+        <Title><![CDATA[Local]]></Title>
+        <Abstract><![CDATA[Labels for the Local lands]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-166.648949</westBoundLongitude><eastBoundLongitude>-77.428046</eastBoundLongitude><southBoundLatitude>31.899346</southBoundLatitude><northBoundLatitude>71.325961</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-166.648949" miny="31.899346" maxx="-77.428046" maxy="71.325961"/>
+<BoundingBox CRS="EPSG:4326" minx="31.899346" miny="-166.648949" maxx="71.325961" maxy="-77.428046"/>
+<BoundingBox CRS="EPSG:3857" minx="-18551276.179600" miny="3750105.480500" maxx="-8619250.691000" maxy="11514657.651500"/>
+<BoundingBox CRS="EPSG:102100" minx="-18551276.179600" miny="3750105.480500" maxx="-8619250.691000" maxy="11514657.651500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Local]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=16" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>17</Name>
+        <Title><![CDATA[State]]></Title>
+        <Abstract><![CDATA[Labels for the State lands]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-176.654242</westBoundLongitude><eastBoundLongitude>-93.576602</eastBoundLongitude><southBoundLatitude>25.887725</southBoundLatitude><northBoundLatitude>71.291814</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-176.654242" miny="25.887725" maxx="-93.576602" maxy="71.291814"/>
+<BoundingBox CRS="EPSG:4326" minx="25.887725" miny="-176.654242" maxx="71.291814" maxy="-93.576602"/>
+<BoundingBox CRS="EPSG:3857" minx="-19665060.260700" miny="2985181.842600" maxx="-10416899.700700" maxy="11502796.109100"/>
+<BoundingBox CRS="EPSG:102100" minx="-19665060.260700" miny="2985181.842600" maxx="-10416899.700700" maxy="11502796.109100"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[State]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=17" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>18</Name>
+        <Title><![CDATA[Other Federal]]></Title>
+        <Abstract><![CDATA[Labels for the Other Federal Lands]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-170.351357</westBoundLongitude><eastBoundLongitude>173.210980</eastBoundLongitude><southBoundLatitude>29.869463</southBoundLatitude><northBoundLatitude>71.326772</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-170.351357" miny="29.869463" maxx="173.210980" maxy="71.326772"/>
+<BoundingBox CRS="EPSG:4326" minx="29.869463" miny="-170.351357" maxx="71.326772" maxy="173.210980"/>
+<BoundingBox CRS="EPSG:3857" minx="-18963426.356700" miny="3486781.536500" maxx="19281758.075000" maxy="11514939.693800"/>
+<BoundingBox CRS="EPSG:102100" minx="-18963426.356700" miny="3486781.536500" maxx="19281758.075000" maxy="11514939.693800"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Other Federal]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=18" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>19</Name>
+        <Title><![CDATA[Bureau of Indian Affairs (BIA)]]></Title>
+        <Abstract><![CDATA[Labels for the Bureau of Indian Affairs (BIA)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-131.649365</westBoundLongitude><eastBoundLongitude>-67.045124</eastBoundLongitude><southBoundLatitude>25.979253</southBoundLatitude><northBoundLatitude>55.300085</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-131.649365" miny="25.979253" maxx="-67.045124" maxy="55.300085"/>
+<BoundingBox CRS="EPSG:4326" minx="25.979253" miny="-131.649365" maxx="55.300085" maxy="-67.045124"/>
+<BoundingBox CRS="EPSG:3857" minx="-14655140.290300" miny="2996511.584700" maxx="-7463429.101000" maxy="7420325.765600"/>
+<BoundingBox CRS="EPSG:102100" minx="-14655140.290300" miny="2996511.584700" maxx="-7463429.101000" maxy="7420325.765600"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Indian Affairs (BIA)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=19" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>20</Name>
+        <Title><![CDATA[Bureau of Reclamation (USBR)]]></Title>
+        <Abstract><![CDATA[Labels for the Bureau of Reclamation (USBR)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-123.253052</westBoundLongitude><eastBoundLongitude>-96.473183</eastBoundLongitude><southBoundLatitude>28.906734</southBoundLatitude><northBoundLatitude>48.957615</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-123.253052" miny="28.906734" maxx="-96.473183" maxy="48.957615"/>
+<BoundingBox CRS="EPSG:4326" minx="28.906734" miny="-123.253052" maxx="48.957615" maxy="-96.473183"/>
+<BoundingBox CRS="EPSG:3857" minx="-13720466.937000" miny="3363780.750500" maxx="-10739345.559000" maxy="6267672.535500"/>
+<BoundingBox CRS="EPSG:102100" minx="-13720466.937000" miny="3363780.750500" maxx="-10739345.559000" maxy="6267672.535500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Reclamation (USBR)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=20" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>21</Name>
+        <Title><![CDATA[US Fish and Wildlife (USFW)]]></Title>
+        <Abstract><![CDATA[Labels for the United States Fish and Wildlife Service (USFW)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149085</westBoundLongitude><eastBoundLongitude>179.774488</eastBoundLongitude><southBoundLatitude>24.451642</southBoundLatitude><northBoundLatitude>70.170624</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149085" miny="24.451642" maxx="179.774488" maxy="70.170624"/>
+<BoundingBox CRS="EPSG:4326" minx="24.451642" miny="-179.149085" maxx="70.170624" maxy="179.774488"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11124478.381300"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942784.866600" miny="2808540.071200" maxx="20012404.472000" maxy="11124478.381300"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[US Fish and Wildlife (USFW)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=21" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>22</Name>
+        <Title><![CDATA[US Forest Service (USFS)]]></Title>
+        <Abstract><![CDATA[Labels for the United States Forest Service (USFS)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-150.007928</westBoundLongitude><eastBoundLongitude>-70.765238</eastBoundLongitude><southBoundLatitude>28.883855</southBoundLatitude><northBoundLatitude>61.518551</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-150.007928" miny="28.883855" maxx="-70.765238" maxy="61.518551"/>
+<BoundingBox CRS="EPSG:4326" minx="28.883855" miny="-150.007928" maxx="61.518551" maxy="-70.765238"/>
+<BoundingBox CRS="EPSG:3857" minx="-16698806.113800" miny="3360871.675600" maxx="-7877550.297200" maxy="8745874.559900"/>
+<BoundingBox CRS="EPSG:102100" minx="-16698806.113800" miny="3360871.675600" maxx="-7877550.297200" maxy="8745874.559900"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[US Forest Service (USFS)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=22" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>23</Name>
+        <Title><![CDATA[National Park Service (NPS)]]></Title>
+        <Abstract><![CDATA[Labels for the National Park Service (NPS)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.548168</westBoundLongitude><eastBoundLongitude>-68.037279</eastBoundLongitude><southBoundLatitude>24.849977</southBoundLatitude><northBoundLatitude>68.655388</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.548168" miny="24.849977" maxx="-68.037279" maxy="68.655388"/>
+<BoundingBox CRS="EPSG:4326" minx="24.849977" miny="-167.548168" maxx="68.655388" maxy="-68.037279"/>
+<BoundingBox CRS="EPSG:3857" minx="-18651376.707900" miny="2857328.923500" maxx="-7573875.230600" maxy="10644569.247600"/>
+<BoundingBox CRS="EPSG:102100" minx="-18651376.707900" miny="2857328.923500" maxx="-7573875.230600" maxy="10644569.247600"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[National Park Service (NPS)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=23" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>24</Name>
+        <Title><![CDATA[Bureau of Land Management (BLM)]]></Title>
+        <Abstract><![CDATA[Labels for the Bureau of Land Management (BLM)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.848901</westBoundLongitude><eastBoundLongitude>-77.186685</eastBoundLongitude><southBoundLatitude>24.616409</southBoundLatitude><northBoundLatitude>71.336073</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.848901" miny="24.616409" maxx="-77.186685" maxy="71.336073"/>
+<BoundingBox CRS="EPSG:4326" minx="24.616409" miny="-167.848901" maxx="71.336073" maxy="-77.186685"/>
+<BoundingBox CRS="EPSG:3857" minx="-18684854.140100" miny="2828702.169500" maxx="-8592382.424200" maxy="11518174.258500"/>
+<BoundingBox CRS="EPSG:102100" minx="-18684854.140100" miny="2828702.169500" maxx="-8592382.424200" maxy="11518174.258500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Bureau of Land Management (BLM)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=24" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>25</Name>
+        <Title><![CDATA[Department Of Defense (DOD)]]></Title>
+        <Abstract><![CDATA[Labels for the Department of Defense (DOD)]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-176.728462</westBoundLongitude><eastBoundLongitude>174.156097</eastBoundLongitude><southBoundLatitude>25.366578</southBoundLatitude><northBoundLatitude>71.323767</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-176.728462" miny="25.366578" maxx="174.156097" maxy="71.323767"/>
+<BoundingBox CRS="EPSG:4326" minx="25.366578" miny="-176.728462" maxx="71.323767" maxy="174.156097"/>
+<BoundingBox CRS="EPSG:3857" minx="-19673322.431200" miny="2920838.099000" maxx="19386968.051700" maxy="11513894.835500"/>
+<BoundingBox CRS="EPSG:102100" minx="-19673322.431200" miny="2920838.099000" maxx="19386968.051700" maxy="11513894.835500"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Department Of Defense (DOD)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=25" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>26</Name>
+        <Title><![CDATA[Alaska Native Lands (Patented or Interim Conveyed)]]></Title>
+        <Abstract><![CDATA[SurfaceManagementAgency: The Surface Management Agency (SMA) Geographic Information System (GIS) dataset depicts Federal land for the United States and classifies this land by its active Federal surface managing agency. The SMA feature class covers the continental United States, Alaska, Hawaii, Puerto Rico, Guam, American Samoa and the Virgin Islands. A Federal SMA agency refers to a Federal agency with administrative jurisdiction over the surface of Federal lands. Jurisdiction over the land is defined when the land is either: Withdrawn by some administrative or legislative action, or Acquired or Exchanged by a Federal Agency. This layer is a dynamic assembly of spatial data layers maintained at various federal and local government offices. The GIS data contained in this dataset represents the polygon features that show the boundaries for Surface Management Agency and the surface extent of each Federal agency’s surface administrative jurisdiction. SMA data depicts current withdrawn areas for a particular agency and (when appropriate) includes land that was acquired or exchanged and is located outside of a withdrawal area for that agency. The SMA data do not illustrate land status ownership pattern boundaries or contain land ownership attribute details.]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.080122</westBoundLongitude><eastBoundLongitude>179.419461</eastBoundLongitude><southBoundLatitude>51.249481</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.080122" miny="51.249481" maxx="179.419461" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="51.249481" miny="-179.080122" maxx="71.386935" maxy="179.419461"/>
+<BoundingBox CRS="EPSG:3857" minx="-19935107.938500" miny="6665543.206100" maxx="19972883.040400" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19935107.938500" miny="6665543.206100" maxx="19972883.040400" maxy="11535890.138200"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Alaska Native Lands (Patented or Interim Conveyed)]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=26" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1">
+        <Name>27</Name>
+        <Title><![CDATA[Alaska Native Allotment]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>Surface Management Agency: The Surface Management Agency (SMA) Geographic Information System (GIS) dataset depicts Federal land for the United States and classifies this land by its active Federal surface managing agency. The SMA feature class covers the continental United States, Alaska, Hawaii, Puerto Rico, Guam, American Samoa and the Virgin Islands. A Federal SMA agency refers to a Federal agency with administrative jurisdiction over the surface of Federal lands. Jurisdiction over the land is defined when the land is either: Withdrawn by some administrative or legislative action, or Acquired or Exchanged by a Federal Agency. This layer is a dynamic assembly of spatial data layers maintained at various federal and local government offices. The GIS data contained in this dataset represents the polygon features that show the boundaries for Surface Management Agency and the surface extent of each Federal agency’s surface administrative jurisdiction. SMA data depicts current withdrawn areas for a particular agency and (when appropriate) includes land that was acquired or exchanged and is located outside of a withdrawal area for that agency. The SMA data do not illustrate land status ownership pattern boundaries or contain land ownership attribute details.</SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-167.848141</westBoundLongitude><eastBoundLongitude>-132.267851</eastBoundLongitude><southBoundLatitude>53.821262</southBoundLatitude><northBoundLatitude>71.208648</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-167.848141" miny="53.821262" maxx="-132.267851" maxy="71.208648"/>
+<BoundingBox CRS="EPSG:4326" minx="53.821262" miny="-167.848141" maxx="71.208648" maxy="-132.267851"/>
+<BoundingBox CRS="EPSG:3857" minx="-18684769.578500" miny="7136377.934100" maxx="-14723989.859000" maxy="11473994.034300"/>
+<BoundingBox CRS="EPSG:102100" minx="-18684769.578500" miny="7136377.934100" maxx="-14723989.859000" maxy="11473994.034300"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Alaska Native Allotment]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=27" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+      </Layer>
+      <Layer queryable="1">
+        <Title><![CDATA[IDENTIFY]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>This group is used to provide 'identify' access to the features in the service.  There is no symbology enabled to the features on this layer for performance reasons.  Used to quickly 'enable pop-ups' from an ArcGIS Online (AGOL) like product (arcgis.com)</SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149171</westBoundLongitude><eastBoundLongitude>179.774913</eastBoundLongitude><southBoundLatitude>24.396306</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149171" miny="24.396306" maxx="179.774913" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.396306" miny="-179.149171" maxx="71.386935" maxy="179.774913"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942794.488800" miny="2801774.600100" maxx="20012451.780100" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942794.488800" miny="2801774.600100" maxx="20012451.780100" maxy="11535890.138200"/>
+      <Layer queryable="1">
+        <Name>29</Name>
+        <Title><![CDATA[Surface Management Agency]]></Title>
+        <Abstract><![CDATA[<DIV STYLE="text-align:Left;font-size:12pt"><DIV><P><SPAN>This is used to enable an identify or query of all the surface management agency layers.  There is no symbology enabled for performance reasons.  </SPAN></P></DIV></DIV>]]></Abstract>
+<CRS>CRS:84</CRS>
+<CRS>EPSG:4326</CRS>
+<CRS>EPSG:3857</CRS>
+ <!-- alias 3857 -->
+<CRS>EPSG:102100</CRS>
+<EX_GeographicBoundingBox><westBoundLongitude>-179.149171</westBoundLongitude><eastBoundLongitude>179.774913</eastBoundLongitude><southBoundLatitude>24.396306</southBoundLatitude><northBoundLatitude>71.386935</northBoundLatitude></EX_GeographicBoundingBox>
+<BoundingBox CRS="CRS:84" minx="-179.149171" miny="24.396306" maxx="179.774913" maxy="71.386935"/>
+<BoundingBox CRS="EPSG:4326" minx="24.396306" miny="-179.149171" maxx="71.386935" maxy="179.774913"/>
+<BoundingBox CRS="EPSG:3857" minx="-19942794.488800" miny="2801774.600100" maxx="20012451.780100" maxy="11535890.138200"/>
+<BoundingBox CRS="EPSG:102100" minx="-19942794.488800" miny="2801774.600100" maxx="20012451.780100" maxy="11535890.138200"/>
+        <Style>
+          <Name>default</Name>
+          <Title><![CDATA[Surface Management Agency]]></Title>
+          <LegendURL width="18" height="18">
+            <Format>image/png</Format>
+            <OnlineResource xlink:href="https://gis.blm.gov/arcgis/services/lands/BLM_Natl_SMA_Cached_without_PriUnk/MapServer/WMSServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=29" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink" />
+          </LegendURL>
+        </Style>
+      </Layer>
+      </Layer>
+    </Layer>
+  </Capability>
+</WMS_Capabilities>

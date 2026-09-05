@@ -1,0 +1,36 @@
+generated: '2026-09-05'
+method: generated
+source: >-
+  Grounded in openapi/bureau-of-land-management-gbp-hub-search-openapi.json (every operationId
+  verified verbatim against the saved spec),
+  openapi/bureau-of-land-management-arcgis-service-inventory.json,
+  conventions/bureau-of-land-management-conventions.yml and
+  errors/bureau-of-land-management-problem-types.yml.
+note: >-
+  BLM publishes no AGENTS.md and no skill files — searched 2026-09-05. These are API Evangelist
+  generated operating instructions for the three flows this provider actually supports. All
+  three are read-only, because the provider is.
+skills:
+  - file: bureau-of-land-management-find-public-lands-data.md
+    name: Find and download BLM public lands data
+    api: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+    operations:
+      - CollectionController_getSiteCollections_api/search/v1
+      - QueryableController_getSiteCollectionQueryables_api/search/v1
+      - OgcItemController_getSiteCollectionItems_api/search/v1
+      - OgcItemController_getSiteCollectionItemById_api/search/v1
+      - GeoserviceController_featureLayers_api/search/v1
+      - GeoserviceController_featureLayerQuery_api/search/v1
+  - file: bureau-of-land-management-query-national-gis-services.md
+    name: Query BLM's national and state ArcGIS services directly
+    api: openapi/bureau-of-land-management-arcgis-service-inventory.json
+    operations: []
+    note: >-
+      No operationIds because BLM publishes no OpenAPI for the ArcGIS REST surface; the skill is
+      grounded in the probed service inventory and the verbatim WMS GetCapabilities documents.
+  - file: bureau-of-land-management-harvest-open-data-catalog.md
+    name: Harvest BLM's federal open data catalog
+    api: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+    operations:
+      - OgcItemAggregationController_getAggregations_api/search/v1
+      - OgcItemController_getSiteCollectionItems_api/search/v1

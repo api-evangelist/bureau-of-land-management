@@ -1,0 +1,71 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://www.blm.gov/services/geospatial/GISData, https://www.blm.gov/services/geospatial,
+  https://gbp-blm-egis.hub.arcgis.com/data.json, and live probes of gis.blm.gov, 2026-09-05.
+note: |
+  BLM publishes no API versioning policy, no deprecation policy, no SLA and no status page.
+  Searched blm.gov and the GBP Hub 2026-09-05: nothing. This is recorded as an absence with the
+  probes that establish it, not as a gap in our looking.
+
+  What DOES exist as a change signal is the dataset level: every one of the 803 datasets in the
+  DCAT-US catalog carries `issued` and `modified` timestamps, so a consumer can detect data
+  change even though they cannot detect contract change.
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: null
+  policy_published: false
+  note: >-
+    The GBP Hub Search API is /api/search/v1 with info.version 1.0.0. The ArcGIS instances
+    report currentVersion 11.5, which is the Esri product version and moves on upgrade — it is
+    not an API contract version.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No RFC 8594 Sunset or Deprecation header was returned on any probed response, and no
+    deprecation policy page exists. No published contract marks any operation deprecated. DO NOT
+    wire a Deprecation pointer for this provider.
+deprecated_operations: []
+sla:
+  url: null
+  uptime_target: null
+  note: No service-level commitment is published for any BLM API surface.
+status_page: null
+status_page_note: >-
+  BLM operates no status page. The GBP Hub and the ArcGIS Online organization run on Esri's
+  platform, whose status page is https://status.arcgis.com — that is ESRI'S page, not BLM's, and
+  it says nothing about the 13 ArcGIS Server instances BLM runs itself on gis.blm.gov. No
+  StatusPage pointer is wired, because wiring one would credit BLM with a surface it does not
+  publish.
+observed_availability:
+  - host: gis.blm.gov
+    result: all 13 REST instances answered 200, 2026-09-05
+  - host: gbp-blm-egis.hub.arcgis.com
+    result: OGC landing page, conformance, collections, OpenAPI and data.json all 200, 2026-09-05
+  - host: muleapi.blm.gov
+    result: >-
+      HTTP 502 "error code: 502" on every path tried (/, /home, /policy/manuals, /openapi.json,
+      /swagger.json, /.well-known/security.txt), 2026-09-05. A BLM API-gateway host that
+      resolves and terminates TLS but whose origin was unreachable throughout this pass. Search
+      engines still index blm.gov content under this hostname, so it has served content in the
+      past. Recorded, not published as an API.
+  - host: navigator.blm.gov
+    result: >-
+      DNS NXDOMAIN, 2026-09-05 (curl exit 6). Referenced by third-party pages and by BLM search
+      results; the hostname no longer resolves.
+data_freshness:
+  mechanism: DCAT-US dataset timestamps
+  evidence: >-
+    https://gbp-blm-egis.hub.arcgis.com/data.json, 803 datasets, each with dct issued/modified;
+    the most recently modified dataset in the 2026-09-05 pull was stamped 2026-09-04T17:49:38Z.
+  note: >-
+    This is the only machine-readable change signal BLM publishes. It tracks DATA, not the
+    contract.
+changelog_published: false
+changelog_note: >-
+  No API changelog, release notes or version history exists on any BLM surface. The BLM
+  newsroom (https://www.blm.gov/blog) is organizational news, not API change. No ChangeLog
+  artifact is written because there is nothing dated to structure.

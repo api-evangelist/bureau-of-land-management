@@ -1,0 +1,119 @@
+generated: '2026-09-05'
+method: probed
+source: >-
+  well-known/bureau-of-land-management-mlrs-openid-configuration.json,
+  well-known/bureau-of-land-management-glorecords-openid-configuration.json,
+  well-known/bureau-of-land-management-blm-egis-arcgis-oauth-authorization-server.json
+note: |
+  READ THIS BEFORE USING THE SCOPE LIST. BLM authors none of these scopes. MLRS and GLO Records
+  run on Salesforce Experience Cloud, and their discovery documents advertise the stock
+  Salesforce platform scope set — identical strings on both hosts, including scopes for
+  products BLM plainly does not operate through these sites (pardot_api, einstein_gpt_api,
+  cdp_*). They describe what the PLATFORM can issue, not what BLM grants.
+
+  BLM publishes no scopes/permissions reference page of its own. Both surfaces are, in
+  practice, closed: every non-discovery path on both hosts answered 401 to an anonymous
+  client on 2026-09-05, and there is no self-service developer registration.
+
+  The public geospatial surface — the GBP Hub Search API, the 13 ArcGIS Server instances and
+  the WMS endpoints — has NO scope model because it has no authentication at all.
+schemes:
+  - name: mlrs-oidc
+    surface: https://mlrs.blm.gov
+    source: well-known/bureau-of-land-management-mlrs-openid-configuration.json
+    scope_authorship: salesforce-platform-default
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://mlrs.blm.gov/services/oauth2/authorize
+        tokenUrl: https://mlrs.blm.gov/services/oauth2/token
+  - name: glorecords-oidc
+    surface: https://glorecords.blm.gov
+    source: well-known/bureau-of-land-management-glorecords-openid-configuration.json
+    scope_authorship: salesforce-platform-default
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://glorecords.blm.gov/services/oauth2/authorize
+        tokenUrl: https://glorecords.blm.gov/services/oauth2/token
+  - name: arcgis-online-oauth2
+    surface: https://blm-egis.maps.arcgis.com
+    source: well-known/bureau-of-land-management-blm-egis-arcgis-oauth-authorization-server.json
+    scope_authorship: esri-platform-default
+    note: The RFC 8414 document advertises no scopes_supported array at all.
+    flows:
+      - flow: authorizationCode
+        authorizationUrl: https://blm-egis.maps.arcgis.com/sharing/rest/oauth2/authorize
+        tokenUrl: https://blm-egis.maps.arcgis.com/sharing/rest/oauth2/token
+scopes:
+  - scope: openid
+    description: OpenID Connect — issue an ID token.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: profile
+    description: Basic profile claims.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: email
+    description: Email claim.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: address
+    description: Address claim.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: phone
+    description: Phone claim.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: id
+    description: Identity URL access.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: api
+    description: Access the platform data API on behalf of the user.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: web
+    description: Web session access.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: refresh_token
+    description: Issue a refresh token.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: offline_access
+    description: Long-lived access (alias of refresh_token on this platform).
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: content
+    description: Content/document access.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+  - scope: full
+    description: Full access to everything the user can reach.
+    flows: [authorizationCode]
+    sources: [mlrs-oidc, glorecords-oidc]
+platform_default_scopes_not_wired_by_blm:
+  - custom_permissions
+  - visualforce
+  - lightning
+  - chatter_api
+  - wave_api
+  - eclair_api
+  - interaction_api
+  - chatbot_api
+  - einstein_gpt_api
+  - sfap_api
+  - scrt_api
+  - pardot_api
+  - user_registration_api
+  - pwdless_login_api
+  - forgot_password
+  - data_cloud_user_claims
+  - mcp_api
+  - cdp_api
+  - cdp_ingest_api
+  - cdp_query_api
+  - cdp_segment_api
+  - cdp_profile_api
+  - cdp_identityresolution_api
+  - cdp_calculated_insight_api

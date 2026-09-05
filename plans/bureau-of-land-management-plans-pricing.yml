@@ -1,163 +1,40 @@
-specification: API Commons Plans
-specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+generated: '2026-09-05'
+method: searched
+source: >-
+  https://www.blm.gov/services/geospatial/GISData, https://www.blm.gov/services/geospatial,
+  https://gbp-blm-egis.hub.arcgis.com/, https://www.blm.gov/services/land-records/glo,
+  searched 2026-09-05.
 provider: Bureau of Land Management
 providerId: bureau-of-land-management
-created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-04'
-tags:
-  - Environment
-  - Federal Government
-  - Land
-  - Resources
-  - GIS
-  - Geospatial
-  - Mining
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
-plans:
-  - id: bureau-of-land-management-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Bureau of Land Management API surface. Intended for evaluation,
-      prototyping, and low-volume integrations. Real limits and pricing must be reconciled with the provider's
-      published plan documentation.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: BLM Geospatial Business Platform (GBP) Hub
-      - name: BLM Mineral and Land Records System (MLRS)
-      - name: BLM General Land Office Records
-      - name: BLM ePlanning
-  - id: bureau-of-land-management-pro
-    name: Professional
-    type: paid
-    description: Production tier for Bureau of Land Management. Provides higher quotas, priority support,
-      and access to the broader API portfolio. Pricing placeholder; align with the provider's pricing
-      page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
-        timeFrame: month
-        geo: global
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: global
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1000
-        price: TBD
-        userMultiplied: false
-    elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: BLM Geospatial Business Platform (GBP) Hub
-      - name: BLM Mineral and Land Records System (MLRS)
-      - name: BLM General Land Office Records
-      - name: BLM ePlanning
-  - id: bureau-of-land-management-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Bureau of Land Management. Includes dedicated capacity, contractual
-      SLAs, security review, data residency options, and named technical account management.
-    entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: -1
-        timeFrame: month
-        geo: configurable
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://blm-egis.maps.arcgis.com/sharing/rest/
-        unit: 1
-        price: custom
-        userMultiplied: false
-    elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: BLM Geospatial Business Platform (GBP) Hub
-      - name: BLM Mineral and Land Records System (MLRS)
-      - name: BLM General Land Office Records
-      - name: BLM ePlanning
+note: |
+  SUPERSEDES a scaffold. This file previously carried three invented tiers — Free (1,000
+  requests/month), Professional (100,000/month, price "TBD", overage "TBD") and Enterprise
+  (custom, dedicated account manager, contractual SLA) — written by a 2026-05-04 bulk sweep.
+  BLM sells none of that and never has.
+
+  plan_count is 0 because there are no plans. BLM is a US federal bureau; its geospatial data
+  and APIs are public-domain public records offered at no charge, with no account, no key, no
+  quota and no commercial tier. That is the whole commercial model, and it is the correct
+  answer rather than a missing one.
+plan_count: 0
+plans: []
+pricing_model: free-public-domain
+sign_up_required: false
+api_key_required: false
+free_tier: true
+paid_tiers: false
+cost_note: >-
+  Every public surface — the GBP Hub Search API, the 13 ArcGIS Server instances, the WMS
+  endpoints, data.json and the DCAT/RSS feeds — was called anonymously and free of charge on
+  2026-09-05. No pricing page, no plans page, no billing surface and no metering exists on any
+  BLM host.
+paid_adjacent_services:
+  - name: GLO Records certified copies
+    note: >-
+      GLO Records lets the public order certified paper copies of land patents and survey plats
+      for a fee. That is a document-fulfilment service transacted through a login, not an API
+      plan, and no price list is published in machine-readable form.
+    url: https://www.blm.gov/services/land-records/glo
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

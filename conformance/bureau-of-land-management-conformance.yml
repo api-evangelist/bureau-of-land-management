@@ -1,0 +1,150 @@
+generated: '2026-09-05'
+method: searched
+source: >-
+  Live probes 2026-09-05 of https://gbp-blm-egis.hub.arcgis.com/api/search/v1/conformance,
+  /data.json, /api/feed/dcat-ap/2.1.1.json, the 13 ArcGIS Server REST instances on
+  https://gis.blm.gov, the WMS GetCapabilities documents saved verbatim in openapi/, and the
+  /.well-known/ documents saved verbatim in well-known/.
+note: |
+  Every entry below was read out of a document BLM actually serves, not out of a marketing
+  claim. The OGC classes are quoted from the conformsTo[] array returned by the GBP Hub's own
+  OGC API landing page and saved verbatim as
+  conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json.
+
+  BLM publishes no certification programme of its own — no trust centre, no SOC 2 / ISO 27001
+  / FedRAMP statement was found on blm.gov — so NO Compliance pointer is wired for this
+  provider. The underlying ArcGIS Online platform carries Esri's FedRAMP authorization, but
+  that is Esri's certification and would be a false claim on BLM's behalf.
+standards:
+  - id: ogc-api-common-1.0-core
+    conforms: true
+    evidence: >-
+      conformsTo carries http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/core at
+      https://gbp-blm-egis.hub.arcgis.com/api/search/v1/conformance (HTTP 200,
+      application/json)
+  - id: ogc-api-common-1.0-json
+    conforms: true
+    evidence: conformsTo carries http://www.opengis.net/spec/ogcapi-common-1/1.0/conf/json
+  - id: ogc-api-common-2.0-collections
+    conforms: true
+    evidence: >-
+      conformsTo carries http://www.opengis.net/spec/ogcapi-common-2/0.0/conf/collections;
+      /api/search/v1/collections returns the dataset/document/site collections (saved as
+      conformance/bureau-of-land-management-gbp-hub-ogc-collections.json)
+  - id: ogc-api-features-1.0-core
+    conforms: true
+    evidence: conformsTo carries http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core
+  - id: ogc-api-features-1.0-geojson
+    conforms: true
+    evidence: conformsTo carries http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson
+  - id: ogc-api-features-1.0-oas30
+    conforms: true
+    evidence: >-
+      conformsTo carries http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30 and the
+      landing page's service-desc link resolves to a real OpenAPI 3.0.0 document
+      (https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json, saved as
+      openapi/bureau-of-land-management-gbp-hub-search-openapi.json)
+  - id: ogc-api-records-1.0-core
+    conforms: true
+    evidence: conformsTo carries http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/core
+  - id: ogc-api-records-1.0-json
+    conforms: true
+    evidence: conformsTo carries http://www.opengis.net/spec/ogcapi-records-1/1.0/conf/json
+  - id: ogc-wms-1.3.0
+    conforms: true
+    evidence: >-
+      42 of the 46 national ArcGIS services advertise the WMSServer extension; WMS_Capabilities
+      version="1.3.0" fetched HTTP 200 from
+      https://gis.blm.gov/arcgis/services/<service>/MapServer/WMSServer?service=WMS&request=GetCapabilities
+      for seven marquee national datasets and saved verbatim in openapi/ (SMA, PLSS CadNSDI,
+      Admin Unit, Recreation, NLCS, Grazing Allotment, GTLF)
+  - id: ogc-wfs
+    conforms: false
+    evidence: >-
+      No national ArcGIS service advertises the WFSServer extension (0 of 46 checked
+      2026-09-05); WFS is not published on this surface
+  - id: openapi-3.0.0
+    conforms: true
+    evidence: >-
+      openapi 3.0.0, info.title "BLM GBP Hub Search API", 17 paths, served at
+      https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - id: geojson-rfc7946
+    conforms: true
+    evidence: >-
+      OGC API items are served as application/geo+json; the ArcGIS FeatureServer layers accept
+      f=geojson
+  - id: esri-arcgis-rest
+    conforms: true
+    evidence: >-
+      13 ArcGIS Server 11.5 REST instances on gis.blm.gov (national + 12 state), 785 services;
+      every /rest/info reports currentVersion 11.5 and authInfo.isTokenBasedSecurity false
+  - id: rfc9116-security-txt
+    conforms: true
+    evidence: >-
+      https://www.blm.gov/.well-known/security.txt HTTP 200 text/plain with Contact, Expires,
+      Policy, Hiring and Preferred-Languages fields
+  - id: openid-connect-discovery
+    conforms: true
+    evidence: >-
+      /.well-known/openid-configuration HTTP 200 on both mlrs.blm.gov and glorecords.blm.gov,
+      issuer set to the BLM host itself; saved verbatim in well-known/
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: >-
+      /.well-known/oauth-authorization-server HTTP 200 on blm-egis.maps.arcgis.com (the BLM
+      ArcGIS Online organization), issuer https://blm-egis.maps.arcgis.com
+  - id: oauth2
+    conforms: true
+    evidence: >-
+      authorization_code and implicit grants advertised on the BLM ArcGIS Online organization;
+      authorization_code, refresh_token, token introspection and revocation advertised on the
+      MLRS and GLO Records discovery documents
+  - id: rfc7636-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported ["S256"] on the BLM ArcGIS Online organization
+  - id: rfc7662-token-introspection
+    conforms: true
+    evidence: introspection_endpoint advertised at /services/oauth2/introspect on mlrs.blm.gov and glorecords.blm.gov
+  - id: rfc7009-token-revocation
+    conforms: true
+    evidence: revocation_endpoint advertised at /services/oauth2/revoke on mlrs.blm.gov and glorecords.blm.gov
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      No surface returns application/problem+json. The GBP Hub Search API returns
+      {message,error,statusCode}; ArcGIS Server returns {"error":{"code","message","details"}}
+  - id: rfc6570-uri-template
+    conforms: false
+    evidence: no templated links advertised
+domain_standards:
+  - id: project-open-data-dcat-us-1.1
+    name: Project Open Data / DCAT-US v1.1 (OMB M-13-13 federal open data catalog)
+    conforms: true
+    evidence: >-
+      https://gbp-blm-egis.hub.arcgis.com/data.json HTTP 200 application/json, 4.8 MB, 803
+      datasets. The document declares itself:
+      "@context":"https://project-open-data.cio.gov/v1.1/schema/catalog.jsonld",
+      "@type":"dcat:Catalog",
+      "conformsTo":"https://project-open-data.cio.gov/v1.1/schema", and every dataset carries
+      publisher.name "Bureau of Land Management". This is the machine-readable inventory a US
+      federal agency is required to publish, and it is the domain standard for this provider's
+      sector — an integrator that already speaks DCAT-US needs no bespoke connector.
+    also_served_at: https://gbp-blm-egis.hub.arcgis.com/api/feed/dcat-us/1.1.json
+  - id: dcat-ap-2.1.1
+    name: DCAT Application Profile for European data portals 2.1.1
+    conforms: true
+    evidence: >-
+      https://gbp-blm-egis.hub.arcgis.com/api/feed/dcat-ap/2.1.1.json HTTP 200, 4.3 MB JSON-LD
+      with the dcat/dct/foaf/vcard context
+  - id: georss
+    conforms: true
+    evidence: >-
+      https://gbp-blm-egis.hub.arcgis.com/api/feed/rss/2.0 HTTP 200 application/rss+xml with
+      xmlns:georss and xmlns:gml declared, channel title "BLM GBP Hub"
+compliance_program:
+  published: false
+  note: >-
+    Searched blm.gov 2026-09-05 for a trust centre, certification page or compliance
+    statement — none exists. BLM is a US federal bureau; its assurance posture is FISMA/NIST
+    800-53 through the Department of the Interior, which it does not publish as a
+    machine-readable or linkable compliance page. No Compliance pointer wired.
