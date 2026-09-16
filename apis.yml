@@ -9,8 +9,8 @@ tags:
 - GIS
 - Geospatial
 - Mining
-- Public-Lands
-- Open-Data
+- Public Lands
+- Open Data
 - OGC
 - Cadastral
 - Recreation
@@ -65,7 +65,7 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/bureau-of-land-management.png
 access: 3rd-Party
 created: '2024-11-30'
-modified: '2026-09-05'
+modified: '2026-09-16'
 position: Producing
 description: 'The Bureau of Land Management (BLM) is the U.S. Department of the Interior bureau that administers
   245 million surface acres of public land and 700 million acres of subsurface mineral estate — about
@@ -201,60 +201,6 @@ apis:
   - Land use planning research
   - Policy development support
   baseURL: https://eplanning.blm.gov
-- aid: bureau-of-land-management:blm-gbp-hub-search-api
-  name: BLM GBP Hub Search API (OGC API - Records)
-  tags:
-  - Federal-Government
-  - Geospatial
-  - GIS
-  - Open-Data
-  - OGC
-  - Search
-  tags_raw:
-  - Federal Government
-  - Geospatial
-  - GIS
-  - Open Data
-  - OGC
-  - Search
-  humanURL: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/
-  baseURL: https://gbp-blm-egis.hub.arcgis.com
-  description: The only OpenAPI the Bureau of Land Management serves. A 17-operation OGC API - Records
-    catalog over BLM's 803 published geospatial datasets, with keyword, bounding-box and CQL2 filtering,
-    facet aggregation, related/connected record traversal, and an ArcGIS FeatureServer projection that
-    takes a caller from a search result straight to queryable features. Anonymous — no key, no plan, no
-    quota. The contract names itself "BLM GBP Hub Search API" and the catalog it serves carries publisher
-    "Bureau of Land Management" on every record; the software underneath is Esri ArcGIS Hub running as
-    BLM's tenant.
-  properties:
-  - url: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
-    type: OpenAPI
-  - url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
-    type: APIReference
-  - url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
-    type: Conformance
-  - url: overlays/bureau-of-land-management-gbp-hub-search-overlay.yaml
-    type: Overlay
-  - url: mcp/bureau-of-land-management-tool-crosswalk.yml
-    type: ToolCrosswalk
-  - url: https://gbp-blm-egis.hub.arcgis.com/
-    type: Portal
-  - url: https://gbp-blm-egis.hub.arcgis.com/data.json
-    type: DataAPI
-  features:
-  - OGC API - Records 1.0
-  - OGC API - Features 1.0
-  - CQL2 filtering
-  - Bounding-box search
-  - Facet aggregation
-  - GeoJSON output
-  - Anonymous access
-  - DCAT-US 1.1 catalog feed
-  useCases:
-  - Public lands dataset discovery
-  - Bulk open-data harvesting
-  - Bounding-box search for land status
-  - Feeding a geospatial agent or MCP server
 - aid: bureau-of-land-management:blm-arcgis-gis-services
   name: BLM National and State ArcGIS REST / OGC WMS Services
   tags:
@@ -333,6 +279,166 @@ apis:
   - Recreation site mapping
   - Mineral and cadastral research
   - State-level BLM data extraction
+- aid: bureau-of-land-management:bureau-of-land-management-catalog-api
+  name: Bureau of Land Management Catalog API
+  description: The Catalog API from Bureau of Land Management — 1 operation(s) for catalog.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-catalog-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-collection-api
+  name: Bureau of Land Management Collection API
+  description: The Collection API from Bureau of Land Management — 2 operation(s) for collection.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - Collection
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-collection-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-geoservice-beta-api
+  name: Bureau of Land Management Geoservice Beta API
+  description: The Geoservice-Beta API from Bureau of Land Management — 6 operation(s) for geoservice-beta.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - Geoservice-Beta
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-geoservice-beta-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-ogcitem-api
+  name: Bureau of Land Management Ogc Item API
+  description: The OgcItem API from Bureau of Land Management — 4 operation(s) for ogcitem.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - OgcItem
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-ogcitem-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-ogcitemaggregation-api
+  name: Bureau of Land Management Ogc Item Aggregation API
+  description: The OgcItemAggregation API from Bureau of Land Management — 1 operation(s) for ogcitemaggregation.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - OgcItemAggregation
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-ogcitemaggregation-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-ogcroot-api
+  name: Bureau of Land Management Ogc Root API
+  description: The OgcRoot API from Bureau of Land Management — 1 operation(s) for ogcroot.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - OgcRoot
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-ogcroot-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-ogcrootconformance-api
+  name: Bureau of Land Management Ogc Root Conformance API
+  description: The OgcRootConformance API from Bureau of Land Management — 1 operation(s) for ogcrootconformance.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - OgcRootConformance
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-ogcrootconformance-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
+- aid: bureau-of-land-management:bureau-of-land-management-queryable-api
+  name: Bureau of Land Management Queryable API
+  description: The Queryable API from Bureau of Land Management — 1 operation(s) for queryable.
+  humanURL: https://gbp-blm-egis.hub.arcgis.com/
+  baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
+  tags:
+  - Queryable
+  properties:
+  - type: OpenAPI
+    url: openapi/bureau-of-land-management-queryable-api-openapi.yml
+  - type: APIReference
+    url: https://gbp-blm-egis.hub.arcgis.com/api/search/definition/?f=json
+  - type: Conformance
+    url: conformance/bureau-of-land-management-gbp-hub-ogc-conformance.json
+  - type: ToolCrosswalk
+    url: mcp/bureau-of-land-management-tool-crosswalk.yml
+  - type: Portal
+    url: https://gbp-blm-egis.hub.arcgis.com/
+  - type: DataAPI
+    url: https://gbp-blm-egis.hub.arcgis.com/data.json
 common:
 - type: AgenticAccess
   url: agentic-access/bureau-of-land-management-agentic-access.yml
@@ -349,7 +455,7 @@ common:
 - type: Data Portal
   url: https://catalog.data.gov/dataset?organization=blm-gov
 - type: OpenAPI
-  url: openapi/bureau-of-land-management-gbp-hub-search-openapi.json
+  url: openapi/_original/bureau-of-land-management-gbp-hub-search-openapi.json
 - type: Conformance
   url: conformance/bureau-of-land-management-conformance.yml
 - type: WellKnown
