@@ -1,0 +1,42 @@
+{
+  "provider": "bureau-of-land-management",
+  "sources": [
+    "_original/bureau-of-land-management-gbp-hub-search-openapi.json"
+  ],
+  "outputs": [
+    "bureau-of-land-management-catalog-api-openapi.yml",
+    "bureau-of-land-management-collection-api-openapi.yml",
+    "bureau-of-land-management-geoservice-beta-api-openapi.yml",
+    "bureau-of-land-management-ogcitem-api-openapi.yml",
+    "bureau-of-land-management-ogcitemaggregation-api-openapi.yml",
+    "bureau-of-land-management-ogcroot-api-openapi.yml",
+    "bureau-of-land-management-ogcrootconformance-api-openapi.yml",
+    "bureau-of-land-management-queryable-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: Catalog",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: Collection",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: Geoservice-Beta",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: OgcItem",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: OgcItemAggregation",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: OgcRoot",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: OgcRootConformance",
+    "bureau-of-land-management-gbp-hub-search-openapi.json: declared missing tag: Queryable",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "bureau-of-land-management-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-collection-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-geoservice-beta-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-ogcitem-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-ogcitemaggregation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-ogcroot-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-ogcrootconformance-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bureau-of-land-management-queryable-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}
