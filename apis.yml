@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/
 name: Bureau of Land Management
 tags:
 - Environment
-- Federal-Government
+- Federal Government
 - Land
 - Resources
 - GIS
@@ -37,6 +37,7 @@ tags_raw:
 - DCAT
 - Conservation
 - Mapping
+- Federal-Government
 type: Index
 kind: government
 deliveryModel:
@@ -81,7 +82,7 @@ apis:
 - aid: bureau-of-land-management:blm-geospatial-business-platform
   name: BLM Geospatial Business Platform (GBP) Hub
   tags:
-  - Federal-Government
+  - Federal Government
   - Geospatial
   - GIS
   - Land
@@ -90,6 +91,7 @@ apis:
   - Geospatial
   - GIS
   - Land
+  - Federal-Government
   humanURL: https://gbp-blm-egis.hub.arcgis.com/
   baseURL: https://blm-egis.maps.arcgis.com/sharing/rest/
   properties:
@@ -118,7 +120,7 @@ apis:
 - aid: bureau-of-land-management:blm-mineral-land-records
   name: BLM Mineral and Land Records System (MLRS)
   tags:
-  - Federal-Government
+  - Federal Government
   - Land
   - Mining
   - Minerals
@@ -127,6 +129,7 @@ apis:
   - Land
   - Mining
   - Minerals
+  - Federal-Government
   humanURL: https://mlrs.blm.gov/s/
   properties:
   - url: https://mlrs.blm.gov/s/
@@ -148,13 +151,14 @@ apis:
 - aid: bureau-of-land-management:blm-general-land-office-records
   name: BLM General Land Office Records
   tags:
-  - Federal-Government
+  - Federal Government
   - Land
   - Historical Records
   tags_raw:
   - Federal Government
   - Land
   - Historical Records
+  - Federal-Government
   humanURL: https://glorecords.blm.gov/default.aspx
   properties:
   - url: https://glorecords.blm.gov/default.aspx
@@ -176,13 +180,14 @@ apis:
 - aid: bureau-of-land-management:blm-eplanning
   name: BLM ePlanning
   tags:
-  - Federal-Government
+  - Federal Government
   - Land Use Planning
   - Environmental
   tags_raw:
   - Federal Government
   - Land Use Planning
   - Environmental
+  - Federal-Government
   humanURL: https://eplanning.blm.gov/
   properties:
   - url: https://eplanning.blm.gov/
@@ -204,7 +209,7 @@ apis:
 - aid: bureau-of-land-management:blm-arcgis-gis-services
   name: BLM National and State ArcGIS REST / OGC WMS Services
   tags:
-  - Federal-Government
+  - Federal Government
   - Geospatial
   - GIS
   - Land
@@ -219,6 +224,7 @@ apis:
   - Cadastral
   - OGC
   - WMS
+  - Federal-Government
   humanURL: https://www.blm.gov/services/geospatial/GISData
   baseURL: https://gis.blm.gov/arcgis/rest/services
   description: 'BLM''s own ArcGIS Server estate, operated on blm.gov infrastructure rather than a hosted
