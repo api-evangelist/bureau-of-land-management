@@ -61,68 +61,39 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    ItemSearchFiltersBlockDto:
+    CollectionDto:
       type: object
       properties:
-        operation:
+        id:
           type: string
-          enum:
-          - AND
-          - OR
-          default: AND
-        predicates:
-          type: array
-          items:
-            $ref: '#/components/schemas/ItemSearchFiltersDto'
-      required:
-      - predicates
-    EnvelopeDto:
-      type: object
-      properties:
-        bbox:
-          type: array
-          minItems: 4
-          items:
-            type: number
+          example: '12345'
         type:
           type: string
-          description: Type of geometry filter, must be "Envelope"
           enum:
-          - Envelope
-        coordinates:
-          description: Coordinates in either 2d bbox [xmin,ymin,xmax,ymax] or envelope [[xmin,ymax],[xmax,ymin]] formats
-          anyOf:
-          - type: array
-            minItems: 4
-            maxItems: 4
-            items:
-              type: number
-          - type: array
-            minItems: 2
-            maxItems: 2
-            items:
-              type: array
-              minItems: 2
-              maxItems: 2
-              items:
-                type: number
+          - Collection
+        title:
+          type: string
+          example: Collection Title
+        description:
+          type: string
+          example: Collection description
+        itemType:
+          type: string
+        crs:
+          type: array
+          items:
+            type: string
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemSearchFiltersBlockDto'
       required:
+      - id
       - type
-      - coordinates
-    RangeParamsEpoch:
-      type: object
-      properties:
-        from:
-          type: number
-          description: epoch time in milliseconds
-          example: 160000000
-        to:
-          type: number
-          description: epoch time in milliseconds
-          example: 170000000
-      required:
-      - from
-      - to
+      - title
+      - description
+      - itemType
+      - crs
     CollectionsResponseLinksDto:
       type: object
       properties:
@@ -139,6 +110,44 @@ components:
       - type
       - title
       - href
+    CollectionWithLinksDto:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '12345'
+        type:
+          type: string
+          enum:
+          - Collection
+        title:
+          type: string
+          example: Collection Title
+        description:
+          type: string
+          example: Collection description
+        itemType:
+          type: string
+        crs:
+          type: array
+          items:
+            type: string
+        filters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ItemSearchFiltersBlockDto'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionDtoLink'
+      required:
+      - id
+      - type
+      - title
+      - description
+      - itemType
+      - crs
+      - links
     ItemSearchFiltersDto:
       type: object
       properties:
@@ -940,95 +949,42 @@ components:
                   type: string
         boundary:
           $ref: '#/components/schemas/GeometryFilterDto'
-    CollectionDto:
+    RangeParamsEpoch:
       type: object
       properties:
-        id:
-          type: string
-          example: '12345'
-        type:
-          type: string
-          enum:
-          - Collection
-        title:
-          type: string
-          example: Collection Title
-        description:
-          type: string
-          example: Collection description
-        itemType:
-          type: string
-        crs:
-          type: array
-          items:
-            type: string
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/ItemSearchFiltersBlockDto'
+        from:
+          type: number
+          description: epoch time in milliseconds
+          example: 160000000
+        to:
+          type: number
+          description: epoch time in milliseconds
+          example: 170000000
       required:
-      - id
-      - type
-      - title
-      - description
-      - itemType
-      - crs
-    GeometryFilterDto:
+      - from
+      - to
+    CollectionsResponseDto:
       type: object
       properties:
-        relation:
-          type: string
-          description: Type of relation, defaults to "intersects"
-          enum:
-          - intersects
-          - disjoint
-          - within
-          - contains
-        geometry:
-          anyOf:
-          - $ref: '#/components/schemas/EnvelopeDto'
-          allOf:
-          - $ref: '#/components/schemas/GeometryDto'
-      required:
-      - geometry
-    CollectionWithLinksDto:
-      type: object
-      properties:
-        id:
-          type: string
-          example: '12345'
-        type:
-          type: string
-          enum:
-          - Collection
-        title:
-          type: string
-          example: Collection Title
-        description:
-          type: string
-          example: Collection description
-        itemType:
-          type: string
-        crs:
+        collections:
           type: array
           items:
-            type: string
-        filters:
-          type: array
-          items:
-            $ref: '#/components/schemas/ItemSearchFiltersBlockDto'
+            $ref: '#/components/schemas/CollectionDto'
         links:
           type: array
           items:
-            $ref: '#/components/schemas/CollectionDtoLink'
+            $ref: '#/components/schemas/CollectionsResponseLinksDto'
       required:
-      - id
-      - type
-      - title
-      - description
-      - itemType
-      - crs
+      - collections
       - links
+    GeometryDto:
+      type: object
+      properties:
+        bbox:
+          type: array
+          minItems: 4
+          items:
+            type: number
     CollectionDtoLink:
       type: object
       properties:
@@ -1048,7 +1004,7 @@ components:
       - title
       - href
       - hreflang
-    GeometryDto:
+    EnvelopeDto:
       type: object
       properties:
         bbox:
@@ -1056,17 +1012,61 @@ components:
           minItems: 4
           items:
             type: number
-    CollectionsResponseDto:
+        type:
+          type: string
+          description: Type of geometry filter, must be "Envelope"
+          enum:
+          - Envelope
+        coordinates:
+          description: Coordinates in either 2d bbox [xmin,ymin,xmax,ymax] or envelope [[xmin,ymax],[xmax,ymin]] formats
+          anyOf:
+          - type: array
+            minItems: 4
+            maxItems: 4
+            items:
+              type: number
+          - type: array
+            minItems: 2
+            maxItems: 2
+            items:
+              type: array
+              minItems: 2
+              maxItems: 2
+              items:
+                type: number
+      required:
+      - type
+      - coordinates
+    ItemSearchFiltersBlockDto:
       type: object
       properties:
-        collections:
+        operation:
+          type: string
+          enum:
+          - AND
+          - OR
+          default: AND
+        predicates:
           type: array
           items:
-            $ref: '#/components/schemas/CollectionDto'
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollectionsResponseLinksDto'
+            $ref: '#/components/schemas/ItemSearchFiltersDto'
       required:
-      - collections
-      - links
+      - predicates
+    GeometryFilterDto:
+      type: object
+      properties:
+        relation:
+          type: string
+          description: Type of relation, defaults to "intersects"
+          enum:
+          - intersects
+          - disjoint
+          - within
+          - contains
+        geometry:
+          anyOf:
+          - $ref: '#/components/schemas/EnvelopeDto'
+          allOf:
+          - $ref: '#/components/schemas/GeometryDto'
+      required:
+      - geometry

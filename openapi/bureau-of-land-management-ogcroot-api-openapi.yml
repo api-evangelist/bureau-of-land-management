@@ -54,6 +54,26 @@ components:
       - title
       - description
       - links
+    OgcApiLandingPageLinkDto:
+      type: object
+      properties:
+        rel:
+          type: string
+          description: relationship
+        type:
+          type: string
+          description: link MIME type
+        title:
+          type: string
+          description: link title
+        href:
+          type: string
+          description: link uri
+      required:
+      - rel
+      - type
+      - title
+      - href
     OgcItemDto:
       type: object
       properties:
@@ -222,23 +242,3 @@ components:
       - geometry
       - properties
       - time
-    OgcApiLandingPageLinkDto:
-      type: object
-      properties:
-        rel:
-          type: string
-          description: relationship
-        type:
-          type: string
-          description: link MIME type
-        title:
-          type: string
-          description: link title
-        href:
-          type: string
-          description: link uri
-      required:
-      - rel
-      - type
-      - title
-      - href
