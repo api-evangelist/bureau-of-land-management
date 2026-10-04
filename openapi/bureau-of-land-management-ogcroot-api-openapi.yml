@@ -32,28 +32,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    OgcApiLandingPageDto:
-      type: object
-      properties:
-        title:
-          type: string
-          description: API title
-        description:
-          type: string
-          description: API description
-        item:
-          description: OGC Record of underlying API Resource
-          allOf:
-          - $ref: '#/components/schemas/OgcItemDto'
-        links:
-          description: API links
-          type: array
-          items:
-            $ref: '#/components/schemas/OgcApiLandingPageLinkDto'
-      required:
-      - title
-      - description
-      - links
     OgcApiLandingPageLinkDto:
       type: object
       properties:
@@ -242,3 +220,25 @@ components:
       - geometry
       - properties
       - time
+    OgcApiLandingPageDto:
+      type: object
+      properties:
+        title:
+          type: string
+          description: API title
+        description:
+          type: string
+          description: API description
+        item:
+          description: OGC Record of underlying API Resource
+          allOf:
+          - $ref: '#/components/schemas/OgcItemDto'
+        links:
+          description: API links
+          type: array
+          items:
+            $ref: '#/components/schemas/OgcApiLandingPageLinkDto'
+      required:
+      - title
+      - description
+      - links

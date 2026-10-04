@@ -1015,15 +1015,16 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    StatisticType:
-      type: string
-      enum:
-      - count
-      - sum
-      - avg
-      - var
-      - max
-      - min
+    FeatureLayerRendererDto:
+      type: object
+      properties:
+        type:
+          type: string
+        symbol:
+          $ref: '#/components/schemas/FeatureLayerSymbolDto'
+      required:
+      - type
+      - symbol
     FeatureServerDto:
       type: object
       properties:
@@ -1140,6 +1141,38 @@ components:
       - layers
       - relationships
       - supportsRelationshipsResource
+    FeatureLayerFieldDto:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+        alias:
+          type: string
+        sqlType:
+          type: string
+        domain:
+          type:
+          - object
+          - 'null'
+        defaultValue:
+          type:
+          - object
+          - 'null'
+        length:
+          type: number
+        editable:
+          type: boolean
+        nullable:
+          type: boolean
+      required:
+      - name
+      - type
+      - alias
+      - sqlType
+      - editable
+      - nullable
     FeatureLayerAdvancedQueryCapabilitiesDto:
       type: object
       properties:
@@ -1252,75 +1285,16 @@ components:
       - supportsFullTextSearch
       - advancedQueryAnalyticCapabilities
       - advancedEditingCapabilities
-    FeatureLayerSymbolDto:
+    FeatureLayerUniqueIdFieldDto:
       type: object
       properties:
-        color:
-          type: array
-          items:
-            type: number
-        outline:
-          $ref: '#/components/schemas/FeatureLayerSymbolOutlineDto'
-        type:
+        name:
           type: string
-        style:
-          type: string
+        isSystemMaintained:
+          type: boolean
       required:
-      - color
-      - outline
-      - type
-      - style
-    OutputStatistics:
-      type: object
-      properties:
-        outStatisticFieldName:
-          type: string
-          description: The name of the statistic
-          example: RegistrationAverage
-        onStatisticField:
-          type: string
-          description: The layer attribute to calculate statistic on
-          example: registrationCount
-        statisticType:
-          description: The type of statistic to calculate
-          example:
-          - count
-          - sum
-          - avg
-          - var
-          - max
-          - min
-          allOf:
-          - $ref: '#/components/schemas/StatisticType'
-      required:
-      - outStatisticFieldName
-      - onStatisticField
-      - statisticType
-    FeatureLayerRendererDto:
-      type: object
-      properties:
-        type:
-          type: string
-        symbol:
-          $ref: '#/components/schemas/FeatureLayerSymbolDto'
-      required:
-      - type
-      - symbol
-    SpatialReferenceDto:
-      type: object
-      properties:
-        latestVcsWkid:
-          type: number
-        latestWkid:
-          type: number
-        latestWkt:
-          type: string
-        vcsWkid:
-          type: number
-        wkid:
-          type: number
-        wkt:
-          type: string
+      - name
+      - isSystemMaintained
     FeatureLayerDto:
       type: object
       properties:
@@ -1539,16 +1513,175 @@ components:
       - supportsCoordinatesQuantization
       - hasLabels
       - geometryType
-    FeatureLayerUniqueIdFieldDto:
+    FeatureServerExtentDto:
+      type: object
+      properties:
+        spatialReference:
+          description: Spatial reference for the extent
+          allOf:
+          - $ref: '#/components/schemas/SpatialReferenceDto'
+        xmin:
+          type: number
+        xmax:
+          type: number
+        ymin:
+          type: number
+        ymax:
+          type: number
+      required:
+      - spatialReference
+      - xmin
+      - xmax
+      - ymin
+      - ymax
+    RestInfoDto:
+      type: object
+      properties:
+        currentVersion:
+          type: number
+          description: Current numeric version of the service
+          example: 11.2
+        fullVersion:
+          type: string
+          description: Full service version string
+          example: 11.2.0
+        authInfo:
+          description: Authentication metadata for the service
+          allOf:
+          - $ref: '#/components/schemas/AuthInfoDto'
+      required:
+      - currentVersion
+      - fullVersion
+      - authInfo
+    FeatureServerFormats:
+      type: string
+      enum:
+      - json
+    FeatureLayerDrawingInfoDto:
+      type: object
+      properties:
+        renderer:
+          $ref: '#/components/schemas/FeatureLayerRendererDto'
+        labelingInfo:
+          type:
+          - object
+          - 'null'
+      required:
+      - renderer
+    FeatureLayerIndexDto:
       type: object
       properties:
         name:
           type: string
-        isSystemMaintained:
+        fields:
+          type: string
+        isAscending:
           type: boolean
+        isUnique:
+          type: boolean
+        description:
+          type: string
+        indexType:
+          type: string
       required:
       - name
-      - isSystemMaintained
+      - fields
+      - isAscending
+      - isUnique
+      - description
+      - indexType
+    FeatureLayerQueryFeatureDto:
+      type: object
+      properties:
+        attributes:
+          type: object
+        geometry:
+          type:
+          - object
+          - 'null'
+      required:
+      - attributes
+    FeatureLayerSymbolOutlineDto:
+      type: object
+      properties:
+        color:
+          type: array
+          items:
+            type: number
+        width:
+          type: number
+        type:
+          type: string
+        style:
+          type: string
+      required:
+      - color
+      - width
+      - type
+      - style
+    AuthInfoDto:
+      type: object
+      properties:
+        isTokenBasedSecurity:
+          type: boolean
+          description: Indicates whether token-based security is enabled
+          example: true
+        tokenServicesUrl:
+          type: string
+          description: Token generation endpoint URL
+          example: https://totoro-purple-qa-pre-hub.hubqa.arcgis.com/events/rest/generateToken
+      required:
+      - isTokenBasedSecurity
+      - tokenServicesUrl
+    FeatureLayerDateFieldsTimeReferenceDto:
+      type: object
+      properties:
+        timeZone:
+          type: string
+        respectsDaylightSaving:
+          type: boolean
+      required:
+      - timeZone
+      - respectsDaylightSaving
+    FeatureLayerSymbolDto:
+      type: object
+      properties:
+        color:
+          type: array
+          items:
+            type: number
+        outline:
+          $ref: '#/components/schemas/FeatureLayerSymbolOutlineDto'
+        type:
+          type: string
+        style:
+          type: string
+      required:
+      - color
+      - outline
+      - type
+      - style
+    FeatureLayerOwnershipBasedAccessControlForFeaturesDto:
+      type: object
+      properties:
+        allowOthersToQuery:
+          type: boolean
+      required:
+      - allowOthersToQuery
+    FeatureLayersDto:
+      type: object
+      properties:
+        layers:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureLayerDto'
+        tables:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureLayerDto'
+      required:
+      - layers
+      - tables
     FeatureLayerQueryDto:
       type: object
       properties:
@@ -1587,55 +1720,56 @@ components:
       - features
       - exceededTransferLimit
       - geometryType
-    FeatureServerFormats:
+    StatisticType:
       type: string
       enum:
-      - json
-    AuthInfoDto:
+      - count
+      - sum
+      - avg
+      - var
+      - max
+      - min
+    SpatialReferenceDto:
       type: object
       properties:
-        isTokenBasedSecurity:
-          type: boolean
-          description: Indicates whether token-based security is enabled
-          example: true
-        tokenServicesUrl:
+        latestVcsWkid:
+          type: number
+        latestWkid:
+          type: number
+        latestWkt:
           type: string
-          description: Token generation endpoint URL
-          example: https://totoro-purple-qa-pre-hub.hubqa.arcgis.com/events/rest/generateToken
-      required:
-      - isTokenBasedSecurity
-      - tokenServicesUrl
-    FeatureServerExtentDto:
+        vcsWkid:
+          type: number
+        wkid:
+          type: number
+        wkt:
+          type: string
+    OutputStatistics:
       type: object
       properties:
-        spatialReference:
-          description: Spatial reference for the extent
+        outStatisticFieldName:
+          type: string
+          description: The name of the statistic
+          example: RegistrationAverage
+        onStatisticField:
+          type: string
+          description: The layer attribute to calculate statistic on
+          example: registrationCount
+        statisticType:
+          description: The type of statistic to calculate
+          example:
+          - count
+          - sum
+          - avg
+          - var
+          - max
+          - min
           allOf:
-          - $ref: '#/components/schemas/SpatialReferenceDto'
-        xmin:
-          type: number
-        xmax:
-          type: number
-        ymin:
-          type: number
-        ymax:
-          type: number
+          - $ref: '#/components/schemas/StatisticType'
       required:
-      - spatialReference
-      - xmin
-      - xmax
-      - ymin
-      - ymax
-    FeatureLayerDateFieldsTimeReferenceDto:
-      type: object
-      properties:
-        timeZone:
-          type: string
-        respectsDaylightSaving:
-          type: boolean
-      required:
-      - timeZone
-      - respectsDaylightSaving
+      - outStatisticFieldName
+      - onStatisticField
+      - statisticType
     FeatureInfoDto:
       type: object
       properties:
@@ -1670,137 +1804,3 @@ components:
       - minScale
       - maxScale
       - geometryType
-    FeatureLayerDrawingInfoDto:
-      type: object
-      properties:
-        renderer:
-          $ref: '#/components/schemas/FeatureLayerRendererDto'
-        labelingInfo:
-          type:
-          - object
-          - 'null'
-      required:
-      - renderer
-    FeatureLayerQueryFeatureDto:
-      type: object
-      properties:
-        attributes:
-          type: object
-        geometry:
-          type:
-          - object
-          - 'null'
-      required:
-      - attributes
-    FeatureLayerFieldDto:
-      type: object
-      properties:
-        name:
-          type: string
-        type:
-          type: string
-        alias:
-          type: string
-        sqlType:
-          type: string
-        domain:
-          type:
-          - object
-          - 'null'
-        defaultValue:
-          type:
-          - object
-          - 'null'
-        length:
-          type: number
-        editable:
-          type: boolean
-        nullable:
-          type: boolean
-      required:
-      - name
-      - type
-      - alias
-      - sqlType
-      - editable
-      - nullable
-    FeatureLayersDto:
-      type: object
-      properties:
-        layers:
-          type: array
-          items:
-            $ref: '#/components/schemas/FeatureLayerDto'
-        tables:
-          type: array
-          items:
-            $ref: '#/components/schemas/FeatureLayerDto'
-      required:
-      - layers
-      - tables
-    RestInfoDto:
-      type: object
-      properties:
-        currentVersion:
-          type: number
-          description: Current numeric version of the service
-          example: 11.2
-        fullVersion:
-          type: string
-          description: Full service version string
-          example: 11.2.0
-        authInfo:
-          description: Authentication metadata for the service
-          allOf:
-          - $ref: '#/components/schemas/AuthInfoDto'
-      required:
-      - currentVersion
-      - fullVersion
-      - authInfo
-    FeatureLayerSymbolOutlineDto:
-      type: object
-      properties:
-        color:
-          type: array
-          items:
-            type: number
-        width:
-          type: number
-        type:
-          type: string
-        style:
-          type: string
-      required:
-      - color
-      - width
-      - type
-      - style
-    FeatureLayerIndexDto:
-      type: object
-      properties:
-        name:
-          type: string
-        fields:
-          type: string
-        isAscending:
-          type: boolean
-        isUnique:
-          type: boolean
-        description:
-          type: string
-        indexType:
-          type: string
-      required:
-      - name
-      - fields
-      - isAscending
-      - isUnique
-      - description
-      - indexType
-    FeatureLayerOwnershipBasedAccessControlForFeaturesDto:
-      type: object
-      properties:
-        allowOthersToQuery:
-          type: boolean
-      required:
-      - allowOthersToQuery

@@ -61,6 +61,25 @@ paths:
       x-summary-source: derived
 components:
   schemas:
+    CollectionDtoLink:
+      type: object
+      properties:
+        rel:
+          type: string
+        type:
+          type: string
+        title:
+          type: string
+        href:
+          type: string
+        hreflang:
+          type: string
+      required:
+      - rel
+      - type
+      - title
+      - href
+      - hreflang
     CollectionDto:
       type: object
       properties:
@@ -94,22 +113,6 @@ components:
       - description
       - itemType
       - crs
-    CollectionsResponseLinksDto:
-      type: object
-      properties:
-        rel:
-          type: string
-        type:
-          type: string
-        title:
-          type: string
-        href:
-          type: string
-      required:
-      - rel
-      - type
-      - title
-      - href
     CollectionWithLinksDto:
       type: object
       properties:
@@ -148,6 +151,93 @@ components:
       - itemType
       - crs
       - links
+    GeometryDto:
+      type: object
+      properties:
+        bbox:
+          type: array
+          minItems: 4
+          items:
+            type: number
+    EnvelopeDto:
+      type: object
+      properties:
+        bbox:
+          type: array
+          minItems: 4
+          items:
+            type: number
+        type:
+          type: string
+          description: Type of geometry filter, must be "Envelope"
+          enum:
+          - Envelope
+        coordinates:
+          description: Coordinates in either 2d bbox [xmin,ymin,xmax,ymax] or envelope [[xmin,ymax],[xmax,ymin]] formats
+          anyOf:
+          - type: array
+            minItems: 4
+            maxItems: 4
+            items:
+              type: number
+          - type: array
+            minItems: 2
+            maxItems: 2
+            items:
+              type: array
+              minItems: 2
+              maxItems: 2
+              items:
+                type: number
+      required:
+      - type
+      - coordinates
+    RangeParamsEpoch:
+      type: object
+      properties:
+        from:
+          type: number
+          description: epoch time in milliseconds
+          example: 160000000
+        to:
+          type: number
+          description: epoch time in milliseconds
+          example: 170000000
+      required:
+      - from
+      - to
+    CollectionsResponseDto:
+      type: object
+      properties:
+        collections:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionDto'
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/CollectionsResponseLinksDto'
+      required:
+      - collections
+      - links
+    GeometryFilterDto:
+      type: object
+      properties:
+        relation:
+          type: string
+          description: Type of relation, defaults to "intersects"
+          enum:
+          - intersects
+          - disjoint
+          - within
+          - contains
+        geometry:
+          anyOf:
+          - $ref: '#/components/schemas/EnvelopeDto'
+          allOf:
+          - $ref: '#/components/schemas/GeometryDto'
+      required:
+      - geometry
     ItemSearchFiltersDto:
       type: object
       properties:
@@ -949,94 +1039,6 @@ components:
                   type: string
         boundary:
           $ref: '#/components/schemas/GeometryFilterDto'
-    RangeParamsEpoch:
-      type: object
-      properties:
-        from:
-          type: number
-          description: epoch time in milliseconds
-          example: 160000000
-        to:
-          type: number
-          description: epoch time in milliseconds
-          example: 170000000
-      required:
-      - from
-      - to
-    CollectionsResponseDto:
-      type: object
-      properties:
-        collections:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollectionDto'
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/CollectionsResponseLinksDto'
-      required:
-      - collections
-      - links
-    GeometryDto:
-      type: object
-      properties:
-        bbox:
-          type: array
-          minItems: 4
-          items:
-            type: number
-    CollectionDtoLink:
-      type: object
-      properties:
-        rel:
-          type: string
-        type:
-          type: string
-        title:
-          type: string
-        href:
-          type: string
-        hreflang:
-          type: string
-      required:
-      - rel
-      - type
-      - title
-      - href
-      - hreflang
-    EnvelopeDto:
-      type: object
-      properties:
-        bbox:
-          type: array
-          minItems: 4
-          items:
-            type: number
-        type:
-          type: string
-          description: Type of geometry filter, must be "Envelope"
-          enum:
-          - Envelope
-        coordinates:
-          description: Coordinates in either 2d bbox [xmin,ymin,xmax,ymax] or envelope [[xmin,ymax],[xmax,ymin]] formats
-          anyOf:
-          - type: array
-            minItems: 4
-            maxItems: 4
-            items:
-              type: number
-          - type: array
-            minItems: 2
-            maxItems: 2
-            items:
-              type: array
-              minItems: 2
-              maxItems: 2
-              items:
-                type: number
-      required:
-      - type
-      - coordinates
     ItemSearchFiltersBlockDto:
       type: object
       properties:
@@ -1052,21 +1054,19 @@ components:
             $ref: '#/components/schemas/ItemSearchFiltersDto'
       required:
       - predicates
-    GeometryFilterDto:
+    CollectionsResponseLinksDto:
       type: object
       properties:
-        relation:
+        rel:
           type: string
-          description: Type of relation, defaults to "intersects"
-          enum:
-          - intersects
-          - disjoint
-          - within
-          - contains
-        geometry:
-          anyOf:
-          - $ref: '#/components/schemas/EnvelopeDto'
-          allOf:
-          - $ref: '#/components/schemas/GeometryDto'
+        type:
+          type: string
+        title:
+          type: string
+        href:
+          type: string
       required:
-      - geometry
+      - rel
+      - type
+      - title
+      - href
