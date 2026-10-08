@@ -446,6 +446,8 @@ apis:
   - type: DataAPI
     url: https://gbp-blm-egis.hub.arcgis.com/data.json
 common:
+- type: FinOps
+  url: finops/bureau-of-land-management-finops.yml
 - type: AgenticAccess
   url: agentic-access/bureau-of-land-management-agentic-access.yml
 - type: VulnerabilityDisclosure
