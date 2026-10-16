@@ -1,24 +1,22 @@
-# Kin Score artifact — bureau-of-land-management — 2026-09-07T200636
+# Kin Score artifact — bureau-of-land-management — 2026-10-11T110117
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: bureau-of-land-management
-  schema_version: 0.20.0
-  scored_at: '2026-09-07'
-  run_ts: 2026-09-07T200636
-  composite: 46.5
+  schema_version: 0.23.0
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
+  composite: 41.9
   band: developing
   facets:
-    discoverability: 85.2
-    contract_quality: 35.5
-    governance: 18.2
+    discoverability: 76.8
+    contract_quality: 36.5
+    contract_governance: 18.2
     operational_transparency: 13.2
     developer_ergonomics: 56.5
-    commercial_clarity: 28.9
-    contract_governance: 18.2
     access_clarity: 28.9
   agent_readiness:
-    score: 42.7
+    score: 39.8
     band: agent-native
     dimensions:
       spec_presence: true
@@ -28,7 +26,7 @@ kin_score:
       auth_clarity: served
       idempotency: na
       error_semantics: documented
-      openapi_examples: verified
+      openapi_examples: partial
       rate_limit_signal: documented
       event_surface_described: false
       agent_skills: derived
@@ -44,10 +42,15 @@ kin_score:
     applies: true
     regime: Government & Public Sector
     regime_id: government
-    score: 75.9
+    score: 40.2
     matched_via: tags
   provenance:
     mcp: derived
     skills: derived
     agentic_access: derived
     conformance: first-party
+    contracts:
+      total: 8
+      derived: 0
+      coverage: 0.0
+      callable: 0.0
