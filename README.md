@@ -1,4 +1,4 @@
-# Bureau of Land Management (bureau-of-land-management)
+# Bureau of Land Management
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,107 +64,150 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-The Bureau of Land Management (BLM) is a U.S. government agency responsible for managing vast stretches of public lands across the country, primarily focused on activities like outdoor recreation, livestock grazing, mineral development, and energy production, aiming to sustain the health and diversity of these lands for future generations.
+The Bureau of Land Management (BLM) is the U.S. Department of the Interior bureau that administers 245 million surface acres of public land and 700 million acres of subsurface mineral estate — about one in every ten acres of the United States — for outdoor recreation, livestock grazing, mineral and energy development, conservation and cultural heritage. Its public API surface is geospatial and entirely anonymous: a catalog of 803 datasets served as OGC API - Records and DCAT-US 1.1, and 785 ArcGIS Server services across thirteen REST instances (one national, twelve state) that BLM operates itself on gis.blm.gov, 42 of which also publish OGC WMS 1.3.0. There is no API key, no plan and no quota — and equally no versioning policy, changelog, status page or developer support channel. Every published operation is read-only; the transactional systems (MLRS mining claims and land records, GLO Records land patents, ePlanning NEPA documents) sit behind a login and publish no contract.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/bureau-of-land-management/refs/heads/main/apis.yml)
+**Areas:** Environment · Federal Government · Land · Resources · GIS · Geospatial · Mining · Public Lands · Open Data · OGC · Cadastral · Recreation
 
-## Scope
+## Bureau of Land Management on APIs.io
 
-- **Type:** Index
-- **x-type:** government
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Bureau of Land Management is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bureau-of-land-management/](https://apis.io/providers/bureau-of-land-management/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (13)
 
-- Environment
-- Federal Government
-- Land
-- Resources
-- GIS
-- Geospatial
-- Mining
+- [BLM Geospatial Business Platform (GBP) Hub](https://apis.io/apis/bureau-of-land-management/blm-geospatial-business-platform/) — The BLM Geospatial Business Platform is a public tool and publication platform for exploring and downloading GIS data. Built on ArcGIS Online, it provides…
+- [BLM Mineral and Land Records System (MLRS)](https://apis.io/apis/bureau-of-land-management/blm-mineral-land-records/) — The Mineral and Land Records System (MLRS) is an online platform delivering state-of-the-art mineral and land records transactions, tracking, mapping, and…
+- [BLM General Land Office Records](https://apis.io/apis/bureau-of-land-management/blm-general-land-office-records/) — The General Land Office (GLO) Records provide access to federal land conveyance records including land patents, survey plats, and field notes from 1788 to…
+- [BLM ePlanning](https://apis.io/apis/bureau-of-land-management/blm-eplanning/) — BLM ePlanning provides public access to land use planning documents, environmental impact statements, and resource management plans. Citizens can track…
+- [BLM National and State ArcGIS REST / OGC WMS Services](https://apis.io/apis/bureau-of-land-management/blm-arcgis-gis-services/) — BLM's own ArcGIS Server estate, operated on blm.gov infrastructure rather than a hosted platform: thirteen REST instances — one national plus Alaska,…
+- [Bureau of Land Management Catalog API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-catalog-api/) — The Catalog API from Bureau of Land Management — 1 operation(s) for catalog.
+- [Bureau of Land Management Collection API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-collection-api/) — The Collection API from Bureau of Land Management — 2 operation(s) for collection.
+- [Bureau of Land Management Geoservice Beta API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-geoservice-beta-api/) — The Geoservice-Beta API from Bureau of Land Management — 6 operation(s) for geoservice-beta.
+- [Bureau of Land Management Ogc Item API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-ogcitem-api/) — The OgcItem API from Bureau of Land Management — 4 operation(s) for ogcitem.
+- [Bureau of Land Management Ogc Item Aggregation API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-ogcitemaggregation-api/) — The OgcItemAggregation API from Bureau of Land Management — 1 operation(s) for ogcitemaggregation.
+- [Bureau of Land Management Ogc Root API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-ogcroot-api/) — The OgcRoot API from Bureau of Land Management — 1 operation(s) for ogcroot.
+- [Bureau of Land Management Ogc Root Conformance API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-ogcrootconformance-api/) — The OgcRootConformance API from Bureau of Land Management — 1 operation(s) for ogcrootconformance.
+- [Bureau of Land Management Queryable API](https://apis.io/apis/bureau-of-land-management/bureau-of-land-management-queryable-api/) — The Queryable API from Bureau of Land Management — 1 operation(s) for queryable.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-11-30
-- **Modified:** 2026-04-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### BLM Geospatial Business Platform (GBP) Hub
-The BLM Geospatial Business Platform is a public tool and publication platform for exploring and downloading GIS data built on ArcGIS Online. Provides REST endpoints for BLM geospatial data including public lands boundaries, mineral resources, recreation areas, and environmental data.
+Model Context Protocol servers that expose the API to agents.
 
-**Human URL:** [https://gbp-blm-egis.hub.arcgis.com/](https://gbp-blm-egis.hub.arcgis.com/)
+- [bureau-of-land-management](https://apis.io/servers/bureau-of-land-management/bureau-of-land-management/)
 
-**Base URL:** https://blm-egis.maps.arcgis.com/sharing/rest/
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Federal Government
-- Geospatial
-- GIS
-- Land
+- [Bureau Of Land Management Agentic Access](https://apis.io/agentic-access/bureau-of-land-management/bureau-of-land-management-agentic-access/)
 
-#### Features
+#### Overlays (1)
 
-- ArcGIS REST Endpoints
-- ISO-19139 XML Metadata
-- DCAT-US Compliance
-- Keyword and Location Search
-- Public Land Records
+OpenAPI overlays, including conversational phrasing for each operation.
 
-#### Use Cases
+- [Bureau Of Land Management Gbp Hub Search Overlay](https://apis.io/overlays/bureau-of-land-management/bureau-of-land-management-gbp-hub-search-overlay/)
 
-- Public lands research
-- Recreation planning
-- Environmental impact assessment
-- Mineral rights research
+#### Security (3)
 
-### BLM Mineral and Land Records System (MLRS)
-MLRS delivers state-of-the-art mineral and land records transactions, tracking, mapping, and more for BLM customers and staff.
+Authentication, trust centre, and vulnerability disclosure.
 
-**Human URL:** [https://mlrs.blm.gov/s/](https://mlrs.blm.gov/s/)
+- [Bureau Of Land Management Authentication](https://apis.io/security/bureau-of-land-management/bureau-of-land-management-authentication/)
+- [Bureau Of Land Management Domain Security](https://apis.io/security/bureau-of-land-management/bureau-of-land-management-domain-security/)
+- [Bureau Of Land Management Vulnerability Disclosure](https://apis.io/security/bureau-of-land-management/bureau-of-land-management-vulnerability-disclosure/)
 
-#### Features
+#### OAuth scopes (1)
 
-- Mineral Records
-- Land Patent Records
-- Rights-of-Way Management
-- Mining Claims
+The permissions the API asks for.
 
-### BLM General Land Office Records
-Provides access to federal land conveyance records including land patents, survey plats, and field notes from 1788 to the present. Contains over 10 million Federal land title records.
+- [Bureau Of Land Management Scopes](https://apis.io/scopes/bureau-of-land-management/bureau-of-land-management-scopes/)
 
-**Human URL:** [https://glorecords.blm.gov/default.aspx](https://glorecords.blm.gov/default.aspx)
+#### Plans and pricing (1)
 
-#### Features
+Published plans, tiers and prices.
 
-- Land Patent Records
-- Survey Plats
-- Field Notes
-- Historical Records Search
+- [Bureau Of Land Management Plans Pricing](https://apis.io/plans/bureau-of-land-management/bureau-of-land-management-plans-pricing/)
 
-### BLM ePlanning
-Provides public access to land use planning documents, environmental impact statements, and resource management plans.
+#### Rate limits (1)
 
-**Human URL:** [https://eplanning.blm.gov/](https://eplanning.blm.gov/)
+Published request limits.
 
-#### Features
+- [Bureau Of Land Management Rate Limits](https://apis.io/rate-limits/bureau-of-land-management/bureau-of-land-management-rate-limits/)
 
-- Land Use Planning Documents
-- Environmental Impact Statements
-- Resource Management Plans
-- Public Comment Access
+#### FinOps (1)
 
-## Common Properties
+What the API costs to run, by operation.
+
+- [Bureau Of Land Management Finops](https://apis.io/finops/bureau-of-land-management/bureau-of-land-management-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.blm.gov)
-- [Portal](https://gbp-blm-egis.hub.arcgis.com/)
-- [Privacy Policy](https://www.blm.gov/privacy-policy)
-- [Data Portal](https://catalog.data.gov/dataset?organization=blm-gov)
+- [Documentation](https://www.blm.gov/services/geospatial/GISData)
+- [Getting started](https://www.blm.gov/services/geospatial)
+- [API reference](https://gis.blm.gov/arcgis/rest/services)
+- [Support](https://www.blm.gov/contact)
+- [Blog](https://www.blm.gov/blog)
+- [Security](https://www.blm.gov/info/notices/vulnerability-disclosure)
+- [Terms of service](https://www.doi.gov/disclaimer)
+- [Privacy policy](https://www.doi.gov/privacy)
+- [GitHub](https://github.com/DOI-BLM)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 40.3** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.8 |
+| Contract quality | 36.5 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 56.5 |
+| Access clarity | 21.1 |
+
+**Agent readiness 41.3** — agent-native
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | served (partial credit) |
+| Idempotency | na |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bureau-of-land-management/](https://apis.io/providers/bureau-of-land-management/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bureau of Land Management: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bureau-of-land-management/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
