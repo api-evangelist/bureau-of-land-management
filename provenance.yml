@@ -35,10 +35,13 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
+  heartbeat/2026-11-02.yml:
+    method: unknown
+    evidence: no authorship recorded
   kin/checks-2026-10-23T222754.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
-  kin/checks-2026-10-31T095417.yml:
+  kin/checks-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-23T000603.yml:
@@ -93,6 +96,15 @@ artifacts:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-10-31T095417.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T171331.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-01T200237.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-11-02T082323.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   lifecycle/bureau-of-land-management-lifecycle.yml:
@@ -171,12 +183,18 @@ artifacts:
   packages/bureau-of-land-management-packages.yml:
     method: searched
     evidence: declared in the artifact
+  patterns/bureau-of-land-management-patterns.yml:
+    method: derived
+    evidence: declared in the artifact
   plans/bureau-of-land-management-plans-pricing.yml:
     method: searched
     evidence: declared in the artifact
   rate-limits/bureau-of-land-management-rate-limits.yml:
     method: unknown
     evidence: no authorship recorded
+  rules/bureau-of-land-management-rules.yml:
+    method: generated
+    evidence: declared in the artifact
   sandbox/bureau-of-land-management-sandbox.yml:
     method: unknown
     evidence: no authorship recorded
